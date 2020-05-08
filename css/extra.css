@@ -19,10 +19,6 @@ body {
     display: block;
 }
 
-.chara-selection-box {
-    box-shadow: 5px 5px 5px 10px #888888;
-}
-
 .chara-img-btn {
     border: unset;
     background: rgba(0,0,0,0);
