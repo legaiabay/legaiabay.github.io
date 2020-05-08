@@ -9,16 +9,22 @@
    </head>
    <body>
       <div class="container container-padding">
-         <div class="row">
-            <div class="col-sm-6">            
-               <h1 class="title">Arknights Collection Tracker</h1>                                            
+         <div id="capture-area">
+            <div class="row">
+               <div class="col-sm-6">            
+                  <h1 class="title">Arknights Collection Tracker</h1>                                            
+               </div>
+               <div class="col-sm-6 text-right">            
+                  <button id="generate" type="button" class="btn btn-primary">Generate Image</button>                                                  
+               </div>            
             </div>
-            <div class="col-sm-6 text-right">            
-               <button type="button" class="btn btn-primary">Generate Image</button>                                                  
-            </div>            
-         </div>
-         <div class="row chara-selection"></div>
-      </div>
+            <div class="row chara-selection"></div>                  
+         </div>                  
+      </div>      
+
+      <div id="result"></div>
+
+      <script src="../js/html2canvas.min.js"></script>
       <script src="../js/chara-selection.js"></script>
    <body>
 </html>

@@ -2,6 +2,14 @@ body {
     background-color: #1b262c;
 }
 
+.container {
+    background-color: #1b262c;
+}
+
+.capture-area {
+    background-color: #1b262c;
+}
+
 .row {
     margin-bottom: 20px;
 }
@@ -14,12 +22,12 @@ body {
     padding-top: 50px;
 }
 
-.chara-img {
-    margin: 10px 5px 5px 5px;
+.chara-img {    
     display: block;
 }
 
-.chara-img-btn {
+.chara-img-btn {    
+    margin: 10px 5px 10px 5px;
     border: unset;
     background: rgba(0,0,0,0);
     transition-duration: 0.4s;
