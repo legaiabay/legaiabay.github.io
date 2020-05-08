@@ -14,7 +14,7 @@ for(let i=0;i<20;i++){
 $(document).ready(function(){
     $('.chara-selection').html(chara_img_all);
 
-    $('.chara-img').on('click', function(){
+    $('.chara-img').mouseup(function(){
         let selected = $(this).data('selected');        
         if(selected === false){
             $(this).css('background-color','white');
