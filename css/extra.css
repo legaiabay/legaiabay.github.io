@@ -10,6 +10,10 @@ body {
     background-color: #1b262c;
 }
 
+.capture-result {
+    display: none;
+}
+
 .row {
     margin-bottom: 20px;
 }

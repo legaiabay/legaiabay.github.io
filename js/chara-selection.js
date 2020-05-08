@@ -1,7 +1,7 @@
 let chara_img = `
     <div class="col-lg-2 col-md-3 col-4 text-center">            
         <button class="chara-img-btn" data-selected="false">
-            <img class="chara-img" src="${location.pathname}../img/ak/chara/Jessica.png" width="128" height="128">
+            <img class="chara-img" src="${location.pathname}../img/ak/chara/Jessica.png" width="128" height="128" loading="lazy">
         </button>
     </div>
 `;
@@ -25,11 +25,17 @@ $(document).ready(function(){
         }        
     });
 
+    $('#download').click(function(){         
+         var a = document.createElement('a');            
+         a.href = $('canvas')[0].toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+         a.download = 'ak-collection-generator.jpg';
+         a.click();
+    })
+
     $('#generate').click(function(){
         console.log("generate image...");     
         
-        $("#generate").css("display","none");
-        $(".capture-result").css("display","none");
+        $("#generate").css("display","none");        
 
         $(".chara-img-btn").each(function(){
             let selected = $(this).data("selected");
@@ -40,7 +46,7 @@ $(document).ready(function(){
             }
         });
 
-        html2canvas(document.querySelector("body"), {
+        html2canvas(document.querySelector("#capture-area"), {
             backgroundColor	: '#1b262c'
         }).then(canvas => {                                
             $("#result").html(canvas);            
@@ -54,7 +60,11 @@ $(document).ready(function(){
                 } else {
                     $(this).css('background','white');
                 }
-            });
+            });           
+
+            $('html, body').animate({
+                scrollTop: $("div#result").offset().top
+            }, 1000);
         });
     })
 });
