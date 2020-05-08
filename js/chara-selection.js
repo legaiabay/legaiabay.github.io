@@ -53,7 +53,8 @@ $(document).ready(function(){
         });
 
         html2canvas(document.querySelector("#capture-area"), {
-            backgroundColor	: '#1b262c'
+            backgroundColor	: '#1b262c',
+            width: window.innerWidth            
         }).then(canvas => {                                            
             let url = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
             $("#result-img").attr("src",url);
