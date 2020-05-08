@@ -26,9 +26,7 @@ hr {
     display: none;
 }
 
-.row {
-    margin-bottom: 20px;
-}
+
 
 .title {
     color: white;
@@ -45,7 +43,7 @@ hr {
 }
 
 .chara-img-btn {    
-    margin: 10px 5px 10px 5px;
+    
     border: unset;
     background: rgba(0,0,0,0);
     transition-duration: 0s;
