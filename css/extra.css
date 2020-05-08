@@ -1,0 +1,20 @@
+body {
+    background-color: #162447;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+.title {
+    color: white;
+}
+
+.container-padding {
+    padding-top: 50px;
+}
+
+.chara-img {
+    margin: 10px 5px 5px 5px;
+    display: block;
+}
