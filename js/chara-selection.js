@@ -29,6 +29,7 @@ $(document).ready(function(){
         console.log("generate image...");     
         
         $("#generate").css("display","none");
+        $(".capture-result").css("display","none");
 
         $(".chara-img-btn").each(function(){
             let selected = $(this).data("selected");
@@ -39,10 +40,11 @@ $(document).ready(function(){
             }
         });
 
-        html2canvas(document.querySelector("body")).then(canvas => {                        
+        html2canvas(document.querySelector("body")).then(canvas => {                                
             $("#result").html(canvas);            
 
             $("#generate").css("display","initial");
+            $(".capture-result").css("display","initial");
             $(".chara-img-btn").each(function(){
                 let selected = $(this).data("selected");
                 if(selected === false){
