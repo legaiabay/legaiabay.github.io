@@ -1,6 +1,6 @@
 let chara_img = `
     <div class="col-lg-2 col-md-3 col-4 text-center">            
-    <img class="chara-img" src="img/chara/Jessica.png" width="128" height="128">
+        <img class="chara-img" src="../img/chara/Jessica.png" width="128" height="128">
     </div>
 `;
 
