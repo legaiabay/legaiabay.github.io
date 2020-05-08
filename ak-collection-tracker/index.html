@@ -9,10 +9,17 @@
    </head>
    <body>
       <div class="container container-padding">
-         <div id="capture-area">
+         <div class="row all-padding">
+            <div class="col-sm-12">                
+               <span class="title">IGN</span>          
+               <input class="space" id="ign-input" type="text">                    
+            </div>
+         </div>
+         <div id="capture-area" class="all-padding">
             <div class="row">
                <div class="col-sm-8">            
-                  <h1 class="title">Arknights Collection Tracker</h1>                                            
+                  <h1 class="title">Arknights Collection Tracker</h1>      
+                  <h6 id="ign" class="title">IGN : </h6>                                      
                </div>
                <div class="col-sm-4 text-right align-self-center">            
                   <button id="generate" type="button" class="btn btn-primary">Generate Image</button>                                                  
@@ -20,7 +27,7 @@
             </div>
             <div class="row chara-selection"></div>                  
          </div>     
-         <div class="capture-result">
+         <div class="capture-result all-padding">
             <div class="row">
                <div class="col-12 text-center">
                   <h2 class="title">Result</h2>

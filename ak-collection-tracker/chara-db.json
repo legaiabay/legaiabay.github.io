@@ -1,0 +1,209 @@
+{
+    "chara": [
+        {
+            "name" : "12F",
+            "image" : "12F.png",
+            "class" : "Sniper"
+        },
+        {
+            "name" : "Adnachiel",
+            "image" : "Adnachiel.png",
+            "class" : "Sniper"
+        },
+        {
+            "name" : "Ansel",
+            "image" : "Ansel.png",
+            "class" : "Medic"
+        },
+        {
+            "name" : "Beagle",
+            "image" : "Beagle.png",
+            "class" : "Defender"
+        },
+        {
+            "name" : "Beehunter",
+            "image" : "Beehunter.png",
+            "class" : "Guard"
+        },
+        {
+            "name" : "Blue Poison",
+            "image" : "Blue Poison.png",
+            "class" : "Sniper"
+        },
+        {
+            "name" : "Castle-3",
+            "image" : "Castle-3.png",
+            "class" : "Guard"
+        },
+        {
+            "name" : "Catapult",
+            "image" : "Catapult.png",
+            "class" : "Sniper"
+        },
+        {
+            "name" : "Ch'en",
+            "image" : "Ch'en.png",
+            "class" : "Defender"
+        },
+        {
+            "name" : "Cliffheart",
+            "image" : "Cliffheart.png",
+            "class" : "Specialist"
+        },
+        {
+            "name" : "Croissant",
+            "image" : "Croissant.png",
+            "class" : "Defender"
+        },
+        {
+            "name" : "Cuora",
+            "image" : "Cuora.png",
+            "class" : "Defender"
+        },
+        {
+            "name" : "Dobermann",
+            "image" : "Dobermann.png",
+            "class" : "Guard"
+        },
+        {
+            "name" : "Durin",
+            "image" : "Durin.png",
+            "class" : "Caster"
+        },
+        {
+            "name" : "Earthspirit",
+            "image" : "Earthspirit.png",
+            "class" : "Supporter"
+        },
+        {
+            "name" : "Estelle",
+            "image" : "Estelle.png",
+            "class" : "Guard"
+        },
+        {
+            "name" : "Exusiai",
+            "image" : "Exusiai.png",
+            "class" : "Sniper"
+        },
+        {
+            "name" : "Fang",
+            "image" : "Fang.png",
+            "class" : "Vanguard"
+        },
+        {
+            "name" : "FEater",
+            "image" : "FEater.png",
+            "class" : "Specialist"
+        },
+        {
+            "name" : "Firewatch",
+            "image" : "Firewatch.png",
+            "class" : "Sniper"
+        },
+        {
+            "name" : "Frostleaf",
+            "image" : "Frostleaf.png",
+            "class" : "Guard"
+        },
+        {
+            "name" : "Gitano",
+            "image" : "Gitano.png",
+            "class" : "Caster"
+        },
+        {
+            "name" : "Gravel",
+            "image" : "Gravel.png",
+            "class" : "Specialist"
+        },
+        {
+            "name" : "Greyy",
+            "image" : "Greyy.png",
+            "class" : "Caster"
+        },
+        {
+            "name" : "Haze",
+            "image" : "Haze.png",
+            "class" : "Caster"
+        },
+        {
+            "name" : "Hibiscus",
+            "image" : "Hibiscus.png",
+            "class" : "Medic"
+        },
+        {
+            "name" : "Hoshiguma",
+            "image" : "Hoshiguma.png",
+            "class" : "Defender"
+        },
+        {
+            "name" : "Ifrit",
+            "image" : "Ifrit.png",
+            "class" : "Caster"
+        },
+        {
+            "name" : "Indra",
+            "image" : "Indra.png",
+            "class" : "Guard"
+        },
+        {
+            "name" : "Jessica",
+            "image" : "Jessica.png",
+            "class" : "Sniper"
+        },
+        {
+            "name" : "Kroos",
+            "image" : "Kroos.png",
+            "class" : "Sniper"
+        },
+        {
+            "name" : "Lancet-2",
+            "image" : "Lancet-2.png",
+            "class" : "Medic"
+        },
+        {
+            "name" : "Lava",
+            "image" : "Lava.png",
+            "class" : "Caster"
+        },
+        {
+            "name" : "Liskarm",
+            "image" : "Liskarm.png",
+            "class" : "Defender"
+        },
+        {
+            "name" : "Manticore",
+            "image" : "Manticore.png",
+            "class" : "Specialist"
+        },
+        {
+            "name" : "Matoimaru",
+            "image" : "Matoimaru.png",
+            "class" : "Guard"
+        },
+        {
+            "name" : "Matterhorn",
+            "image" : "Matterhorn.png",
+            "class" : "Defender"
+        },
+        {
+            "name" : "Mayer",
+            "image" : "Mayer.png",
+            "class" : "Specialist"
+        },
+        {
+            "name" : "Melantha",
+            "image" : "Melantha.png",
+            "class" : "Guard"
+        },
+        {
+            "name" : "Orchid",
+            "image" : "Orchid.png",
+            "class" : "Supporter"
+        },
+        {
+            "name" : "Pramanix",
+            "image" : "Pramanix.png",
+            "class" : "Supporter"
+        }
+    ]
+}

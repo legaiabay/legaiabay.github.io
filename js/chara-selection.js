@@ -1,28 +1,34 @@
-let chara_img = `
-    <div class="col-lg-2 col-md-3 col-4 text-center">            
-        <button class="chara-img-btn" data-selected="false">
-            <img class="chara-img" src="${location.pathname}../img/ak/chara/Jessica.png" width="128" height="128" loading="lazy">
-        </button>
-    </div>
-`;
-
-let chara_img_all = '';
-for(let i=0;i<20;i++){
-    chara_img_all += chara_img;
+function CreateCharaDiv(name, image){
+    return `
+        <div class="col-lg-2 col-md-3 col-4 text-center">            
+            <button class="chara-img-btn" data-selected="false">
+                <img class="chara-img" src="${location.pathname}../img/ak/chara/${image}" width="128" height="128" alt="${name}">
+            </button>
+        </div>
+    `;
 }
 
 $(document).ready(function(){
-    $('.chara-selection').html(chara_img_all);
+    let chara_img_all = '';
+    $.getJSON(`${location.pathname}chara-db.json`, function(data) {         
+        data.chara.forEach(element => {chara_img_all += CreateCharaDiv(element.name, element.image);});    
+    }).then(function(){
+        $('.chara-selection').append(chara_img_all);
 
-    $('.chara-img-btn').click(function(){
-        let selected = $(this).data('selected');        
-        if(selected === false){
-            $(this).css('background','white');
-            $(this).data('selected',true);            
-        } else {
-            $(this).css('background','rgba(0,0,0,0)');
-            $(this).data('selected',false);            
-        }        
+        $('#ign-input').keyup(function(){
+            $('#ign').text("IGN : " + $(this).val());
+        })
+
+        $('.chara-img-btn').click(function(){
+            let selected = $(this).data('selected');        
+            if(selected === false){
+                $(this).css('background','white');
+                $(this).data('selected',true);            
+            } else {
+                $(this).css('background','rgba(0,0,0,0)');
+                $(this).data('selected',false);            
+            }        
+        });
     });
 
     $('#download').click(function(){         
@@ -48,8 +54,7 @@ $(document).ready(function(){
 
         html2canvas(document.querySelector("#capture-area"), {
             backgroundColor	: '#1b262c'
-        }).then(canvas => {                                
-            //$("#result").html(canvas);     
+        }).then(canvas => {                                            
             let url = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
             $("#result-img").attr("src",url);
             $("#result-a").attr("href",url);
