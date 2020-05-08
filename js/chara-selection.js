@@ -14,7 +14,7 @@ for(let i=0;i<20;i++){
 $(document).ready(function(){
     $('.chara-selection').html(chara_img_all);
 
-    $('.chara-img-btn').mouseup(function(){
+    $('.chara-img-btn').click(function(){
         let selected = $(this).data('selected');        
         if(selected === false){
             $(this).css('background','white');
@@ -46,13 +46,17 @@ $(document).ready(function(){
             }
         });
 
-        html2canvas(document.querySelector("#capture-area"), {
+        html2canvas(document.querySelector(".capture-area"), {
             backgroundColor	: '#1b262c'
         }).then(canvas => {                                
-            $("#result").html(canvas);            
+            //$("#result").html(canvas);     
+            let url = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+            $("#result-img").attr("src",url);
+            $("#result-a").attr("href",url);
 
             $("#generate").css("display","initial");
             $(".capture-result").css("display","initial");
+
             $(".chara-img-btn").each(function(){
                 let selected = $(this).data("selected");
                 if(selected === false){

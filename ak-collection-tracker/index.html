@@ -9,7 +9,7 @@
    </head>
    <body>
       <div class="container container-padding">
-         <div id="capture-area">
+         <div class="capture-area">
             <div class="row">
                <div class="col-sm-8">            
                   <h1 class="title">Arknights Collection Tracker</h1>                                            
@@ -23,12 +23,19 @@
          <div class="capture-result">
             <div class="row">
                <div class="col-12 text-center">
-                  <button id="download" type="button" class="btn btn-primary">Download Image</button>
+                  <h2 class="title">Result</h2>
+                  <h6 class="title">(click image below to download)</h6>                  
+                  <hr>
                </div>
             </div>
             <div class="row">
                <div class="col-12">                  
-                  <div id="result"></div>
+                  <div id="result" class="result-box">
+                     <a id="result-a" download="ak-collection-tracker.jpg" href="">
+                        <img id="result-img" src="" width="100%">
+                     </a>
+
+                  </div>
                </div>
             </div>                                                   
          </div>             

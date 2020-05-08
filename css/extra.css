@@ -2,12 +2,20 @@ body {
     background-color: #1b262c;
 }
 
+hr {
+    height: 2px;
+    color: white;
+    background-color: white;
+    border: none;
+}
+
 .container {
     background-color: #1b262c;
 }
 
 .capture-area {
     background-color: #1b262c;
+    padding: 20px 20px 20px 20px;
 }
 
 .capture-result {
@@ -41,4 +49,8 @@ body {
 .chara-img-btn:hover {
     background-color: white; /* Green */
     color: white;
+}
+
+.result-box {
+    border: 2px solid white;
 }
