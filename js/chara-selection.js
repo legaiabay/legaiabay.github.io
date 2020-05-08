@@ -40,7 +40,9 @@ $(document).ready(function(){
             }
         });
 
-        html2canvas(document.querySelector("body")).then(canvas => {                                
+        html2canvas(document.querySelector("body"), {
+            backgroundColor	: '#1b262c'
+        }).then(canvas => {                                
             $("#result").html(canvas);            
 
             $("#generate").css("display","initial");
