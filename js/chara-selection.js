@@ -46,7 +46,7 @@ $(document).ready(function(){
             }
         });
 
-        html2canvas(document.querySelector(".capture-area"), {
+        html2canvas(document.querySelector("#capture-area"), {
             backgroundColor	: '#1b262c'
         }).then(canvas => {                                
             //$("#result").html(canvas);     
