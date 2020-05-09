@@ -8,16 +8,12 @@ function CreateCharaDiv(name, image){
     `;
 }
 
-$(document).ready(function(){
+function SetCharaDiv(){
     let chara_img_all = '';
     $.getJSON(`${location.pathname}chara-db.json`, function(data) {         
         data.chara.forEach(element => {chara_img_all += CreateCharaDiv(element.name, element.image);});    
     }).then(function(){
-        $('.chara-selection').append(chara_img_all);
-
-        $('#ign-input').keyup(function(){
-            $('#ign').text("IGN : " + $(this).val());
-        })
+        $('.chara-selection').append(chara_img_all);        
 
         $('.chara-img-btn').click(function(){
             let selected = $(this).data('selected');        
@@ -30,6 +26,14 @@ $(document).ready(function(){
             }        
         });
     });
+}
+
+$(document).ready(function(){
+    SetCharaDiv();
+
+    $('#ign-input').keyup(function(){
+        $('#ign').text("IGN : " + $(this).val());
+    })
 
     $('#download').click(function(){         
          var a = document.createElement('a');            

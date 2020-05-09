@@ -13,6 +13,16 @@ hr {
     margin-left: 20px;
 }
 
+.vert-space-1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.vert-space-2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .container {
     background-color: #1b262c;
 }
@@ -25,8 +35,6 @@ hr {
 .capture-result {
     display: none;
 }
-
-
 
 .title {
     color: white;
@@ -42,11 +50,10 @@ hr {
     height: 100%;
 }
 
-.chara-img-btn {    
-    
+.chara-img-btn {        
     border: unset;
     background: rgba(0,0,0,0);
-    transition-duration: 0s;
+    transition-duration: 0.4s;
     transition-delay: 0s;
 }
 
