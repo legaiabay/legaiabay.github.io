@@ -305,12 +305,6 @@
             "image" : "Platinum.png",
             "class" : "Sniper",
             "rarity" : 5
-        },        
-        {
-            "name" : "Platinum",
-            "image" : "Platinum.png",
-            "class" : "Sniper",
-            "rarity" : 5
         },
         {
             "name" : "Plume",
