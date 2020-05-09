@@ -27,6 +27,12 @@ hr {
     background-color: #1b262c;
 }
 
+.input-center {
+    text-align: center;
+    left: 50%;
+    width: 20em;
+}
+
 .all-padding {
     background-color: #1b262c;
     padding: 20px 20px 20px 20px;
@@ -38,6 +44,19 @@ hr {
 
 .title {
     color: white;
+}
+
+.title-url {
+    font-weight: lighter;
+}
+
+.title-ign {
+    font-weight: lighter;
+    margin-top: 40px;
+}
+
+.title-footer {
+    font-weight: lighter;
 }
 
 .container-padding {
