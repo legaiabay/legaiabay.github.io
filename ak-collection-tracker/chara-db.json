@@ -51,7 +51,7 @@
         {
             "name" : "Ch'en",
             "image" : "Ch'en.png",
-            "class" : "Defender",
+            "class" : "Guard",
             "rarity" : 6
         },
         {
