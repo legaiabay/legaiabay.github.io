@@ -1,4 +1,4 @@
-let version = "v.0.1.0";
+let version = "v.1.0.0";
 let selected_count = 0;
 let chara_rarity_count = [0,0,0,0,0,0];
 
@@ -70,7 +70,7 @@ $(document).ready(function(){
     $('#reset').click(function(){         
         selected_count = 0;
         $("#selected").html(selected_count);
-        
+
         chara_rarity_count = [0,0,0,0,0,0];
         for(let i=1;i<=chara_rarity_count.length;i++){
             $("#rarity-"+i).html(0)
