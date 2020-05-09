@@ -56,6 +56,19 @@ $(document).ready(function(){
         $('#ign').text("IGN : " + $(this).val());
     })
 
+    $('#reset').click(function(){         
+        chara_rarity_count = [0,0,0,0,0,0];
+        for(let i=1;i<=chara_rarity_count.length;i++){
+            $("#rarity-"+i).html(0)
+        }
+        
+        $("#rarity-"+$(this).data('rarity')).html(0)
+        $(".chara-img-btn").each(function(){            
+            $(this).css('background','rgba(0,0,0,0)');
+            $(this).data("selected",false);                                    
+        });
+    });
+
     $('#download').click(function(){         
          var a = document.createElement('a');            
          a.href = $('canvas')[0].toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
@@ -63,9 +76,7 @@ $(document).ready(function(){
          a.click();
     })
 
-    $('#generate').click(function(){
-        console.log("generate image...");     
-        
+    $('#generate').click(function(){                
         $("#generate").css("display","none");        
 
         $(".chara-img-btn").each(function(){
