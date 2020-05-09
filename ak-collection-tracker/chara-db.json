@@ -165,6 +165,7 @@
             "id": "24",
             "name": "Estelle",
             "class": "Guard",
+            "rarity": "4",
             "image": "char_127_estell"
         },
         {
@@ -542,8 +543,8 @@
             "id": "78",
             "name": "Bagpipe",
             "class": "Vanguard",
-            "rarity": "5",
-            "image": "char_220_grani"
+            "rarity": "6",
+            "image": "char_222_bpipe"
         },
         {
             "id": "79",
@@ -950,6 +951,13 @@
             "class": "Defender",
             "rarity": "6",
             "image": "char_2014_nian"
+        },
+        {
+            "id": "137",
+            "name": "Grani",
+            "class": "Vanguard",
+            "rarity": "5",
+            "image": "char_220_grani"
         }
     ]
 }
