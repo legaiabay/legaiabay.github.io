@@ -17,7 +17,7 @@ function CreateCharaDiv(name, image, chara_class, rarity){
         <div class="col-lg-2 col-md-3 col-4 text-center">            
             <button class="chara-img-btn" data-selected="false" data-rarity=${rarity}>
                 <div class="chara-img-box">
-                    <img class="chara-img" src="${location.pathname}../img/ak/chara/${image}" width="128" height="128" alt="${name}">
+                    <img class="chara-img" src="${location.pathname}../img/ak/chara/${image}" loading="lazy" width="128" height="128" alt="${name}">
                     <img class="chara-img-class" src="${location.pathname}../img/ak/classes/${class_img}">                
                 </div>
             </button>
