@@ -74,6 +74,11 @@ hr {
     color: white;
 }
 
+.chara-rarity-title {
+    color: white;
+    font-size: 2em;
+}
+
 .chara-star {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -81,4 +86,24 @@ hr {
 
 .result-box {
     border: 2px solid white;
+}
+
+.generate-float-btn{
+    background:#007BFF;
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    right: 30px;
+    bottom:30px;
+    z-index: 999;
 }

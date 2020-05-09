@@ -117,7 +117,7 @@ $(document).ready(function(){
             })
 
             $('html, body').animate({
-                scrollTop: $("div#result").offset().top
+                scrollTop: $("div.capture-result").offset().top
             }, 1000);
         });
     })
