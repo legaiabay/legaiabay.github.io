@@ -44,10 +44,22 @@ hr {
     padding-top: 50px;
 }
 
+.chara-img-box{
+    position: relative;
+}
+
 .chara-img {    
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.chara-img-class {    
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    top: 75%;
+    left: 0;
 }
 
 .chara-img-btn {        
@@ -60,6 +72,11 @@ hr {
 .chara-img-btn:hover {
     background-color: white; /* Green */
     color: white;
+}
+
+.chara-star {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .result-box {

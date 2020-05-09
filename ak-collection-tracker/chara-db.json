@@ -4,505 +4,505 @@
             "name" : "12F",
             "image" : "12F.png",
             "class" : "Sniper",
-            "Rarity" : 2
+            "rarity" : 2
         },
         {
             "name" : "Adnachiel",
             "image" : "Adnachiel.png",
             "class" : "Sniper",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Ansel",
             "image" : "Ansel.png",
             "class" : "Medic",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Beagle",
             "image" : "Beagle.png",
             "class" : "Defender",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Beehunter",
             "image" : "Beehunter.png",
             "class" : "Guard",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Blue Poison",
             "image" : "Blue Poison.png",
             "class" : "Sniper",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Castle-3",
             "image" : "Castle-3.png",
             "class" : "Guard",
-            "Rarity" : 1
+            "rarity" : 1
         },
         {
             "name" : "Catapult",
             "image" : "Catapult.png",
             "class" : "Sniper",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Ch'en",
             "image" : "Ch'en.png",
             "class" : "Defender",
-            "Rarity" : 6
+            "rarity" : 6
         },
         {
             "name" : "Cliffheart",
             "image" : "Cliffheart.png",
             "class" : "Specialist",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Croissant",
             "image" : "Croissant.png",
             "class" : "Defender",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Cuora",
             "image" : "Cuora.png",
             "class" : "Defender",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Dobermann",
             "image" : "Dobermann.png",
             "class" : "Guard",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Durin",
             "image" : "Durin.png",
             "class" : "Caster",
-            "Rarity" : 2
+            "rarity" : 2
         },
         {
             "name" : "Earthspirit",
             "image" : "Earthspirit.png",
             "class" : "Supporter",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Estelle",
             "image" : "Estelle.png",
             "class" : "Guard",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Exusiai",
             "image" : "Exusiai.png",
             "class" : "Sniper",
-            "Rarity" : 6
+            "rarity" : 6
         },
         {
             "name" : "Fang",
             "image" : "Fang.png",
             "class" : "Vanguard",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "FEater",
             "image" : "FEater.png",
             "class" : "Specialist",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Firewatch",
             "image" : "Firewatch.png",
             "class" : "Sniper",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Frostleaf",
             "image" : "Frostleaf.png",
             "class" : "Guard",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Gitano",
             "image" : "Gitano.png",
             "class" : "Caster",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Gravel",
             "image" : "Gravel.png",
             "class" : "Specialist",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Greyy",
             "image" : "Greyy.png",
             "class" : "Caster",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Haze",
             "image" : "Haze.png",
             "class" : "Caster",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Hibiscus",
             "image" : "Hibiscus.png",
             "class" : "Medic",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Hoshiguma",
             "image" : "Hoshiguma.png",
             "class" : "Defender",
-            "Rarity" : 6
+            "rarity" : 6
         },
         {
             "name" : "Ifrit",
             "image" : "Ifrit.png",
             "class" : "Caster",
-            "Rarity" : 6
+            "rarity" : 6
         },
         {
             "name" : "Indra",
             "image" : "Indra.png",
             "class" : "Guard",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Jessica",
             "image" : "Jessica.png",
             "class" : "Sniper",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Kroos",
             "image" : "Kroos.png",
             "class" : "Sniper",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Lancet-2",
             "image" : "Lancet-2.png",
             "class" : "Medic",
-            "Rarity" : 1
+            "rarity" : 1
         },
         {
             "name" : "Lava",
             "image" : "Lava.png",
             "class" : "Caster",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Liskarm",
             "image" : "Liskarm.png",
             "class" : "Defender",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Manticore",
             "image" : "Manticore.png",
             "class" : "Specialist",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Matoimaru",
             "image" : "Matoimaru.png",
             "class" : "Guard",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Matterhorn",
             "image" : "Matterhorn.png",
             "class" : "Defender",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Mayer",
             "image" : "Mayer.png",
             "class" : "Specialist",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Melantha",
             "image" : "Melantha.png",
             "class" : "Guard",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Meteor",
             "image" : "Meteor.png",
             "class" : "Sniper",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Meteorite",
             "image" : "Meteorite.png",
             "class" : "Sniper",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Midnight",
             "image" : "Midnight.png",
             "class" : "Guard",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Mousse",
             "image" : "Mousse.png",
             "class" : "Guard",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Myrrh",
             "image" : "Myrrh.png",
             "class" : "Medic",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Nearl",
             "image" : "Nearl.png",
             "class" : "Defender",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Nightingale",
             "image" : "Nightingale.png",
             "class" : "Medic",
-            "Rarity" : 6
+            "rarity" : 6
         },
         {
             "name" : "Nightmare",
             "image" : "Nightmare.png",
             "class" : "Caster",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Noir Corne",
             "image" : "Noir Corne.png",
             "class" : "Defender",
-            "Rarity" : 2
+            "rarity" : 2
         },
         {
             "name" : "Orchid",
             "image" : "Orchid.png",
             "class" : "Supporter",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Perfumer",
             "image" : "Perfumer.png",
             "class" : "Medic",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Platinum",
             "image" : "Platinum.png",
             "class" : "Sniper",
-            "Rarity" : 5
+            "rarity" : 5
         },        
         {
             "name" : "Platinum",
             "image" : "Platinum.png",
             "class" : "Sniper",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Plume",
             "image" : "Plume.png",
             "class" : "Vanguard",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Popukar",
             "image" : "Popukar.png",
             "class" : "Guard",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Pramanix",
             "image" : "Pramanix.png",
             "class" : "Supporter",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Projekt Red",
             "image" : "Projekt Red.png",
             "class" : "Specialist",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Provence",
             "image" : "Provence.png",
             "class" : "Sniper",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Ptilopsis",
             "image" : "Ptilopsis.png",
             "class" : "Medic",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Rangers",
             "image" : "Rangers.png",
             "class" : "Sniper",
-            "Rarity" : 2
+            "rarity" : 2
         },
         {
             "name" : "Rope",
             "image" : "Rope.png",
             "class" : "Specialist",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Saria",
             "image" : "Saria.png",
             "class" : "Defender",
-            "Rarity" : 6
+            "rarity" : 6
         },
         {
             "name" : "Savage",
             "image" : "Savage.png",
             "class" : "Guard",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Scavenger",
             "image" : "Scavenger.png",
             "class" : "Vanguard",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Shaw",
             "image" : "Shaw.png",
             "class" : "Specialist",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Shining",
             "image" : "Shining.png",
             "class" : "Medic",
-            "Rarity" : 6
+            "rarity" : 6
         },
         {
             "name" : "ShiraYuki",
             "image" : "ShiraYuki.png",
             "class" : "Sniper",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Siege",
             "image" : "Siege.png",
             "class" : "Vanguard",
-            "Rarity" : 6
+            "rarity" : 6
         },
         {
             "name" : "Silence",
             "image" : "Silence.png",
             "class" : "Medic",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "SilverAsh",
             "image" : "SilverAsh.png",
             "class" : "Guard",
-            "Rarity" : 6
+            "rarity" : 6
         },
         {
             "name" : "Skadi",
             "image" : "Skadi.png",
             "class" : "Guard",
-            "Rarity" : 6
+            "rarity" : 6
         },
         {
             "name" : "Specter",
             "image" : "Specter.png",
             "class" : "Guard",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Spot",
             "image" : "Spot.png",
             "class" : "Defender",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Steward",
             "image" : "Steward.png",
             "class" : "Caster",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Swire",
             "image" : "Swire.png",
             "class" : "Guard",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Texas",
             "image" : "Texas.png",
             "class" : "Vanguard",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Thermal-EX",
             "image" : "Thermal-EX.png",
             "class" : "Specialist",
-            "Rarity" : 1
+            "rarity" : 1
         },
         {
             "name" : "Vanilla",
             "image" : "Vanilla.png",
             "class" : "Vanguard",
-            "Rarity" : 3
+            "rarity" : 3
         },
         {
             "name" : "Vigna",
             "image" : "Vigna.png",
             "class" : "Vanguard",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Vulcan",
             "image" : "Vulcan.png",
             "class" : "Defender",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Warfarin",
             "image" : "Warfarin.png",
             "class" : "Medic",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Yato",
             "image" : "Yato.png",
             "class" : "Vanguard",
-            "Rarity" : 2
+            "rarity" : 2
         },
         {
             "name" : "Гум (Gum)",
             "image" : "Гум.png",
             "class" : "Defender",
-            "Rarity" : 4
+            "rarity" : 4
         },
         {
             "name" : "Зима (Zima)",
             "image" : "Зима.png",
             "class" : "Vanguard",
-            "Rarity" : 5
+            "rarity" : 5
         },
         {
             "name" : "Истина (Istina)",
             "image" : "Истина.png",
             "class" : "Supporter",
-            "Rarity" : 5
+            "rarity" : 5
         }
     ]
 }
