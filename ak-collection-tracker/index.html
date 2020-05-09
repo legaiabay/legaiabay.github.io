@@ -19,7 +19,10 @@
                <div class="form-group">
                   <div class="col-12 text-center">
                      <h4 class="title">IGN</h4>          
-                     <input class="input-center" id="ign-input" type="text" placeholder="Type your IGN here" maxlength="24">   
+                     <input class="input-center" id="ign-input" type="text" placeholder="(optional) Type your IGN here" maxlength="24">   
+                     <div class="vert-space-1"></div>
+                     <h6 class="title title-footer"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;<b>How to : </b>Select character you have and press "Generate" button (bottom right) to generate image.</h6>
+                     <hr>
                   </div>                  
                </div>                  
             </div>
@@ -27,7 +30,7 @@
          <div id="capture-area" class="all-padding">
             <div class="row">
                <div class="col-12">                                
-                  <h1 class="title">Arknights Collection Tracker</h1>      
+                  <h1 class="title">Arknights Collection Tracker <span class="title-version version"></span></h1>
                   <h6 class="title title-url">legaiabay.github.io/ak-collection-tracker</h6>
                   <h3 id="ign" class="title title-ign">IGN : </h3>                                                               
                </div>     
@@ -65,7 +68,8 @@
          </div>     
          <div class="row">                        
             <div class="col-12">     
-               <button id="reset" type="button" class="btn btn-primary">Reset Selection</button> 
+               <button id="reset" type="button" class="btn btn-primary">Reset Selection</button>
+               <span class="title">&nbsp;&nbsp;Total : <span id="selected"></span></span>            
                <button id="generate" type="button" class="btn btn-primary btn-block generate-float-btn"><i class="fa fa-download"></i></button>                                                    
             </div>
             <div class="vert-space-2"></div>
@@ -74,7 +78,8 @@
             <div class="row">
                <div class="col-12 text-center">
                   <h2 class="title">Result</h2>
-                  <h6 class="title">(click image or "Save Image" below to download)</h6>                  
+                  <h6 class="title title-footer">(simply click/tap image below to download)</h6> 
+                  <h6 class="title title-footer">(if character images doesn't appear, try generate again)</h6>                  
                   <hr>
                </div>
             </div>
@@ -91,7 +96,7 @@
          <div class="row">  
             <div class="col-12 text-center">
                <hr>
-               <h6 class="title title-footer">Made by : Legaiabay | <a href="https://github.com/legaiabay" target="_blank">Github</a></h6>
+               <h6 class="title title-footer">By : Legaiabay | <a href="https://github.com/legaiabay" target="_blank">Github</a></h6>
             </div>
          </div>
       </div>           

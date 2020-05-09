@@ -9,6 +9,10 @@ hr {
     border: none;
 }
 
+.disable-drag {
+    pointer-events: none;
+}
+
 .space {
     margin-left: 20px;
 }
@@ -46,6 +50,11 @@ hr {
     color: white;
 }
 
+.title-version{
+    font-size: 0.4em;
+    font-weight: lighter;
+}
+
 .title-url {
     font-weight: lighter;
 }
@@ -53,6 +62,11 @@ hr {
 .title-ign {
     font-weight: lighter;
     margin-top: 40px;
+}
+
+.title-top {
+    margin-top: -20px;
+    font-weight: lighter;
 }
 
 .title-footer {

@@ -1,3 +1,5 @@
+let version = "v.0.1.0";
+let selected_count = 0;
 let chara_rarity_count = [0,0,0,0,0,0];
 
 function CreateCharaDiv(name, image, chara_class, rarity){
@@ -17,8 +19,8 @@ function CreateCharaDiv(name, image, chara_class, rarity){
         <div class="col-lg-2 col-md-3 col-4 text-center">            
             <button class="chara-img-btn" data-selected="false" data-rarity=${rarity}>
                 <div class="chara-img-box">
-                    <img class="chara-img" src="${location.pathname}../img/ak/chara/${image}" loading="lazy" width="128" height="128" alt="${name}">
-                    <img class="chara-img-class" src="${location.pathname}../img/ak/classes/${class_img}">                
+                    <img class="chara-img disable-drag" src="${location.pathname}../img/ak/avatars/${image}.png" loading="lazy" width="128" height="128" alt="${name}">
+                    <img class="chara-img-class disable-drag" src="${location.pathname}../img/ak/classes/${class_img}">                
                 </div>
             </button>
         </div>
@@ -27,7 +29,7 @@ function CreateCharaDiv(name, image, chara_class, rarity){
 
 function SetCharaDiv(){        
     $.getJSON(`${location.pathname}chara-db.json`, function(data) {                 
-        data.chara.forEach(element => {                                    
+        data.chara.forEach(element => {                                      
             $('.chara-selection-'+element.rarity).append(CreateCharaDiv(element.name, element.image, element.class, element.rarity));
         });           
     }).then(function(){                        
@@ -37,26 +39,38 @@ function SetCharaDiv(){
             if(selected === false){                
                 $(this).css('background','white');
                 $(this).data('selected',true);
+                selected_count++;
                 chara_rarity_count[rarity-1]++;
-                $("#rarity-"+rarity).html(chara_rarity_count[rarity-1]);            
+                $("#rarity-"+rarity).html(chara_rarity_count[rarity-1]);   
+                $("#selected").html(selected_count);         
             } else {
                 $(this).css('background','rgba(0,0,0,0)');
-                $(this).data('selected',false);            
+                $(this).data('selected',false);     
+                selected_count--;       
                 chara_rarity_count[rarity-1]--;
                 $("#rarity-"+rarity).html(chara_rarity_count[rarity-1]);          
+                $("#selected").html(selected_count);
             }        
         });        
     });
 }
 
 $(document).ready(function(){
+    $(".version").append(version);
+    $("#selected").html(selected_count);
+
     SetCharaDiv();
+
+    $('img').on('dragstart', function(event) { event.preventDefault(); });
 
     $('#ign-input').keyup(function(){
         $('#ign').text("IGN : " + $(this).val());
     })
 
     $('#reset').click(function(){         
+        selected_count = 0;
+        $("#selected").html(selected_count);
+        
         chara_rarity_count = [0,0,0,0,0,0];
         for(let i=1;i<=chara_rarity_count.length;i++){
             $("#rarity-"+i).html(0)
