@@ -1,4 +1,4 @@
-let version = "v.1.1.0";
+let version = "v.1.1.1";
 let selected_server = "cn";
 let current_total_operator = 0;
 let current_total_operator_en = 0;
