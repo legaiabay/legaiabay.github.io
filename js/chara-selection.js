@@ -32,6 +32,19 @@ function CreateCharaDiv(data){
     `;
 }
 
+function SetChangelog(){
+    $.getJSON(`${location.pathname}changelog.json`, function(data) {    
+        data.changelog.reverse();             
+        data.changelog.forEach(element => {                   
+            $(".changelog-body").append(`<b>Version ${element.version}</b>`);
+            element.list.forEach(change => {
+                $(".changelog-body").append("<br>- "+change);
+            })
+            $(".changelog-body").append("<br><br>");
+        });           
+    })
+}
+
 function SetCharaDiv(){        
     $.getJSON(`${location.pathname}chara-db.json`, function(data) {                 
         data.chara.forEach(element => {                   
@@ -92,6 +105,7 @@ $(document).ready(function(){
     $(".version").append(version);
     $(".selected").html(selected_count);
 
+    SetChangelog();
     SetCharaDiv();
 
     $('img').on('dragstart', function(event) { event.preventDefault(); });
@@ -140,9 +154,7 @@ $(document).ready(function(){
         }
     })
 
-    $('#reset').click(function(){         
-        Reset();
-    });
+    $('#reset').click(function(){Reset();});
 
     $('#select-all').click(function(){
         $('.chara-img-btn').data("selected",true).css("background","white");        

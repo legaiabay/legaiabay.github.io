@@ -226,3 +226,11 @@ hr {
   .server-non-cn{
       display: none;
   }
+  
+  .modal-content {
+      background-color: #1b262c;
+  }
+
+  .modal-close {
+      color: white;
+  }
