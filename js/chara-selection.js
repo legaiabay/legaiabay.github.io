@@ -58,7 +58,7 @@ function SetCharaDiv(){
         });           
     }).then(function(){  
         $(".selected-server, .selected-server-2").append("CN");                              
-        $("#total-operator").append(current_total_operator);
+        $(".total-operator").append(current_total_operator);
         total_chara_rarity.forEach((element, index) => {
             $("#rarity-"+(index+1)+"-total").html("/"+element);
         });
@@ -125,7 +125,7 @@ $(document).ready(function(){
             $("#server-en").prop("checked",true);                  
             $(".selected-server").html("EN/JP/KR"); 
             $(".selected-server-2").html("EN"); 
-            $("#total-operator").html(current_total_operator_en);
+            $(".total-operator").html(current_total_operator_en);
             total_chara_rarity_en.forEach((element, index) => {
                 $("#rarity-"+(index+1)+"-total").html("/"+element);
             });
@@ -134,7 +134,7 @@ $(document).ready(function(){
             $(".chara-img-btn[data-server=1]").parent().css("display","flex");             
             $(".server-non-cn").css("display","none");  
             $(".selected-server, .selected-server-2").html("CN");                   
-            $("#total-operator").html(current_total_operator);
+            $(".total-operator").html(current_total_operator);
             total_chara_rarity.forEach((element, index) => {
                 $("#rarity-"+(index+1)+"-total").html("/"+element);
             });    

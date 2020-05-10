@@ -19,6 +19,12 @@
                 "Show changelog",
                 "Minor UI update"
             ]
+        },
+        {
+            "version" : "1.1.1",
+            "list" : [
+                "Minor update"
+            ]
         }
     ]
 }
