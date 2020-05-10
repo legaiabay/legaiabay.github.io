@@ -1,0 +1,31 @@
+Todo :
+
+Easy : 
+- background color option - PENDING
+
+Medium : 
+- show changelog
+- optional : show all operators in image but op you have being highlighted
+- "generate" counter -> to firebase
+- cookie to save latest selection
+- image loading animation
+- differentiate CN/EN server
+
+Hard :
+- PWA 
+- how to make wide image for smartphone
+- faction background for chara images
+- optional : show name (with toggle)
+- compress image
+- sorting
+- filter by
+
+V.1.1.0
+- dont show ign if empty - DONE
+- show current total operator - DONE
+- show total selected operators - DONE
+- (per rarity) obtained operator / all operator. Example : 20/35 - DONE
+- generate date (image and filename) - DONE
+- differentiate CN/EN server - DONE
+- select all - DONE
+- show changelog

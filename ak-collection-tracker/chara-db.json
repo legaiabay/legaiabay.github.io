@@ -5,959 +5,1096 @@
             "name": "Amiya",
             "class": "Caster",
             "rarity": "5",
-            "image": "char_002_amiya"
+            "image": "char_002_amiya",
+            "server": "2"
         },
         {
             "id": "2",
             "name": "12F",
             "class": "Caster",
             "rarity": "2",
-            "image": "char_009_12fce"
+            "image": "char_009_12fce",
+            "server": "2"
         },
         {
             "id": "3",
             "name": "C'hen",
             "class": "Guard",
             "rarity": "6",
-            "image": "char_010_chen"
+            "image": "char_010_chen",
+            "server": "2"
         },
         {
             "id": "4",
             "name": "Blaze",
             "class": "Guard",
             "rarity": "6",
-            "image": "char_017_huang"
+            "image": "char_017_huang",
+            "server": "1"
         },
         {
             "id": "5",
             "name": "Sora",
             "class": "Supporter",
             "rarity": "5",
-            "image": "char_101_sora"
+            "image": "char_101_sora",
+            "server": "2"
         },
         {
             "id": "6",
             "name": "Texas",
             "class": "Vanguard",
             "rarity": "5",
-            "image": "char_102_texas"
+            "image": "char_102_texas",
+            "server": "2"
         },
         {
             "id": "7",
             "name": "Exusiai",
             "class": "Sniper",
             "rarity": "6",
-            "image": "char_103_angel"
+            "image": "char_103_angel",
+            "server": "2"
         },
         {
             "id": "8",
             "name": "Franka",
             "class": "Guard",
             "rarity": "5",
-            "image": "char_106_franka"
+            "image": "char_106_franka",
+            "server": "2"
         },
         {
             "id": "9",
             "name": "Liskarm",
             "class": "Defender",
             "rarity": "5",
-            "image": "char_107_liskam"
+            "image": "char_107_liskam",
+            "server": "2"
         },
         {
             "id": "10",
             "name": "Silence",
             "class": "Medic",
             "rarity": "5",
-            "image": "char_108_silent"
+            "image": "char_108_silent",
+            "server": "2"
         },
         {
             "id": "11",
             "name": "Gitano",
             "class": "Caster",
             "rarity": "4",
-            "image": "char_109_fmout"
+            "image": "char_109_fmout",
+            "server": "2"
         },
         {
             "id": "12",
             "name": "Deepcolor",
             "class": "Supporter",
             "rarity": "4",
-            "image": "char_110_deepcl"
+            "image": "char_110_deepcl",
+            "server": "2"
         },
         {
             "id": "13",
             "name": "Siege",
             "class": "Vanguard",
             "rarity": "6",
-            "image": "char_112_siege"
+            "image": "char_112_siege",
+            "server": "2"
         },
         {
             "id": "14",
             "name": "W",
             "class": "Sniper",
             "rarity": "6",
-            "image": "char_113_cqbw"
+            "image": "char_113_cqbw",
+            "server": "1"
         },
         {
             "id": "15",
             "name": "Zima",
             "class": "Vanguard",
             "rarity": "5",
-            "image": "char_115_headbr"
+            "image": "char_115_headbr",
+            "server": "2"
         },
         {
             "id": "16",
             "name": "Myrrh",
             "class": "Medic",
             "rarity": "4",
-            "image": "char_117_myrrh"
+            "image": "char_117_myrrh",
+            "server": "2"
         },
         {
             "id": "17",
             "name": "ShiraYuki",
             "class": "Sniper",
             "rarity": "4",
-            "image": "char_118_yuki"
+            "image": "char_118_yuki",
+            "server": "2"
         },
         {
             "id": "18",
             "name": "Hibiscus",
             "class": "Medic",
             "rarity": "3",
-            "image": "char_120_hibisc"
+            "image": "char_120_hibisc",
+            "server": "2"
         },
         {
             "id": "19",
             "name": "Lava",
             "class": "Caster",
             "rarity": "3",
-            "image": "char_121_lava"
+            "image": "char_121_lava",
+            "server": "2"
         },
         {
             "id": "20",
             "name": "Beagle",
             "class": "Defender",
             "rarity": "3",
-            "image": "char_122_beagle"
+            "image": "char_122_beagle",
+            "server": "2"
         },
         {
             "id": "21",
             "name": "Fang",
             "class": "Vanguard",
             "rarity": "3",
-            "image": "char_123_fang"
+            "image": "char_123_fang",
+            "server": "2"
         },
         {
             "id": "22",
             "name": "Kroos",
             "class": "Sniper",
             "rarity": "3",
-            "image": "char_124_kroos"
+            "image": "char_124_kroos",
+            "server": "2"
         },
         {
             "id": "23",
             "name": "Meteor",
             "class": "Sniper",
             "rarity": "4",
-            "image": "char_126_shotst"
+            "image": "char_126_shotst",
+            "server": "2"
         },
         {
             "id": "24",
             "name": "Estelle",
             "class": "Guard",
             "rarity": "4",
-            "image": "char_127_estell"
+            "image": "char_127_estell",
+            "server": "2"
         },
         {
             "id": "25",
             "name": "Ptilopsis",
             "class": "Medic",
             "rarity": "5",
-            "image": "char_128_plosis"
+            "image": "char_128_plosis",
+            "server": "2"
         },
         {
             "id": "26",
             "name": "Blue Poison",
             "class": "Sniper",
             "rarity": "5",
-            "image": "char_129_bluep"
+            "image": "char_129_bluep",
+            "server": "2"
         },
         {
             "id": "27",
             "name": "Dobermann",
             "class": "Guard",
             "rarity": "4",
-            "image": "char_130_doberm"
+            "image": "char_130_doberm",
+            "server": "2"
         },
         {
             "id": "28",
             "name": "Flamebringer",
             "class": "Guard",
             "rarity": "5",
-            "image": "char_131_flameb"
+            "image": "char_131_flameb",
+            "server": "2"
         },
         {
             "id": "29",
             "name": "May",
             "class": "Sniper",
             "rarity": "4",
-            "image": "char_133_mm"
+            "image": "char_133_mm",
+            "server": "1"
         },
         {
             "id": "30",
             "name": "Ifrit",
             "class": "Caster",
             "rarity": "6",
-            "image": "char_134_ifrit"
+            "image": "char_134_ifrit",
+            "server": "2"
         },
         {
             "id": "31",
             "name": "Hoshiguma",
             "class": "Defender",
             "rarity": "6",
-            "image": "char_136_hsguma"
+            "image": "char_136_hsguma",
+            "server": "2"
         },
         {
             "id": "32",
             "name": "Beehunter",
             "class": "Guard",
             "rarity": "4",
-            "image": "char_137_brownb"
+            "image": "char_137_brownb",
+            "server": "2"
         },
         {
             "id": "33",
             "name": "Lappland",
             "class": "Guard",
             "rarity": "5",
-            "image": "char_140_whitew"
+            "image": "char_140_whitew",
+            "server": "2"
         },
         {
             "id": "34",
             "name": "Haze",
             "class": "Caster",
             "rarity": "4",
-            "image": "char_141_nights"
+            "image": "char_141_nights",
+            "server": "2"
         },
         {
             "id": "35",
             "name": "Specter",
             "class": "Guard",
             "rarity": "5",
-            "image": "char_143_ghost"
+            "image": "char_143_ghost",
+            "server": "2"
         },
         {
             "id": "36",
             "name": "Projekt Red",
             "class": "Specialist",
             "rarity": "5",
-            "image": "char_144_red"
+            "image": "char_144_red",
+            "server": "2"
         },
         {
             "id": "37",
             "name": "Provenant",
             "class": "Sniper",
             "rarity": "5",
-            "image": "char_145_prove"
+            "image": "char_145_prove",
+            "server": "2"
         },
         {
             "id": "38",
             "name": "Shining",
             "class": "Medic",
             "rarity": "6",
-            "image": "char_147_shining"
+            "image": "char_147_shining",
+            "server": "2"
         },
         {
             "id": "39",
             "name": "Nearl",
             "class": "Defender",
             "rarity": "5",
-            "image": "char_148_nearl"
+            "image": "char_148_nearl",
+            "server": "2"
         },
         {
             "id": "40",
             "name": "Scavenger",
             "class": "Vanguard",
             "rarity": "4",
-            "image": "char_149_scave"
+            "image": "char_149_scave",
+            "server": "2"
         },
         {
             "id": "41",
             "name": "Cuora",
             "class": "Defender",
             "rarity": "4",
-            "image": "char_150_snakek"
+            "image": "char_150_snakek",
+            "server": "2"
         },
         {
             "id": "42",
             "name": "Myrtle",
             "class": "Vanguard",
             "rarity": "4",
-            "image": "char_151_myrtle"
+            "image": "char_151_myrtle",
+            "server": "2"
         },
         {
             "id": "43",
             "name": "Indra",
             "class": "Guard",
             "rarity": "5",
-            "image": "char_155_tiger"
+            "image": "char_155_tiger",
+            "server": "2"
         },
         {
             "id": "44",
             "name": "Firewatch",
             "class": "Sniper",
             "rarity": "5",
-            "image": "char_158_milu"
+            "image": "char_158_milu",
+            "server": "2"
         },
         {
             "id": "45",
             "name": "Conviction",
             "class": "Guard",
             "rarity": "4",
-            "image": "char_159_peacok"
+            "image": "char_159_peacok",
+            "server": "1"
         },
         {
             "id": "46",
             "name": "Vulcan",
             "class": "Defender",
             "rarity": "5",
-            "image": "char_163_hpsts"
+            "image": "char_163_hpsts",
+            "server": "2"
         },
         {
             "id": "47",
             "name": "Nightmare",
             "class": "Caster",
             "rarity": "5",
-            "image": "char_164_nightm"
+            "image": "char_164_nightm",
+            "server": "2"
         },
         {
             "id": "48",
             "name": "Skyfire",
             "class": "Caster",
             "rarity": "5",
-            "image": "char_166_skfire"
+            "image": "char_166_skfire",
+            "server": "2"
         },
         {
             "id": "49",
             "name": "Warfarin",
             "class": "Medic",
             "rarity": "5",
-            "image": "char_171_bldsk"
+            "image": "char_171_bldsk",
+            "server": "2"
         },
         {
             "id": "50",
             "name": "SilverAsh",
             "class": "Guard",
             "rarity": "6",
-            "image": "char_172_svrash"
+            "image": "char_172_svrash",
+            "server": "2"
         },
         {
             "id": "51",
             "name": "Cliffheart",
             "class": "Specialist",
             "rarity": "5",
-            "image": "char_173_slchan"
+            "image": "char_173_slchan",
+            "server": "2"
         },
         {
             "id": "52",
             "name": "Pramanix",
             "class": "Supporter",
             "rarity": "5",
-            "image": "char_174_slbell"
+            "image": "char_174_slbell",
+            "server": "2"
         },
         {
             "id": "53",
             "name": "Nightingale",
             "class": "Medic",
             "rarity": "6",
-            "image": "char_179_cgbird"
+            "image": "char_179_cgbird",
+            "server": "2"
         },
         {
             "id": "54",
             "name": "Eyjafjalla",
             "class": "Caster",
             "rarity": "6",
-            "image": "char_180_amgoat"
+            "image": "char_180_amgoat",
+            "server": "2"
         },
         {
             "id": "55",
             "name": "Perfumer",
             "class": "Medic",
             "rarity": "4",
-            "image": "char_181_flower"
+            "image": "char_181_flower",
+            "server": "2"
         },
         {
             "id": "56",
             "name": "Earthspirit",
             "class": "Supporter",
             "rarity": "4",
-            "image": "char_183_skgoat"
+            "image": "char_183_skgoat",
+            "server": "2"
         },
         {
             "id": "57",
             "name": "Mousse",
             "class": "Guard",
             "rarity": "4",
-            "image": "char_185_frncat"
+            "image": "char_185_frncat",
+            "server": "2"
         },
         {
             "id": "58",
             "name": "Gavial",
             "class": "Medic",
             "rarity": "4",
-            "image": "char_187_ccheal"
+            "image": "char_187_ccheal",
+            "server": "2"
         },
         {
             "id": "59",
             "name": "Hellagur",
             "class": "Guard",
             "rarity": "6",
-            "image": "char_188_helage"
+            "image": "char_188_helage",
+            "server": "2"
         },
         {
             "id": "60",
             "name": "Vermeil",
             "class": "Sniper",
             "rarity": "4",
-            "image": "char_190_clour"
+            "image": "char_190_clour",
+            "server": "2"
         },
         {
             "id": "61",
             "name": "Plume",
             "class": "Vanguard",
             "rarity": "3",
-            "image": "char_192_falco"
+            "image": "char_192_falco",
+            "server": "2"
         },
         {
             "id": "62",
             "name": "Frostleaf",
             "class": "Guard",
             "rarity": "4",
-            "image": "char_193_frostl"
+            "image": "char_193_frostl",
+            "server": "2"
         },
         {
             "id": "63",
             "name": "Istina",
             "class": "Supporter",
             "rarity": "5",
-            "image": "char_195_glassb"
+            "image": "char_195_glassb",
+            "server": "2"
         },
         {
             "id": "64",
             "name": "Gum",
             "class": "Defender",
             "rarity": "4",
-            "image": "char_196_sunbr"
+            "image": "char_196_sunbr",
+            "server": "2"
         },
         {
             "id": "65",
             "name": "Courier",
             "class": "Vanguard",
             "rarity": "4",
-            "image": "char_198_blackd"
+            "image": "char_198_blackd",
+            "server": "2"
         },
         {
             "id": "66",
             "name": "Matterhorn",
             "class": "Defender",
             "rarity": "4",
-            "image": "char_199_yak"
+            "image": "char_199_yak",
+            "server": "2"
         },
         {
             "id": "67",
             "name": "Croissant",
             "class": "Defender",
             "rarity": "5",
-            "image": "char_201_moeshd"
+            "image": "char_201_moeshd",
+            "server": "2"
         },
         {
             "id": "68",
             "name": "Saria",
             "class": "Defender",
             "rarity": "6",
-            "image": "char_202_demkni"
+            "image": "char_202_demkni",
+            "server": "2"
         },
         {
             "id": "69",
             "name": "Platinum",
             "class": "Sniper",
             "rarity": "5",
-            "image": "char_204_platnm"
+            "image": "char_204_platnm",
+            "server": "2"
         },
         {
             "id": "70",
             "name": "Melantha",
             "class": "Guard",
             "rarity": "3",
-            "image": "char_208_melan"
+            "image": "char_208_melan",
+            "server": "2"
         },
         {
             "id": "71",
             "name": "Cardigan",
             "class": "Defender",
             "rarity": "3",
-            "image": "char_209_ardign"
+            "image": "char_209_ardign",
+            "server": "2"
         },
         {
             "id": "72",
             "name": "Steward",
             "class": "Caster",
             "rarity": "3",
-            "image": "char_210_stward"
+            "image": "char_210_stward",
+            "server": "2"
         },
         {
             "id": "73",
             "name": "Adnachiel",
             "class": "Sniper",
             "rarity": "3",
-            "image": "char_211_adnach"
+            "image": "char_211_adnach",
+            "server": "2"
         },
         {
             "id": "74",
             "name": "Ansel",
             "class": "Medic",
             "rarity": "3",
-            "image": "char_212_ansel"
+            "image": "char_212_ansel",
+            "server": "2"
         },
         {
             "id": "75",
             "name": "Mostima",
             "class": "Caster",
             "rarity": "6",
-            "image": "char_213_mostma"
+            "image": "char_213_mostma",
+            "server": "1"
         },
         {
             "id": "76",
             "name": "Manticore",
             "class": "Specialist",
             "rarity": "5",
-            "image": "char_215_mantic"
+            "image": "char_215_mantic",
+            "server": "2"
         },
         {
             "id": "77",
             "name": "Meteorite",
             "class": "Sniper",
             "rarity": "5",
-            "image": "char_219_meteo"
+            "image": "char_219_meteo",
+            "server": "2"
         },
         {
             "id": "78",
             "name": "Bagpipe",
             "class": "Vanguard",
             "rarity": "6",
-            "image": "char_222_bpipe"
+            "image": "char_222_bpipe",
+            "server": "1"
         },
         {
             "id": "79",
             "name": "Aak",
             "class": "Specialist",
             "rarity": "6",
-            "image": "char_225_haak"
+            "image": "char_225_haak",
+            "server": "1"
         },
         {
             "id": "80",
             "name": "Hung",
             "class": "Defender",
             "rarity": "5",
-            "image": "char_226_hmau"
+            "image": "char_226_hmau",
+            "server": "1"
         },
         {
             "id": "81",
             "name": "Savage",
             "class": "Guard",
             "rarity": "5",
-            "image": "char_230_savage"
+            "image": "char_230_savage",
+            "server": "2"
         },
         {
             "id": "82",
             "name": "Jessica",
             "class": "Sniper",
             "rarity": "4",
-            "image": "char_235_jesica"
+            "image": "char_235_jesica",
+            "server": "2"
         },
         {
             "id": "83",
             "name": "Rope",
             "class": "Specialist",
             "rarity": "4",
-            "image": "char_236_rope"
+            "image": "char_236_rope",
+            "server": "2"
         },
         {
             "id": "84",
             "name": "Gravel",
             "class": "Medic",
             "rarity": "4",
-            "image": "char_237_gravel"
+            "image": "char_237_gravel",
+            "server": "2"
         },
         {
             "id": "85",
             "name": "Vanilla",
             "class": "Vanguard",
             "rarity": "3",
-            "image": "char_240_wyvern"
+            "image": "char_240_wyvern",
+            "server": "2"
         },
         {
             "id": "86",
             "name": "Feater",
             "class": "Specialist",
             "rarity": "5",
-            "image": "char_241_panda"
+            "image": "char_241_panda",
+            "server": "2"
         },
         {
             "id": "87",
             "name": "Mayer",
             "class": "Supporter",
             "rarity": "5",
-            "image": "char_242_otter"
+            "image": "char_242_otter",
+            "server": "2"
         },
         {
             "id": "88",
             "name": "Waai Fu",
             "class": "Specialist",
             "rarity": "5",
-            "image": "char_243_waaifu"
+            "image": "char_243_waaifu",
+            "server": "1"
         },
         {
             "id": "89",
             "name": "Magallan",
             "class": "Supporter",
             "rarity": "6",
-            "image": "char_248_mgllan"
+            "image": "char_248_mgllan",
+            "server": "2"
         },
         {
             "id": "90",
             "name": "Phantom",
             "class": "Specialist",
             "rarity": "6",
-            "image": "char_250_phatom"
+            "image": "char_250_phatom",
+            "server": "1"
         },
         {
             "id": "91",
             "name": "Bibeak",
             "class": "Guard",
             "rarity": "5",
-            "image": "char_252_bibeak"
+            "image": "char_252_bibeak",
+            "server": "1"
         },
         {
             "id": "92",
             "name": "Greyy",
             "class": "Caster",
             "rarity": "4",
-            "image": "char_253_greyy"
+            "image": "char_253_greyy",
+            "server": "2"
         },
         {
             "id": "93",
             "name": "Shamare",
             "class": "Supporter",
             "rarity": "5",
-            "image": "char_254_vodfox"
+            "image": "char_254_vodfox",
+            "server": "1"
         },
         {
             "id": "94",
             "name": "Dur-nar",
             "class": "Defender",
             "rarity": "4",
-            "image": "char_260_durnar"
+            "image": "char_260_durnar",
+            "server": "1"
         },
         {
             "id": "95",
             "name": "Reed",
             "class": "Vanguard",
             "rarity": "5",
-            "image": "char_261_sddrag"
+            "image": "char_261_sddrag",
+            "server": "1"
         },
         {
             "id": "96",
             "name": "Skadi",
             "class": "Guard",
             "rarity": "6",
-            "image": "char_263_skadi"
+            "image": "char_263_skadi",
+            "server": "2"
         },
         {
             "id": "97",
             "name": "Astesia",
             "class": "Guard",
             "rarity": "5",
-            "image": "char_274_astesi"
+            "image": "char_274_astesi",
+            "server": "2"
         },
         {
             "id": "98",
             "name": "Breeze",
             "class": "Medic",
             "rarity": "5",
-            "image": "char_275_breeze"
+            "image": "char_275_breeze",
+            "server": "1"
         },
         {
             "id": "99",
             "name": "Shaw",
             "class": "Specialist",
             "rarity": "4",
-            "image": "char_277_sqrrel"
+            "image": "char_277_sqrrel",
+            "server": "2"
         },
         {
             "id": "100",
             "name": "Orchid",
             "class": "Supporter",
             "rarity": "3",
-            "image": "char_278_orchid"
+            "image": "char_278_orchid",
+            "server": "2"
         },
         {
             "id": "101",
             "name": "Executor",
             "class": "Sniper",
             "rarity": "5",
-            "image": "char_279_excu"
+            "image": "char_279_excu",
+            "server": "2"
         },
         {
             "id": "102",
             "name": "Popukar",
             "class": "Guard",
             "rarity": "3",
-            "image": "char_281_popka"
+            "image": "char_281_popka",
+            "server": "2"
         },
         {
             "id": "103",
             "name": "Catapult",
             "class": "Sniper",
             "rarity": "3",
-            "image": "char_282_catap"
+            "image": "char_282_catap",
+            "server": "2"
         },
         {
             "id": "104",
             "name": "Midnight",
             "class": "Guard",
             "rarity": "3",
-            "image": "char_283_midn"
+            "image": "char_283_midn",
+            "server": "2"
         },
         {
             "id": "105",
             "name": "Spot",
             "class": "Defender",
             "rarity": "3",
-            "image": "char_284_spot"
+            "image": "char_284_spot",
+            "server": "2"
         },
         {
             "id": "106",
             "name": "Lancet-2",
             "class": "Medic",
             "rarity": "1",
-            "image": "char_285_medic2"
+            "image": "char_285_medic2",
+            "server": "2"
         },
         {
             "id": "107",
             "name": "Castle-3",
             "class": "Guard",
             "rarity": "1",
-            "image": "char_286_cast3"
+            "image": "char_286_cast3",
+            "server": "2"
         },
         {
             "id": "108",
             "name": "Matoimaru",
             "class": "Guard",
             "rarity": "4",
-            "image": "char_289_gyuki"
+            "image": "char_289_gyuki",
+            "server": "2"
         },
         {
             "id": "109",
             "name": "Vigna",
             "class": "Vanguard",
             "rarity": "4",
-            "image": "char_290_vigna"
+            "image": "char_290_vigna",
+            "server": "2"
         },
         {
             "id": "110",
             "name": "Angelina",
             "class": "Supporter",
             "rarity": "6",
-            "image": "char_291_aglina"
+            "image": "char_291_aglina",
+            "server": "2"
         },
         {
             "id": "111",
             "name": "Sussuro",
             "class": "Medic",
             "rarity": "4",
-            "image": "char_298_susuro"
+            "image": "char_298_susuro",
+            "server": "1"
         },
         {
             "id": "112",
             "name": "Cutter",
             "class": "Guard",
             "rarity": "4",
-            "image": "char_301_cutter"
+            "image": "char_301_cutter",
+            "server": "1"
         },
         {
             "id": "113",
             "name": "Ambriel",
             "class": "Sniper",
             "rarity": "4",
-            "image": "char_302_glaze"
+            "image": "char_302_glaze",
+            "server": "1"
         },
         {
             "id": "114",
             "name": "Leizi",
             "class": "Caster",
             "rarity": "5",
-            "image": "char_306_leizi"
+            "image": "char_306_leizi",
+            "server": "1"
         },
         {
             "id": "115",
             "name": "Swire",
             "class": "Guard",
             "rarity": "5",
-            "image": "char_308_swire"
+            "image": "char_308_swire",
+            "server": "2"
         },
         {
             "id": "116",
             "name": "Bison",
             "class": "Defender",
             "rarity": "5",
-            "image": "char_325_bison"
+            "image": "char_325_bison",
+            "server": "1"
         },
         {
             "id": "117",
             "name": "Glaucus",
             "class": "Supporter",
             "rarity": "5",
-            "image": "char_326_glacus"
+            "image": "char_326_glacus",
+            "server": "2"
         },
         {
             "id": "118",
             "name": "Sideroca",
             "class": "Guard",
             "rarity": "5",
-            "image": "char_333_sidero"
+            "image": "char_333_sidero",
+            "server": "1"
         },
         {
             "id": "119",
             "name": "Utage",
             "class": "Guard",
             "rarity": "4",
-            "image": "char_337_utage"
+            "image": "char_337_utage",
+            "server": "1"
         },
         {
             "id": "120",
             "name": "Schwarz",
             "class": "Sniper",
             "rarity": "6",
-            "image": "char_340_shwaz"
+            "image": "char_340_shwaz",
+            "server": "2"
         },
         {
             "id": "121",
             "name": "Ceylon",
             "class": "Medic",
             "rarity": "5",
-            "image": "char_348_ceylon"
+            "image": "char_348_ceylon",
+            "server": "2"
         },
         {
             "id": "122",
             "name": "Ethan",
             "class": "Specialist",
             "rarity": "4",
-            "image": "char_355_ethan"
+            "image": "char_355_ethan",
+            "server": "1"
         },
         {
             "id": "123",
             "name": "Broca",
             "class": "Guard",
             "rarity": "5",
-            "image": "char_356_broca"
+            "image": "char_356_broca",
+            "server": "1"
         },
         {
             "id": "124",
             "name": "GreyThroat",
             "class": "Sniper",
             "rarity": "5",
-            "image": "char_367_swllow"
+            "image": "char_367_swllow",
+            "server": "1"
         },
         {
             "id": "125",
             "name": "Thermal-EX",
             "class": "Specialist",
             "rarity": "1",
-            "image": "char_376_therex"
+            "image": "char_376_therex",
+            "server": "1"
         },
         {
             "id": "126",
             "name": "Sesa",
             "class": "Sniper",
             "rarity": "5",
-            "image": "char_379_sesa"
+            "image": "char_379_sesa",
+            "server": "1"
         },
         {
             "id": "127",
             "name": "Snowsant",
             "class": "Specialist",
             "rarity": "5",
-            "image": "char_383_snsant"
+            "image": "char_383_snsant",
+            "server": "1"
         },
         {
             "id": "128",
             "name": "Purestream",
             "class": "Medic",
             "rarity": "4",
-            "image": "char_385_finlpp"
+            "image": "char_385_finlpp",
+            "server": "1"
         },
         {
             "id": "129",
             "name": "Weedy",
             "class": "Specialist",
             "rarity": "6",
-            "image": "char_400_weedy"
+            "image": "char_400_weedy",
+            "server": "1"
         },
         {
             "id": "130",
             "name": "Elysium",
             "class": "Vanguard",
             "rarity": "5",
-            "image": "char_401_elysm"
+            "image": "char_401_elysm",
+            "server": "1"
         },
         {
             "id": "131",
             "name": "Noir Corne",
             "class": "Defender",
             "rarity": "2",
-            "image": "char_500_noirc"
+            "image": "char_500_noirc",
+            "server": "2"
         },
         {
             "id": "132",
             "name": "Durin",
             "class": "Caster",
             "rarity": "2",
-            "image": "char_501_durin"
+            "image": "char_501_durin",
+            "server": "2"
         },
         {
             "id": "133",
             "name": "Yato",
             "class": "Vanguard",
             "rarity": "2",
-            "image": "char_502_nblade"
+            "image": "char_502_nblade",
+            "server": "2"
         },
         {
             "id": "134",
             "name": "Rangers",
             "class": "Sniper",
             "rarity": "2",
-            "image": "char_503_rang"
+            "image": "char_503_rang",
+            "server": "2"
         },
         {
             "id": "135",
             "name": "Ceobe",
             "class": "Caster",
             "rarity": "6",
-            "image": "char_2013_cerber"
+            "image": "char_2013_cerber",
+            "server": "1"
         },
         {
             "id": "136",
             "name": "Nian",
             "class": "Defender",
             "rarity": "6",
-            "image": "char_2014_nian"
+            "image": "char_2014_nian",
+            "server": "1"
         },
         {
             "id": "137",
             "name": "Grani",
             "class": "Vanguard",
             "rarity": "5",
-            "image": "char_220_grani"
+            "image": "char_220_grani",
+            "server": "2"
         }
     ]
 }

@@ -1,0 +1,23 @@
+{
+    "changelog" : [
+        {
+            "version" : "1.0.0",
+            "list" : [
+                "Initial release!"
+            ]
+        },
+        {
+            "version" : "1.1.0",
+            "list" : [
+                "Operator list by server (CN and EN/JP/KR)",
+                "Hide IGN if empty",
+                "Show total current operator by server",
+                "Show total selected operators",
+                "Show total operator per rarity",
+                "Added date for image filename",               
+                "Select all button",
+                "Show changelog"
+            ]
+        }
+    ]
+}
