@@ -31,6 +31,13 @@
             "list" : [
                 "Fix total selected count after select all"
             ]
+        },
+        {
+            "version" : "1.2.0",
+            "list" : [
+                "Current selected operators, IGN, and server now saved to cookies",
+                "Generate image loading animation"
+            ]
         }
     ]
 }
