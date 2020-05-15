@@ -12,9 +12,13 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>      
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       <script src="../js/date.format.min.js"></script>
+      <script src="../js/cookies.min.js"></script>
    </head>
-   <body>      
+   <body>            
       <div class="container container-padding">
+         <div class="loading-overlay">
+            <div class="loading lds-dual-ring"></div>
+         </div>
          <div class="row">
             <div class="col-12">    
                <!-- Background color style (PENDING) -->
@@ -32,7 +36,7 @@
                -->                              
                <div class="form-group">
                   <div class="row">
-                     <div class="col-12 text-center">
+                     <div class="col-12 text-center">                        
                         <h4 class="title">IGN</h4>          
                         <input class="input-center" id="ign-input" type="text" placeholder="(optional) Type your IGN here" maxlength="24">   
                         <div class="vert-space-1"></div>
@@ -73,6 +77,7 @@
                      <div class="col-12 text-center">       
                         <div class="vert-space-1"></div>                                
                         <h6 class="title title-footer"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;<b>How to : </b>Select operator and press "Generate" button (bottom right) to generate image.</h6>
+                        <h6 class="title title-footer"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;Your collection will be saved to local cookies, so you can continue your latest collection later.<h6>
                         <h6 class="title title-footer"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;Current total operators <span class="selected-server"></span> : <span class="total-operator"></span></h6>
                         <h6 class="title title-footer"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;Version updated! <b><a href="#" data-toggle="modal" data-target="#changelog">Changelog</a></b></h6>
                         <hr>
@@ -182,6 +187,6 @@
       </div>
 
       <script src="../js/html2canvas.min.js"></script>
-      <script src="../js/chara-selection.min.js"></script>
+      <script src="../js/ak-collection-tracker.min.js"></script>
    <body>   
 </html>

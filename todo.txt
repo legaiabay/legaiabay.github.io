@@ -5,8 +5,6 @@ Easy :
 
 Medium : 
 - optional : show all operators in image but op you have being highlighted
-- cookie to save latest selection
-- image loading animation
 - E1 E2 image/logo
 
 Hard :
