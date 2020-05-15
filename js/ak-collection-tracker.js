@@ -128,9 +128,9 @@ function SetCharaDiv(){
         data.chara.forEach(element => {                   
             current_total_operator++;                      
             total_chara_rarity[element.rarity-1]++;   
-            selected_chara_all.push(element.id);
+            selected_chara_all.push(parseInt(element.id));
             if(element.server == 2){
-                selected_chara_all_en.push(element.id);
+                selected_chara_all_en.push(parseInt(element.id));
                 current_total_operator_en++;
                 total_chara_rarity_en[element.rarity-1]++;        
             }
@@ -148,7 +148,7 @@ function SetCharaDiv(){
         $('.chara-img-btn').click(function(){
             let selected = $(this).data('selected');
             let rarity = $(this).data('rarity');                    
-            let id = $(this).data('id');
+            let id = parseInt($(this).data('id'));
 
             if(selected === false){                
                 $(this).css('background','white');
