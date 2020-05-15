@@ -14,10 +14,10 @@ function LoadCookies(){
     let saved_selected = Cookies.get("selected");
     let saved_server = Cookies.get("server");
     let saved_server_en = Cookies.get("server_en");
-    let saved_ign = Cookies.get("ign");    
+    let saved_ign = Cookies.get("ign");        
     
-    if(saved_selected == undefined || saved_selected[0] == "") saved_selected = [];
-    else saved_selected = saved_selected.split(",");
+    if(saved_selected == undefined || saved_selected[0] == "" || saved_selected.length === 0) saved_selected = [];
+    else saved_selected = saved_selected.split(",");    
 
     for(let i=0;i<saved_selected.length;i++){
         saved_selected[i] = parseInt(saved_selected[i]);
