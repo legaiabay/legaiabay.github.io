@@ -4,11 +4,10 @@ Easy :
 - background color option - PENDING
 
 Medium : 
-- optional : show name (with toggle)
 - optional : show all operators in image but op you have being highlighted
-- "generate" counter -> to firebase
 - cookie to save latest selection
 - image loading animation
+- E1 E2 image/logo
 
 Hard :
 - PWA 

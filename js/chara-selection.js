@@ -1,4 +1,4 @@
-let version = "v.1.1.1";
+let version = "v.1.1.2";
 let selected_server = "cn";
 let current_total_operator = 0;
 let current_total_operator_en = 0;
@@ -159,12 +159,14 @@ $(document).ready(function(){
     $('#select-all').click(function(){
         $('.chara-img-btn').data("selected",true).css("background","white");        
         if(selected_server == "en"){                      
+            selected_count = current_total_operator_en;
             $(".selected").html(current_total_operator_en);   
             for(let i=1;i<=chara_rarity_count.length;i++){
                 chara_rarity_count[i-1] = total_chara_rarity_en[i-1];
                 $("#rarity-"+i).html(chara_rarity_count[i-1]);   
             }                        
-        } else if(selected_server == "cn"){                        
+        } else if(selected_server == "cn"){                     
+            selected_count = current_total_operator;   
             $(".selected").html(current_total_operator);   
             for(let i=1;i<=chara_rarity_count.length;i++){
                 chara_rarity_count[i-1] = total_chara_rarity[i-1];
