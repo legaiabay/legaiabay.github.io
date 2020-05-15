@@ -1,4 +1,4 @@
-let version = "v.1.1.2";
+let version = "v.1.2.0";
 let selected_server = "cn";
 let current_total_operator = 0;
 let current_total_operator_en = 0;
@@ -190,6 +190,7 @@ $(document).ready(function(){
 
     $('#generate').click(function(){                
         $("#generate").css("display","none");  
+        $(".loading-overlay").css("display","block");
         
         if($("#ign-input").val() === ""){            
             $("#ign").css("display","none");
@@ -250,6 +251,8 @@ $(document).ready(function(){
             } else {
                 $(".chara-img-btn[data-server=1]").parent().css("display","flex")
             }
+
+            $(".loading-overlay").css("display","none");
 
             $('html, body').animate({
                 scrollTop: $("div.capture-result").offset().top
