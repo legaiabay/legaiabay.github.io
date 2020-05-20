@@ -750,7 +750,7 @@
             "class": "Defender",
             "rarity": "4",
             "image": "char_260_durnar",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "95",
@@ -782,7 +782,7 @@
             "class": "Medic",
             "rarity": "5",
             "image": "char_275_breeze",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "99",
@@ -974,7 +974,7 @@
             "class": "Specialist",
             "rarity": "4",
             "image": "char_355_ethan",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "123",
