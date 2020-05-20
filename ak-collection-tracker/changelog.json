@@ -38,6 +38,12 @@
                 "Current selected operators, IGN, and server now saved to cookies",
                 "Generate image loading animation"
             ]
+        },
+        {
+            "version" : "1.2.1",
+            "list" : [
+                "EN/KR/JP new characters : Dur'nar, Ethan, Breeze"
+            ]
         }
     ]
 }
