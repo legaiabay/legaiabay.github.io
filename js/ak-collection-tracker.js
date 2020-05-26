@@ -1,4 +1,5 @@
-let version = "v.1.2.1";
+const VERSION = "v.1.3.0";
+
 let selected_server = "cn";
 let current_total_operator = 0;
 let current_total_operator_en = 0;
@@ -200,20 +201,24 @@ function Generate(){
         $("#ign").css("display","none");
     }    
 
-    $(".chara-img-btn").each(function(){
-        let selected = $(this).data("selected");
-        if(selected === false){                
-            $(this).parent().css("display","none");
-        } else {
-            $(this).css('background','rgba(0,0,0,0)');
-        }
-    });
+    console.log($("#keep-unselected").is(":checked"));
 
     let rarity_to_hide = [];
-    chara_rarity_count.forEach((element, index) => {
-        if(element <= 0) $(".chara-selection-"+(index+1)).css("display","none");
-        rarity_to_hide.push(index);
-    })        
+    if(!$("#keep-unselected").is(":checked")){
+        $(".chara-img-btn").each(function(){
+            let selected = $(this).data("selected");
+            if(selected === false){                
+                $(this).parent().css("display","none");
+            } else {
+                $(this).css('background','rgba(0,0,0,0)');
+            }
+        });
+        
+        chara_rarity_count.forEach((element, index) => {
+            if(element <= 0) $(".chara-selection-"+(index+1)).css("display","none");
+            rarity_to_hide.push(index);
+        })   
+    }         
 
     $('html, body').animate({
         scrollTop: $("body").offset().top
@@ -246,9 +251,11 @@ function Generate(){
             }                
         });                      
 
-        rarity_to_hide.forEach((element) => {
-            $(".chara-selection-"+element).css("display","flex");
-        })
+        if(!$("#keep-unselected").is(":checked")){
+            rarity_to_hide.forEach((element) => {
+                $(".chara-selection-"+element).css("display","flex");
+            })
+        }
 
         if($("#server").prop("checked")){
             $(".chara-img-btn[data-server=1]").parent().css("display","none")
@@ -265,7 +272,7 @@ function Generate(){
 }
 
 $(document).ready(function(){
-    $(".version").append(version);
+    $(".version").append(VERSION);
     $(".selected").html(selected_count);
 
     SetChangelog();
