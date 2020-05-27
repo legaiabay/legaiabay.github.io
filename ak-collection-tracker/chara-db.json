@@ -230,7 +230,7 @@
             "class": "Sniper",
             "rarity": "4",
             "image": "char_133_mm",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "30",
@@ -598,7 +598,7 @@
             "class": "Caster",
             "rarity": "6",
             "image": "char_213_mostma",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "76",
@@ -702,7 +702,7 @@
             "class": "Specialist",
             "rarity": "5",
             "image": "char_243_waaifu",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "89",
