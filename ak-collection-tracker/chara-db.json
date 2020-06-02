@@ -1095,6 +1095,22 @@
             "rarity": "5",
             "image": "char_220_grani",
             "server": "2"
+        },
+        {
+            "id": "138",
+            "name": "Tsukinogi",
+            "class": "Supporter",
+            "rarity": "5",
+            "image": "char_343_tknogi",
+            "server": "1"
+        },
+        {
+            "id": "139",
+            "name": "Asbestos",
+            "class": "Defender",
+            "rarity": "5",
+            "image": "char_378_asbest",
+            "server": "1"
         }
     ]
 }
