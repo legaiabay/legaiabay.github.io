@@ -1111,6 +1111,38 @@
             "rarity": "5",
             "image": "char_378_asbest",
             "server": "1"
+        },
+        {
+            "id": "140",
+            "name": "Podenco",
+            "class": "Supporter",
+            "rarity": "4",
+            "image": "char_258_podego",
+            "server": "1"
+        },
+        {
+            "id": "141",
+            "name": "Absinthe",
+            "class": "Caster",
+            "rarity": "5",
+            "image": "char_405_absin",
+            "server": "1"
+        },
+        {
+            "id": "142",
+            "name": "Leonhardt",
+            "class": "Caster",
+            "rarity": "5",
+            "image": "char_373_lionhd",
+            "server": "1"
+        },
+        {
+            "id": "143",
+            "name": "Poca",
+            "class": "Sniper",
+            "rarity": "6",
+            "image": "char_197_poca",
+            "server": "1"
         }
     ]
 }

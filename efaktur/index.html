@@ -7,9 +7,12 @@
         <input type="file" id="files" name="files" />
         <br/>
         <textarea id="base64" rows="5"></textarea>
-        <div id="demo">
+        <br>
+        <img id="qr" src="">
+        <div id="demo"></div>
+        <button type="button" onclick="getQRData()">Get</button>
 
-        </div>
+        <script src="js/qrdecoder.js"></script>
         <script src="js/toBase64.js"></script>
         <script src="js/efakturFetcher.js"></script>
     </body>
