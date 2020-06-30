@@ -30,7 +30,7 @@
             "class": "Guard",
             "rarity": "6",
             "image": "char_017_huang",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "5",
@@ -902,7 +902,7 @@
             "class": "Sniper",
             "rarity": "4",
             "image": "char_302_glaze",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "114",
@@ -990,7 +990,7 @@
             "class": "Sniper",
             "rarity": "5",
             "image": "char_367_swllow",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "125",
@@ -1142,6 +1142,22 @@
             "class": "Sniper",
             "rarity": "6",
             "image": "char_197_poca",
+            "server": "1"
+        },
+        {
+            "id": "144",
+            "name": "Click",
+            "class": "Caster",
+            "rarity": "4",
+            "image": "",
+            "server": "1"
+        },
+        {
+            "id": "145",
+            "name": "Folinic",
+            "class": "Medic",
+            "rarity": "5",
+            "image": "",
             "server": "1"
         }
     ]
