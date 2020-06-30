@@ -1149,7 +1149,7 @@
             "name": "Click",
             "class": "Caster",
             "rarity": "4",
-            "image": "",
+            "image": "placeholder",
             "server": "1"
         },
         {
@@ -1157,7 +1157,7 @@
             "name": "Folinic",
             "class": "Medic",
             "rarity": "5",
-            "image": "",
+            "image": "placeholder",
             "server": "1"
         }
     ]
