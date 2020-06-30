@@ -68,6 +68,12 @@
             "list" : [
                 "CN new operators : Podenco, Absinthe, Leonhardt, Poca"
             ]
+        },
+        {
+            "version" : "1.3.4",
+            "list" : [
+                "EN/JP/KR new operators : Blaze, Greythroat, Ambriel"
+            ]
         }
     ]
 }
