@@ -1159,6 +1159,14 @@
             "rarity": "5",
             "image": "placeholder",
             "server": "1"
+        },
+        {
+            "id": "146",
+            "name": "Ayerscarpe",
+            "class": "Guard",
+            "rarity": "5",
+            "image": "placeholder",
+            "server": "1"
         }
     ]
 }
