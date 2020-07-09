@@ -1149,7 +1149,7 @@
             "name": "Click",
             "class": "Caster",
             "rarity": "4",
-            "image": "placeholder",
+            "image": "char_328_cammou",
             "server": "1"
         },
         {
@@ -1157,7 +1157,7 @@
             "name": "Folinic",
             "class": "Medic",
             "rarity": "5",
-            "image": "placeholder",
+            "image": "char_345_folnic",
             "server": "1"
         },
         {
@@ -1165,11 +1165,19 @@
             "name": "Ayerscarpe",
             "class": "Guard",
             "rarity": "5",
-            "image": "placeholder",
+            "image": "char_294_ayer",
             "server": "1"
         },
         {
             "id": "147",
+            "name": "Suzuran",
+            "class": "Supporter",
+            "rarity": "6",
+            "image": "char_358_lisa",
+            "server": "1"
+        },
+        {
+            "id": "148",
             "name": "Scene",
             "class": "Supporter",
             "rarity": "5",
@@ -1177,7 +1185,7 @@
             "server": "1"
         },
         {
-            "id": "148",
+            "id": "149",
             "name": "Beeswax",
             "class": "Caster",
             "rarity": "5",
@@ -1185,18 +1193,10 @@
             "server": "1"
         },
         {
-            "id": "149",
+            "id": "150",
             "name": "Chiave",
             "class": "Vanguard",
             "rarity": "5",
-            "image": "placeholder",
-            "server": "1"
-        },
-        {
-            "id": "150",
-            "name": "Suzuran",
-            "class": "Supporter",
-            "rarity": "6",
             "image": "placeholder",
             "server": "1"
         }

@@ -75,6 +75,13 @@
                 "EN/JP/KR new operators : Blaze, Greythroat, Ambriel",
                 "Placeholder image for upcoming new CN operator"
             ]
+        },
+        {
+            "version" : "1.3.5",
+            "list" : [
+                "CN new operators : Suzuran, Ayerscape, Folinic, Click",
+                "Added minor info"
+            ]
         }
     ]
 }
