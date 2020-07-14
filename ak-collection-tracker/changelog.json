@@ -82,6 +82,12 @@
                 "CN new operators : Suzuran, Ayerscape, Folinic, Click",
                 "Added minor info"
             ]
+        },
+        {
+            "version" : "1.3.6",
+            "list" : [
+                "EN/JP/KR new operators : Reed, Broca"
+            ]
         }
     ]
 }
