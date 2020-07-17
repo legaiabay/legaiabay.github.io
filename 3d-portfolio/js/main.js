@@ -24,7 +24,7 @@ function createPost(data){
 
 function setPosts(){       
     let posts = "";
-    $.getJSON(`${location.href}/data/posts.json`, function(data) {      
+    $.getJSON(`data/posts.json`, function(data) {      
         let count = 0;
         posts += `<div class="row">`
         data.posts.reverse();         
