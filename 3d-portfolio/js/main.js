@@ -3,8 +3,6 @@
 	http://www.templatemo.com/preview/templatemo_423_artcore
 */
 
-let posts = "";
-
 function createPost(data){    
     return `
         <div class="col-md-6 col-sm-12 project-item mix">
@@ -25,6 +23,7 @@ function createPost(data){
 }
 
 function setPosts(){       
+    let posts = "";
     $.getJSON(`${location.href}/data/posts.json`, function(data) {      
         let count = 0;
         posts += `<div class="row">`
@@ -39,8 +38,9 @@ function setPosts(){
             }
         });        
         posts += `</div>`
-    }).then(function(){        
         $('#posts').append(posts);
+    }).then(function(){        
+        
         
         $('.loader-item').fadeOut(); 
         $('#pageloader').delay(350).fadeOut('slow');
