@@ -62,26 +62,6 @@ function setPosts(){
         });
 
 
-
-
-    /************** Superfish (DropDown Menu) *********************/
-        function initSuperFish(){
-            
-            $(".sf-menu").superfish({
-                 delay:  50,
-                 autoArrows: true,
-                 animation:   {opacity:'show'}
-                 //cssArrows: true
-            });
-            
-        }
-        
-        initSuperFish();
-
-        $('.sub-menu').addClass('animated fadeInRight');
-
-
-
     /************** Search Overlay *********************/
         $('#search-icon').on('click', function() {
             $('#search-overlay').removeClass('animated bounceOutUp');
