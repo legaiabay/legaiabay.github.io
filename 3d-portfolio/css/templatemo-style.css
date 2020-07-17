@@ -693,7 +693,7 @@ a.btn-left:hover, .top-header .social-top ul li a:hover, .main-header .menu-wrap
   height: 100%;
   position: fixed;
   top: 0;
-  background-color: white;
+  background-color: #212529;
   z-index: 9999;
 }
 
@@ -709,7 +709,7 @@ a.btn-left:hover, .top-header .social-top ul li a:hover, .main-header .menu-wrap
   top: 50%;
   left: 50%;
   text-align: center;
-  background: white;
+  background: #212529;
   border-left: 4px solid;
   border-right: 4px solid;
   border-top: 4px solid;
