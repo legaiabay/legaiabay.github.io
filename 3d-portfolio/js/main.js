@@ -25,7 +25,7 @@ function createPost(data){
 }
 
 function setPosts(){       
-    $.getJSON(`data/posts.json`, function(data) {      
+    $.getJSON(`${location.href}/data/posts.json`, function(data) {      
         let count = 0;
         posts += `<div class="row">`
         data.posts.reverse();         
@@ -39,8 +39,7 @@ function setPosts(){
             }
         });        
         posts += `</div>`
-    }).then(function(){
-        console.log(posts);
+    }).then(function(){        
         $('#posts').append(posts);
         
         $('.loader-item').fadeOut(); 
