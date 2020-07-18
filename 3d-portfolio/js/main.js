@@ -4,13 +4,28 @@
 */
 
 function createPost(data){    
+
+    if(data.type == "video"){
+        return `
+            <div class="col-md-6 col-sm-12 project-item mix">
+                <div class="project-thumb">
+                    <iframe src="https://www.youtube.com/embed/${data.href}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
+                </div>
+                <div class="box-content project-detail">
+                    <h2>${data.title}</h2>
+                    <p><span>[${data.date}]</span> ${data.desc}</p>
+                </div>
+            </div>
+        `;
+    }
+
     return `
         <div class="col-md-6 col-sm-12 project-item mix">
             <div class="project-thumb">
-                <img src="images/posts/${data.img}.jpg" alt="">
+                <img src="images/posts/${data.href}.jpg" alt="">
                 <div class="overlay-b">
                     <div class="overlay-inner">
-                        <a href="images/posts/${data.img}.jpg" class="fancybox fa fa-expand" title="[${data.date}] ${data.title}"></a>
+                        <a href="images/posts/${data.href}.jpg" class="fancybox fa fa-expand" title="[${data.date}] ${data.title}"></a>
                     </div>
                 </div>
             </div>

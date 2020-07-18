@@ -5,77 +5,96 @@
             "title" : "Marshall",
             "desc" : "Probably my first render after so many trials and error.",
             "date" : "2020-06-15",
-            "img" : "20200615-01"
+            "type" : "image",
+            "href" : "20200615-01"
         },
         {
             "id": "2",
             "title" : "Marshall & Fox",
             "desc" : "Marshall with my irl fox keychain!",
             "date" : "2020-06-16",
-            "img" : "20200616-01"
+            "type" : "image",
+            "href" : "20200616-01"
         },
         {
             "id": "3",
             "title" : "Jessica's First Task",
             "desc" : "My first humanoid render of my \"self-proclaim\" daughter  from Arknights, Jessica lol",
             "date" : "2020-06-29",
-            "img" : "20200629-01"
+            "type" : "image",
+            "href" : "20200629-01"
         },
         {
             "id": "4",
             "title" : "Shooting Range",
             "desc" : "Jessica doing shooting practice without Liskarm around.",
             "date" : "2020-07-02",
-            "img" : "20200702-01"
+            "type" : "image",
+            "href" : "20200702-01"
         },
         {
             "id": "5",
             "title" : "Going Home",
             "desc" : "Jessica going home after training in her fancy car.",
             "date" : "2020-07-02",
-            "img" : "20200702-02"
+            "type" : "image",
+            "href" : "20200702-02"
         },
         {
             "id": "6",
             "title" : "Supermarket",
             "desc" : "Jessica buying some spicy noodles.",
             "date" : "2020-07-03",
-            "img" : "20200703-01"
+            "type" : "image",
+            "href" : "20200703-01"
         },
         {
             "id": "7",
             "title" : "Apartment",
             "desc" : "Jessica sightseeing in her apartment.",
             "date" : "2020-07-05",
-            "img" : "20200705-01"
+            "type" : "image",
+            "href" : "20200705-01"
         },
         {
             "id": "8",
-            "title" : "Maid Cafe",
-            "desc" : "Alisa (original character) daily work as a maid in maid cafe.",
-            "date" : "2020-07-16",
-            "img" : "20200716-01"
+            "title" : "Jess playing Arknights",
+            "desc" : "My first animation render ever, set in my room.",
+            "date" : "2020-07-13",
+            "type" : "video",
+            "href" : "y2UQJNTNq4U"
         },
         {
             "id": "9",
-            "title" : "Martial Arts Training",
-            "desc" : "Aside from her job as maid, she is very good with martial arts too!",
+            "title" : "Maid Cafe",
+            "desc" : "Alisa (original character) daily work as a maid in maid cafe.",
             "date" : "2020-07-16",
-            "img" : "20200716-02"
+            "type" : "image",
+            "href" : "20200716-01"
         },
         {
             "id": "10",
-            "title" : "Konbini",
-            "desc" : "Surprisingly Jess and Alisa know each other, and both bought something from konbini. Maybe Jess paid Alisa to be her maid too lol.",
-            "date" : "2020-07-17",
-            "img" : "20200717-01"
+            "title" : "Martial Arts Training",
+            "desc" : "Aside from her job as maid, she is very good with martial arts too!",
+            "date" : "2020-07-16",
+            "type" : "image",
+            "href" : "20200716-02"
         },
         {
             "id": "11",
+            "title" : "Konbini",
+            "desc" : "Surprisingly Jess and Alisa know each other, and both bought something from konbini. Maybe Jess paid Alisa to be her maid too lol.",
+            "date" : "2020-07-17",
+            "type" : "image",
+            "href" : "20200717-01"
+        },
+        {
+            "id": "12",
             "title" : "Everyone is here! (1)",
             "desc" : "All my hand-made models so far. The most right one is actually my very first model creation lol.",
             "date" : "2020-07-18",
-            "img" : "20200718-01"
+            "type" : "image",
+            "href" : "20200718-01"
         }
     ]
 }
