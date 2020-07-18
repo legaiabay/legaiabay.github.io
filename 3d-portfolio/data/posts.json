@@ -95,6 +95,14 @@
             "date" : "2020-07-18",
             "type" : "image",
             "href" : "20200718-01"
+        },
+        {
+            "id": "13",
+            "title" : "Vending Machine",
+            "desc" : "Friday evening walk, take a break with beverages from vending machine.",
+            "date" : "2020-07-19",
+            "type" : "image",
+            "href" : "20200719-01"
         }
     ]
 }
