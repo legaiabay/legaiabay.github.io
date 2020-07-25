@@ -3,6 +3,13 @@
 	http://www.templatemo.com/preview/templatemo_423_artcore
 */
 
+let allPosts = 0;
+let postCount = 1;
+let postMax = 0
+let postIncrement = 6;
+let postsData = null;
+let waypoints = 0;
+
 function createPost(data){    
 
     if(data.type == "video"){
@@ -37,29 +44,64 @@ function createPost(data){
     `;
 }
 
+function loadMore(){
+    setPosts();
+    $(`.waypoints`).hide();
+}
+
 function setPosts(){       
     let posts = "";
     $.getJSON(`data/posts.json`, function(data) {      
+        if(postsData == null){
+            postsData = data;
+            postsData.posts.reverse();         
+            postMax = data.posts.length;            
+        } else {
+            if(postMax > 0){
+                postMax -= postIncrement;                
+            } else {
+                postmax = 0;
+            }
+        };
+
         let count = 0;
         posts += `<div class="row">`
-        data.posts.reverse();         
-        data.posts.forEach(element => {            
-            posts += createPost(element);    
-            count++;
-            if(count >= 2){
-                posts += `</div>`
-                posts += `<div class="row">`
-                count = 0;
+        postsData.posts.forEach(element => {                        
+            if(element.id <= (postMax) && element.id > (postMax - postIncrement)){
+                posts += createPost(element);    
+                postCount++;
+                count++;
+                if(count >= 2){
+                    posts += `</div>`
+                    posts += `<div class="row">`
+                    count = 0;
+                }
             }
         });        
         posts += `</div>`
         $('#posts').append(posts);
-    }).then(function(){        
+
+        if(postMax >= 0){
+            $('#posts').append(`            
+                <div id="waypoint">    
+                    <div class="waypoints loader-waypoint fa fa-spin colored-border"></div>            
+                </div>
+            `);
+        } else {
+            $('#posts').append(` 
+            <div class="end col-md-12 col-sm-12">
+                <h2 style="padding-left: 50px; text-align: center;">That's all folks!</h2>
+            </div>
+            `);
+        }
         
+        postCount = 0;        
+
+    }).then(function(){        
         
         $('.loader-item').fadeOut(); 
         $('#pageloader').delay(350).fadeOut('slow');
-        $('body').delay(350).css({'overflow-y':'visible'});
+        $('body').delay(350).css({'overflow-y':'visible'});        
 
         /************** Toggle *********************/
     	$('.toggle-id').on('click', function() {
@@ -168,15 +210,22 @@ function setPosts(){
             effects: ['fade','grayscale'],
             easing: 'snap',
             transitionSpeed: 400
-        });
-
-
-
+        });        
 
     /************** FancyBox Lightbox *********************/
-        $(".fancybox").fancybox();
-
-
+        $(".fancybox").fancybox();        
+        
+        $(`.waypoint`).waypoint(function() {
+            if(postMax > 0){
+                waypoints++;                       
+                setTimeout(loadMore, 500);                                
+                this.destroy()                
+            }
+        }, {
+            offset: '110%',
+            triggerOnce: true 
+        });
+    
 
 
     /************** Contact Form *********************/
@@ -211,13 +260,15 @@ function setPosts(){
             return false;
 
         });
+
+        
     });
 }
 
 $(document).ready(function() {
 
     setPosts();
-
+      
 });
 
 
