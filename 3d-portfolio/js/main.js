@@ -3,6 +3,13 @@
 	http://www.templatemo.com/preview/templatemo_423_artcore
 */
 
+var firebaseConfig = {
+    apiKey: "AIzaSyA2ksCDuXSyB-ow4PV96Cep_M8F3GIJ7dA",
+    authDomain: "threed-dump.firebaseapp.com",
+    databaseURL: "https://threed-dump.firebaseio.com",
+    projectId: "threed-dump",
+  };
+
 let allPosts = 0;
 let postCount = 1;
 let postMax = 0
@@ -268,6 +275,15 @@ function setPosts(){
 }
 
 $(document).ready(function() {
+
+    firebase.initializeApp(firebaseConfig);
+    let db = firebase.firestore();
+
+    db.collection("posts").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            console.log(`${doc.id} => ${doc.data().title}`);
+        });
+    });
 
     setPosts();
       
