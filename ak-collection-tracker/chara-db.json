@@ -630,7 +630,7 @@
             "class": "Specialist",
             "rarity": "6",
             "image": "char_225_haak",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "80",
@@ -638,7 +638,7 @@
             "class": "Defender",
             "rarity": "5",
             "image": "char_226_hmau",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "81",
@@ -1014,7 +1014,7 @@
             "class": "Specialist",
             "rarity": "5",
             "image": "char_383_snsant",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "128",
@@ -1086,7 +1086,7 @@
             "class": "Defender",
             "rarity": "6",
             "image": "char_2014_nian",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "137",
