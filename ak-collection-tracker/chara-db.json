@@ -1181,7 +1181,7 @@
             "name": "Scene",
             "class": "Supporter",
             "rarity": "5",
-            "image": "placeholder",
+            "image": "scene",
             "server": "1"
         },
         {
@@ -1189,7 +1189,7 @@
             "name": "Beeswax",
             "class": "Caster",
             "rarity": "5",
-            "image": "placeholder",
+            "image": "beewax",
             "server": "1"
         },
         {
@@ -1197,7 +1197,7 @@
             "name": "Chiave",
             "class": "Vanguard",
             "rarity": "5",
-            "image": "placeholder",
+            "image": "chiave",
             "server": "1"
         }
     ]

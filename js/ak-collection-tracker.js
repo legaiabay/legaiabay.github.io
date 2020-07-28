@@ -1,4 +1,4 @@
-const VERSION = "v.1.3.7";
+const VERSION = "v.1.3.8";
 
 let selected_server = "cn";
 let current_total_operator = 0;
