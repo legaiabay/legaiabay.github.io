@@ -55,7 +55,8 @@ function setPosts(){
         if(postsData == null){
             postsData = data;
             postsData.posts.reverse();         
-            postMax = data.posts.length;            
+            postMax = data.posts.length; 
+            console.log(postMax);           
         } else {
             if(postMax > 0){
                 postMax -= postIncrement;                
@@ -68,6 +69,7 @@ function setPosts(){
         posts += `<div class="row">`
         postsData.posts.forEach(element => {                        
             if(element.id <= (postMax) && element.id > (postMax - postIncrement)){
+                console.log(element.id);
                 posts += createPost(element);    
                 postCount++;
                 count++;
