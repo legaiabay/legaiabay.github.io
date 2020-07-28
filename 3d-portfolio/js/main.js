@@ -6,16 +6,14 @@
 var firebaseConfig = {
     apiKey: "AIzaSyA2ksCDuXSyB-ow4PV96Cep_M8F3GIJ7dA",
     authDomain: "threed-dump.firebaseapp.com",
-    databaseURL: "https://threed-dump.firebaseio.com",
     projectId: "threed-dump",
-  };
+};
 
-let allPosts = 0;
-let postCount = 1;
-let postMax = 0
-let postIncrement = 6;
-let postsData = null;
+firebase.initializeApp(firebaseConfig); 
+var db = firebase.firestore();
+
 let waypoints = 0;
+let lastPost = null;
 
 function createPost(data){    
 
@@ -56,41 +54,37 @@ function loadMore(){
     $(`.waypoints`).hide();
 }
 
-function setPosts(){       
+function setPosts(){              
+    if(lastPost != null && lastPost <= 1) return true;
+    
     let posts = "";
-    $.getJSON(`data/posts.json`, function(data) {      
-        if(postsData == null){
-            postsData = data;
-            postsData.posts.reverse();         
-            postMax = data.posts.length; 
-            console.log(postMax);           
-        } else {
-            if(postMax > 0){
-                postMax -= postIncrement;                
-            } else {
-                postmax = 0;
-            }
-        };
+    var ref = db.collection("posts").orderBy("id", "desc").limit(6);
+
+    if(lastPost != null){       
+        ref = db.collection("posts").orderBy("id", "desc").limit(6).where("id", "<", parseInt(lastPost));        
+    }
+
+    ref.get().then((snapshot) => {
 
         let count = 0;
         posts += `<div class="row">`
-        postsData.posts.forEach(element => {                        
-            if(element.id <= (postMax) && element.id > (postMax - postIncrement)){
-                console.log(element.id);
-                posts += createPost(element);    
-                postCount++;
-                count++;
-                if(count >= 2){
-                    posts += `</div>`
-                    posts += `<div class="row">`
-                    count = 0;
-                }
+
+        snapshot.forEach((element) => {      
+            posts += createPost(element.data());    
+            count++;
+            if(count >= 2){
+                posts += `</div>`
+                posts += `<div class="row">`
+                count = 0;
             }
-        });        
+
+            lastPost = element.id;
+        });
+
         posts += `</div>`
         $('#posts').append(posts);
 
-        if(postMax >= 0){
+        if(lastPost > 1){
             $('#posts').append(`            
                 <div id="waypoint">    
                     <div class="waypoints loader-waypoint fa fa-spin colored-border"></div>            
@@ -102,9 +96,7 @@ function setPosts(){
                 <h2 style="padding-left: 50px; text-align: center;">That's all folks!</h2>
             </div>
             `);
-        }
-        
-        postCount = 0;        
+        }     
 
     }).then(function(){        
         
@@ -118,8 +110,6 @@ function setPosts(){
             $(id).slideToggle(250);
             return false;
         });
-
-
 
     /************** Responsive navigation *********************/
         $('a.toggle-menu').click(function(){
@@ -149,9 +139,6 @@ function setPosts(){
     	        return false;
     	    } // esc
     	});
-
-    
-
 
 	/************** Full Screen Slider *********************/
     	$(window).resize(function(){
@@ -186,8 +173,6 @@ function setPosts(){
 
     	})
 
-
-
 	/************** SlideJS *********************/
     	$('.project-slider').slidesjs({
     		pagination: false,
@@ -196,8 +181,6 @@ function setPosts(){
     	      effect: "fade"
     	    }
         });
-
-
 
     /************** Animated Hover Effects *********************/
         $('.staff-member').hover(function(){
@@ -212,8 +195,6 @@ function setPosts(){
     	    $('.overlay-b a').removeClass('animated fadeIn');
     	});
 
-
-
 	/************** Mixitup (Filter Projects) *********************/
     	$('.projects-holder').mixitup({
             effects: ['fade','grayscale'],
@@ -225,7 +206,7 @@ function setPosts(){
         $(".fancybox").fancybox();        
         
         $(`.waypoint`).waypoint(function() {
-            if(postMax > 0){
+            if(lastPost > 0){
                 waypoints++;                       
                 setTimeout(loadMore, 500);                                
                 this.destroy()                
@@ -235,8 +216,6 @@ function setPosts(){
             triggerOnce: true 
         });
     
-
-
     /************** Contact Form *********************/
         $('#contactform').submit(function(){
 
@@ -269,21 +248,11 @@ function setPosts(){
             return false;
 
         });
-
         
     });
 }
 
-$(document).ready(function() {
-
-    firebase.initializeApp(firebaseConfig);
-    let db = firebase.firestore();
-
-    db.collection("posts").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data().title}`);
-        });
-    });
+$(document).ready(function() {    
 
     setPosts();
       
