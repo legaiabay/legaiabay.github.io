@@ -3,11 +3,7 @@
 	http://www.templatemo.com/preview/templatemo_423_artcore
 */
 
-var firebaseConfig = {
-    apiKey: "AIzaSyA2ksCDuXSyB-ow4PV96Cep_M8F3GIJ7dA",
-    authDomain: "threed-dump.firebaseapp.com",
-    projectId: "threed-dump",
-};
+var firebaseConfig = {apiKey: "AIzaSyA2ksCDuXSyB-ow4PV96Cep_M8F3GIJ7dA",authDomain: "threed-dump.firebaseapp.com",projectId: "threed-dump"};
 
 firebase.initializeApp(firebaseConfig); 
 var db = firebase.firestore();
@@ -61,7 +57,7 @@ function setPosts(){
     var ref = db.collection("posts").orderBy("id", "desc").limit(6);
 
     if(lastPost != null){       
-        ref = db.collection("posts").orderBy("id", "desc").limit(6).where("id", "<", parseInt(lastPost));        
+        ref = ref.where("id", "<", parseInt(lastPost));        
     }
 
     ref.get().then((snapshot) => {
@@ -208,7 +204,7 @@ function setPosts(){
         $(`.waypoint`).waypoint(function() {
             if(lastPost > 0){
                 waypoints++;                       
-                setTimeout(loadMore, 500);                                
+                setTimeout(loadMore, 100);                                
                 this.destroy()                
             }
         }, {

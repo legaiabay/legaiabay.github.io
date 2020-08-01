@@ -1,17 +1,17 @@
 const VERSION = "v.1.3.8";
 
-let selected_server = "cn";
-let current_total_operator = 0;
-let current_total_operator_en = 0;
-let selected_count = 0;
-let selected_chara = [];
-let selected_chara_all = [];
-let selected_chara_all_en = [];
-let total_chara_rarity = [0,0,0,0,0,0];
-let total_chara_rarity_en = [0,0,0,0,0,0];
-let chara_rarity_count = [0,0,0,0,0,0];
+var selected_server = "cn";
+var current_total_operator = 0;
+var current_total_operator_en = 0;
+var selected_count = 0;
+var selected_chara = [];
+var selected_chara_all = [];
+var selected_chara_all_en = [];
+var total_chara_rarity = [0,0,0,0,0,0];
+var total_chara_rarity_en = [0,0,0,0,0,0];
+var chara_rarity_count = [0,0,0,0,0,0];
 
-function LoadCookies(){
+let loadCookies = () => {   
     let saved_selected = Cookies.get("selected");
     let saved_server = Cookies.get("server");
     let saved_server_en = Cookies.get("server_en");
@@ -22,53 +22,85 @@ function LoadCookies(){
 
     for(let i=0;i<saved_selected.length;i++){
         saved_selected[i] = parseInt(saved_selected[i]);
-        let _selected = $(`.chara-img-btn[data-id=${saved_selected[i]}]`);
-        let rarity = _selected.data('rarity');    
+        let _selected = document.querySelector(`.chara-img-btn[data-id='${saved_selected[i]}']`);
+        let rarity = _selected.getAttribute('data-rarity');    
 
-        _selected.css('background','white');
-        _selected.data('selected',true);        
+        _selected.style.background = 'white';
+        _selected.setAttribute('data-selected', true); 
+
         selected_count++;
         chara_rarity_count[rarity-1]++;
-        $("#rarity-"+rarity).html(chara_rarity_count[rarity-1]);   
-        $(".selected").html(selected_count);      
+        
+        document.querySelector("#rarity-"+rarity).innerHTML = chara_rarity_count[rarity-1];   
+        document.querySelectorAll(".selected").forEach((_element) => {
+            _element.innerHTML = selected_count; 
+        })      
     }
 
     selected_chara = saved_selected;
     
     if(saved_server != "" && saved_server != undefined) {
-        SetServer(saved_server); 
-        if(saved_server == "en") $("#server").prop("checked",true);
+        setServer(saved_server); 
+        if(saved_server == "en") document.querySelector("#server").setAttribute("checked",true);
     }   
 
     if(saved_server_en != "" && saved_server_en != undefined) {        
-        $(".selected-server-2").html(saved_server_en); 
+        document.querySelector(".selected-server-2").innerHTML = saved_server_en; 
         if(saved_server_en == "EN"){
-            $("#server-en").prop("checked",true);
+            document.querySelector("#server-en").setAttribute("checked",true);
         } else if(saved_server_en == "JP"){
-            $("#server-jp").prop("checked",true);
+            document.querySelector("#server-jp").setAttribute("checked",true);
         } else if(saved_server_en == "KR"){
-            $("#server-kr").prop("checked",true);
+            document.querySelector("#server-kr").setAttribute("checked",true);
         }
     }
 
     if(saved_ign != "" && saved_ign != undefined){        
-        $('#ign-input').val(saved_ign);
-        $('#ign').text("IGN : " + saved_ign);
+        document.querySelector('#ign-input').value = saved_ign;
+        document.querySelector('#ign').innerHTML = "IGN : " + saved_ign;
     }    
 }
 
-function SetServer(s){
+let setServer = (s) => {
     if(s == "en"){
         selected_server = "en";
-        $(".chara-img-btn[data-server=1]").parent().css("display","none");
-        $(".chara-img-btn[data-server=1]").data("selected",false).css('background','rgba(0,0,0,0)');
-        $(".server-non-cn").css("display","flex");       
-        $("#server-en").prop("checked",true);                  
-        $(".selected-server").html("EN/JP/KR"); 
-        $(".selected-server-2").html("EN"); 
-        $(".total-operator").html(current_total_operator_en);
+
+        //$(".chara-img-btn[data-server=1]").parent().css("display","none");
+        document.querySelectorAll(".chara-img-btn[data-server='1']").forEach((element) => {
+            element.parentNode.style.display = "none";
+        });
+
+        //$(".chara-img-btn[data-server=1]").data("selected",false).css('background','rgba(0,0,0,0)');
+        document.querySelectorAll(".chara-img-btn[data-server='1'][data-selected=false]").forEach((element) => {
+            element.style.backgroundColor = "rgba(0,0,0,0)";
+        });
+
+        //$(".server-non-cn").css("display","flex");               
+        document.querySelectorAll(".server-non-cn").forEach((element) => {
+            element.style.display = "flex";
+        });
+
+        //$("#server-en").prop("checked",true);                     
+        document.querySelector("#server-en").checked = true;
+
+        //$(".selected-server").html("EN/JP/KR");         
+        document.querySelectorAll(".selected-server").forEach((element) => {
+            element.innerHTML = "EN/JP/KR"
+        });
+
+        //$(".selected-server-2").html("EN");         
+        document.querySelectorAll(".selected-server-2").forEach((element) => {
+            element.innerHTML = "EN"
+        });
+
+        //$(".total-operator").html(current_total_operator_en);        
+        document.querySelectorAll(".total-operator").forEach((element) => {
+            element.innerHTML = current_total_operator_en;
+        });
+
         total_chara_rarity_en.forEach((element, index) => {
-            $("#rarity-"+(index+1)+"-total").html("/"+element);
+            //$("#rarity-"+(index+1)+"-total").html("/"+element);
+            document.querySelector("#rarity-"+(index+1)+"-total").innerHTML = "/"+element;
         });        
     } else if (s == "cn"){
         selected_server = "cn";
@@ -86,7 +118,7 @@ function SetServer(s){
     Cookies.set("server",s);
 }
 
-function CreateCharaDiv(data){
+let createCharaDiv = (data) => {
     let class_img = "";
     switch(data.class){
         case "Caster": class_img = "caster.png";break;
@@ -111,7 +143,7 @@ function CreateCharaDiv(data){
     `;
 }
 
-function SetChangelog(){
+let setChangelog = () => {
     $.getJSON(`${location.pathname}changelog.json`, function(data) {    
         data.changelog.reverse();             
         data.changelog.forEach(element => {                   
@@ -124,57 +156,75 @@ function SetChangelog(){
     })
 }
 
-function SetCharaDiv(){        
-    $.getJSON(`${location.pathname}chara-db.json`, function(data) {                 
+let setCharaDiv = () => {        
+    fetch(`${location.pathname}chara-db.json`)
+    .then(res => res.json())
+    .then(data => {
         data.chara.forEach(element => {                   
             current_total_operator++;                      
             total_chara_rarity[element.rarity-1]++;   
             selected_chara_all.push(parseInt(element.id));
+            
             if(element.server == 2){
                 selected_chara_all_en.push(parseInt(element.id));
                 current_total_operator_en++;
                 total_chara_rarity_en[element.rarity-1]++;        
             }
-            $('.chara-selection-'+element.rarity).append(CreateCharaDiv(element));
-        });           
+
+            //$('.chara-selection-'+element.rarity).append(createCharaDiv(element));
+            document.querySelectorAll('.chara-selection-'+element.rarity).forEach((_element) => {
+                _element.insertAdjacentHTML('beforeend', createCharaDiv(element));
+            });
+        });          
     }).then(function(){          
-        $(".selected-server, .selected-server-2").html("CN");                              
-        $(".total-operator").html(current_total_operator);
-        total_chara_rarity.forEach((element, index) => {
-            $("#rarity-"+(index+1)+"-total").html("/"+element);
+        //$(".selected-server, .selected-server-2").html("CN");   
+        document.querySelectorAll('.selected-server, .selected-server-2').forEach((_element) => {
+            _element.innerHTML = 'CN';
         });
 
-        LoadCookies();
+        //$(".total-operator").html(current_total_operator);
+        document.querySelectorAll('.total-operator').forEach((_element) => {
+            _element.innerHTML = current_total_operator;
+        });
+                                   
+        total_chara_rarity.forEach((element, index) => {
+            //$("#rarity-"+(index+1)+"-total").html("/"+element);
+            document.querySelector("#rarity-"+(index+1)+"-total").innerHTML = "/" + element;
+        });
 
-        $('.chara-img-btn').click(function(){
-            let selected = $(this).data('selected');
-            let rarity = $(this).data('rarity');                    
-            let id = parseInt($(this).data('id'));
+        loadCookies();
+        
+        document.querySelectorAll('.chara-img-btn').forEach((_element) => {
+            _element.addEventListener('click', function() { 
+                let selected = $(this).data('selected');
+                let rarity = $(this).data('rarity');                    
+                let id = parseInt($(this).data('id'));
 
-            if(selected === false){                
-                $(this).css('background','white');
-                $(this).data('selected',true);
-                selected_chara.push(id);
-                selected_count++;
-                chara_rarity_count[rarity-1]++;
-                $("#rarity-"+rarity).html(chara_rarity_count[rarity-1]);   
-                $(".selected").html(selected_count);         
-            } else {
-                $(this).css('background','rgba(0,0,0,0)');
-                $(this).data('selected',false);     
-                selected_chara.splice(selected_chara.indexOf(id),1);                
-                selected_count--;       
-                chara_rarity_count[rarity-1]--;
-                $("#rarity-"+rarity).html(chara_rarity_count[rarity-1]);          
-                $(".selected").html(selected_count);
-            }        
-            
-            Cookies.set("selected", selected_chara);                  
-        });        
+                if(selected === false){                
+                    $(this).css('background','white');
+                    $(this).data('selected',true);
+                    selected_chara.push(id);
+                    selected_count++;
+                    chara_rarity_count[rarity-1]++;
+                    $("#rarity-"+rarity).html(chara_rarity_count[rarity-1]);   
+                    $(".selected").html(selected_count);         
+                } else {
+                    $(this).css('background','rgba(0,0,0,0)');
+                    $(this).data('selected',false);     
+                    selected_chara.splice(selected_chara.indexOf(id),1);                
+                    selected_count--;       
+                    chara_rarity_count[rarity-1]--;
+                    $("#rarity-"+rarity).html(chara_rarity_count[rarity-1]);          
+                    $(".selected").html(selected_count);
+                }        
+                
+                Cookies.set("selected", selected_chara);  
+            }, false);
+        });
     });
 }
 
-function Reset(){
+let reset = () => {
     selected_chara = [];
     selected_count = 0;
     $(".selected").html(selected_count);
@@ -193,15 +243,13 @@ function Reset(){
     Cookies.set("selected", selected_chara);  
 }
 
-function Generate(){
+let generate = () => {
     $("#generate").css("display","none");  
     $(".loading-overlay").css("display","block");
     
     if($("#ign-input").val() === ""){            
         $("#ign").css("display","none");
-    }    
-
-    console.log($("#keep-unselected").is(":checked"));
+    }        
 
     let rarity_to_hide = [];
     if(!$("#keep-unselected").is(":checked")){
@@ -275,8 +323,8 @@ $(document).ready(function(){
     $(".version").append(VERSION);
     $(".selected").html(selected_count);
 
-    SetChangelog();
-    SetCharaDiv();    
+    setChangelog();
+    setCharaDiv();    
 
     $('img').on('dragstart', function(event) { event.preventDefault(); });
 
@@ -286,9 +334,9 @@ $(document).ready(function(){
     })
 
     $('#server').click(function(){              
-        if($(this).prop("checked")) SetServer("en");
-        else SetServer("cn");    
-        Reset();
+        if($(this).prop("checked")) setServer("en");
+        else setServer("cn");    
+        reset();
     })
 
     $('.server-radio').click(function(){
@@ -305,7 +353,7 @@ $(document).ready(function(){
         }
     })
 
-    $('#reset').click(function(){Reset();});
+    $('#reset').click(function(){reset();});
 
     $('#select-all').click(function(){        
         $('.chara-img-btn').data("selected",true).css("background","white");        
@@ -343,5 +391,5 @@ $(document).ready(function(){
          a.click();
     })
 
-    $('#generate').click(function(){Generate();});
+    $('#generate').click(function(){generate();});
 });
