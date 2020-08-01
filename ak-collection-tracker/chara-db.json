@@ -1199,6 +1199,14 @@
             "rarity": "5",
             "image": "chiave",
             "server": "1"
+        },
+        {
+            "id": "151",
+            "name": "Jaye",
+            "class": "Specialist",
+            "rarity": "4",
+            "image": "placeholder",
+            "server": "1"
         }
     ]
 }
