@@ -64,52 +64,57 @@ let loadCookies = () => {
 let setServer = (s) => {
     if(s == "en"){
         selected_server = "en";
-
-        //$(".chara-img-btn[data-server=1]").parent().css("display","none");
+        
         document.querySelectorAll(".chara-img-btn[data-server='1']").forEach((element) => {
             element.parentNode.style.display = "none";
         });
 
-        //$(".chara-img-btn[data-server=1]").data("selected",false).css('background','rgba(0,0,0,0)');
         document.querySelectorAll(".chara-img-btn[data-server='1'][data-selected=false]").forEach((element) => {
             element.style.backgroundColor = "rgba(0,0,0,0)";
         });
 
-        //$(".server-non-cn").css("display","flex");               
         document.querySelectorAll(".server-non-cn").forEach((element) => {
             element.style.display = "flex";
         });
 
-        //$("#server-en").prop("checked",true);                     
         document.querySelector("#server-en").checked = true;
 
-        //$(".selected-server").html("EN/JP/KR");         
         document.querySelectorAll(".selected-server").forEach((element) => {
             element.innerHTML = "EN/JP/KR"
         });
-
-        //$(".selected-server-2").html("EN");         
+        
         document.querySelectorAll(".selected-server-2").forEach((element) => {
             element.innerHTML = "EN"
         });
 
-        //$(".total-operator").html(current_total_operator_en);        
         document.querySelectorAll(".total-operator").forEach((element) => {
             element.innerHTML = current_total_operator_en;
         });
 
         total_chara_rarity_en.forEach((element, index) => {
-            //$("#rarity-"+(index+1)+"-total").html("/"+element);
             document.querySelector("#rarity-"+(index+1)+"-total").innerHTML = "/"+element;
         });        
     } else if (s == "cn"){
-        selected_server = "cn";
-        $(".chara-img-btn[data-server=1]").parent().css("display","flex");             
-        $(".server-non-cn").css("display","none");  
-        $(".selected-server, .selected-server-2").html("CN");                   
-        $(".total-operator").html(current_total_operator);
-        total_chara_rarity.forEach((element, index) => {
-            $("#rarity-"+(index+1)+"-total").html("/"+element);
+        selected_server = "cn";         
+
+        document.querySelectorAll(".chara-img-btn[data-server='1']").forEach((element) => {
+            element.parentNode.style.display = "flex";
+        });         
+
+        document.querySelectorAll(".server-non-cn").forEach((element) => {
+            element.style.display = "none";
+        });
+
+        document.querySelectorAll(".selected-server, .selected-server-2").forEach((element) => {
+            element.innerHTML = "CN"
+        });
+
+        document.querySelectorAll(".total-operator").forEach((element) => {
+            element.innerHTML = current_total_operator;
+        });
+                             
+        total_chara_rarity.forEach((element, index) => {            
+            document.querySelector("#rarity-"+(index+1)+"-total").innerHTML = "/"+element;
         });    
 
         Cookies.set("server_en","");
@@ -144,7 +149,9 @@ let createCharaDiv = (data) => {
 }
 
 let setChangelog = () => {
-    $.getJSON(`${location.pathname}changelog.json`, function(data) {    
+    fetch(`${location.pathname}changelog.json`)
+    .then(res => res.json())
+    .then(data => {
         data.changelog.reverse();             
         data.changelog.forEach(element => {                   
             $(".changelog-body").append(`<b>Version ${element.version}</b>`);
@@ -152,8 +159,8 @@ let setChangelog = () => {
                 $(".changelog-body").append("<br>- "+change);
             })
             $(".changelog-body").append("<br><br>");
-        });           
-    })
+        });        
+    });
 }
 
 let setCharaDiv = () => {        
@@ -170,53 +177,52 @@ let setCharaDiv = () => {
                 current_total_operator_en++;
                 total_chara_rarity_en[element.rarity-1]++;        
             }
-
-            //$('.chara-selection-'+element.rarity).append(createCharaDiv(element));
+            
             document.querySelectorAll('.chara-selection-'+element.rarity).forEach((_element) => {
                 _element.insertAdjacentHTML('beforeend', createCharaDiv(element));
             });
         });          
-    }).then(function(){          
-        //$(".selected-server, .selected-server-2").html("CN");   
+    }).then(function(){                  
         document.querySelectorAll('.selected-server, .selected-server-2').forEach((_element) => {
             _element.innerHTML = 'CN';
         });
 
-        //$(".total-operator").html(current_total_operator);
         document.querySelectorAll('.total-operator').forEach((_element) => {
             _element.innerHTML = current_total_operator;
         });
                                    
         total_chara_rarity.forEach((element, index) => {
-            //$("#rarity-"+(index+1)+"-total").html("/"+element);
             document.querySelector("#rarity-"+(index+1)+"-total").innerHTML = "/" + element;
         });
 
         loadCookies();
         
         document.querySelectorAll('.chara-img-btn').forEach((_element) => {
-            _element.addEventListener('click', function() { 
-                let selected = $(this).data('selected');
-                let rarity = $(this).data('rarity');                    
-                let id = parseInt($(this).data('id'));
+            _element.addEventListener('click', function() {                 
+                let selected = _element.getAttribute('data-selected');
+                let rarity = _element.getAttribute('data-rarity');                    
+                let id = parseInt(_element.getAttribute('data-id'));
 
-                if(selected === false){                
-                    $(this).css('background','white');
-                    $(this).data('selected',true);
+                console.log(typeof selected);
+
+                if(selected == 'false'){                
+                    _element.style.background = 'white';
+                    _element.setAttribute('data-selected',true);
                     selected_chara.push(id);
                     selected_count++;
                     chara_rarity_count[rarity-1]++;
-                    $("#rarity-"+rarity).html(chara_rarity_count[rarity-1]);   
-                    $(".selected").html(selected_count);         
                 } else {
-                    $(this).css('background','rgba(0,0,0,0)');
-                    $(this).data('selected',false);     
+                    _element.style.background = 'rgba(0,0,0,0)';
+                    _element.setAttribute('data-selected',false);
                     selected_chara.splice(selected_chara.indexOf(id),1);                
                     selected_count--;       
                     chara_rarity_count[rarity-1]--;
-                    $("#rarity-"+rarity).html(chara_rarity_count[rarity-1]);          
-                    $(".selected").html(selected_count);
-                }        
+                }  
+                
+                document.querySelector("#rarity-"+rarity).innerHTML = chara_rarity_count[rarity-1];                          
+                document.querySelectorAll('.selected').forEach((_element) => {
+                    _element.innerHTML = selected_count;
+                });  
                 
                 Cookies.set("selected", selected_chara);  
             }, false);
@@ -227,17 +233,18 @@ let setCharaDiv = () => {
 let reset = () => {
     selected_chara = [];
     selected_count = 0;
-    $(".selected").html(selected_count);
+    document.querySelectorAll('.selected').forEach((_element) => {
+        _element.innerHTML = selected_count;
+    });  
 
     chara_rarity_count = [0,0,0,0,0,0];
     for(let i=1;i<=chara_rarity_count.length;i++){
-        $("#rarity-"+i).html(0)
-    }
-    
-    $("#rarity-"+$(this).data('rarity')).html(0)
-    $(".chara-img-btn").each(function(){            
-        $(this).css('background','rgba(0,0,0,0)');
-        $(this).data("selected",false);                                    
+        document.querySelector("#rarity-"+i).innerHTML = "0";
+    }        
+
+    document.querySelectorAll('.chara-img-btn').forEach((_element) => {
+        _element.style.background = 'rgba(0,0,0,0)';
+        _element.setAttribute("data-selected", false);
     });
 
     Cookies.set("selected", selected_chara);  
