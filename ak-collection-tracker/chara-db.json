@@ -1207,6 +1207,14 @@
             "rarity": "4",
             "image": "placeholder",
             "server": "1"
+        },
+        {
+            "id": "152",
+            "name": "Andreana",
+            "class": "Sniper",
+            "rarity": "5",
+            "image": "placeholder",
+            "server": "1"
         }
     ]
 }
