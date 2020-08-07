@@ -1215,6 +1215,14 @@
             "rarity": "5",
             "image": "placeholder",
             "server": "1"
+        },
+        {
+            "id": "153",
+            "name": "Thorn",
+            "class": "Guard",
+            "rarity": "6",
+            "image": "placeholder",
+            "server": "1"
         }
     ]
 }
