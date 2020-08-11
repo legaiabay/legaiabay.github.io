@@ -106,6 +106,12 @@
             "list" : [
                 "Code overhaul! No more JQuery! All with Vanilla JS and ES6 standard! (Thanks to Bootstrap 5)"                
             ]
+        },
+        {
+            "version" : "1.4.1",
+            "list" : [
+                "CN new operators : Thorns, Andreana, Jaye"
+            ]
         }
     ]
 }

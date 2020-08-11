@@ -1,4 +1,4 @@
-const VERSION = "v.1.4.0";
+const VERSION = "v.1.4.1";
 
 var selected_server = "cn";
 var current_total_operator = 0;

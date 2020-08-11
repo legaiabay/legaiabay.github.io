@@ -1205,7 +1205,7 @@
             "name": "Jaye",
             "class": "Specialist",
             "rarity": "4",
-            "image": "placeholder",
+            "image": "jaye",
             "server": "1"
         },
         {
@@ -1213,15 +1213,15 @@
             "name": "Andreana",
             "class": "Sniper",
             "rarity": "5",
-            "image": "placeholder",
+            "image": "andreana",
             "server": "1"
         },
         {
             "id": "153",
-            "name": "Thorn",
+            "name": "Thorns",
             "class": "Guard",
             "rarity": "6",
-            "image": "placeholder",
+            "image": "thorns",
             "server": "1"
         }
     ]
