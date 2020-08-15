@@ -1223,6 +1223,22 @@
             "rarity": "6",
             "image": "thorns",
             "server": "1"
+        },
+        {
+            "id": "154",
+            "name": "Aciddrop",
+            "class": "Sniper",
+            "rarity": "4",
+            "image": "placeholder",
+            "server": "1"
+        },
+        {
+            "id": "155",
+            "name": "Tomimi",
+            "class": "Caster",
+            "rarity": "5",
+            "image": "placeholder",
+            "server": "1"
         }
     ]
 }
