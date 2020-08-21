@@ -1239,6 +1239,14 @@
             "rarity": "5",
             "image": "placeholder",
             "server": "1"
+        },
+        {
+            "id": "156",
+            "name": "Eunectes",
+            "class": "Defender",
+            "rarity": "6",
+            "image": "placeholder",
+            "server": "1"
         }
     ]
 }
