@@ -117,7 +117,8 @@
             "version" : "1.4.2",
             "list" : [
                 "EN new operators : Ceobe, Lizi",
-                "CN new operators : Aciddrop, Tomimi, Eunectes"
+                "CN new operators : Aciddrop, Tomimi, Eunectes",
+                "Fix EN total operators bug"
             ]
         }
     ]

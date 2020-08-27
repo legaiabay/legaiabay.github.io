@@ -97,7 +97,7 @@ let setServer = (s) => {
         });
         
         document.querySelectorAll(".selected-server-2").forEach((_element) => {
-            eleme_elementnt.innerHTML = "EN"
+            _element.innerHTML = "EN"
         });
 
         document.querySelectorAll(".total-operator").forEach((_element) => {
@@ -185,7 +185,7 @@ let setCharaDiv = () => {
         data.chara.forEach(_element => {                   
             current_total_operator++;                      
             total_chara_rarity[_element.rarity-1]++;   
-            selected_chara_all.push(parseInt(_element.id));
+            selected_chara_all.push(parseInt(_element.id));            
             
             if(_element.server == 2){
                 selected_chara_all_en.push(parseInt(_element.id));
