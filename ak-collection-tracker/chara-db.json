@@ -910,7 +910,7 @@
             "class": "Caster",
             "rarity": "5",
             "image": "char_306_leizi",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "115",
@@ -1078,7 +1078,7 @@
             "class": "Caster",
             "rarity": "6",
             "image": "char_2013_cerber",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "136",
@@ -1229,7 +1229,7 @@
             "name": "Aciddrop",
             "class": "Sniper",
             "rarity": "4",
-            "image": "placeholder",
+            "image": "char_366_acdrop",
             "server": "1"
         },
         {
@@ -1237,7 +1237,7 @@
             "name": "Tomimi",
             "class": "Caster",
             "rarity": "5",
-            "image": "placeholder",
+            "image": "char_411_tomimi",
             "server": "1"
         },
         {
@@ -1245,7 +1245,7 @@
             "name": "Eunectes",
             "class": "Defender",
             "rarity": "6",
-            "image": "placeholder",
+            "image": "char_416_zumama",
             "server": "1"
         }
     ]
