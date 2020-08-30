@@ -54,6 +54,10 @@ hr {
     color: white;
 }
 
+.title-font {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .title-version{
     font-size: 0.4em;
     font-weight: lighter;
