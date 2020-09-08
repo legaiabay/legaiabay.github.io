@@ -622,7 +622,7 @@
             "class": "Vanguard",
             "rarity": "6",
             "image": "char_222_bpipe",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "79",
@@ -726,7 +726,7 @@
             "class": "Guard",
             "rarity": "5",
             "image": "char_252_bibeak",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "92",
@@ -950,7 +950,7 @@
             "class": "Guard",
             "rarity": "4",
             "image": "char_337_utage",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "120",
@@ -1006,7 +1006,7 @@
             "class": "Sniper",
             "rarity": "5",
             "image": "char_379_sesa",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "127",

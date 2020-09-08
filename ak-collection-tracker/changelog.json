@@ -116,9 +116,15 @@
         {
             "version" : "1.4.2",
             "list" : [
-                "EN new operators : Ceobe, Lizi",
+                "EN/JP/KR new operators : Ceobe, Lizi",
                 "CN new operators : Aciddrop, Tomimi, Eunectes",
                 "Fix EN total operators bug"
+            ]
+        },
+        {
+            "version" : "1.4.3",
+            "list" : [
+                "EN/JP/KR new operators : Bagpipe, Sesa, Bibeak, Utage"
             ]
         }
     ]
