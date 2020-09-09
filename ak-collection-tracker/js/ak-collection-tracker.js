@@ -1,4 +1,5 @@
 const VERSION = "v.1.4.3";
+const COOKIE_EXPIRED = 365;
 
 var selected_server = "cn";
 var current_total_operator = 0;
@@ -130,10 +131,10 @@ let setServer = (s) => {
             document.querySelector("#rarity-"+(index+1)+"-total").innerHTML = "/"+_element;
         });    
 
-        Cookies.set("server_en","");
+        Cookies.set("server_en","", { expires: COOKIE_EXPIRED });
     }
 
-    Cookies.set("server",s);
+    Cookies.set("server",s,{ expires: COOKIE_EXPIRED });
 }
 
 let createCharaDiv = (data) => {
@@ -237,7 +238,7 @@ let setCharaDiv = () => {
                     _element.innerHTML = selected_count;
                 });  
                 
-                Cookies.set("selected", selected_chara);  
+                Cookies.set("selected", selected_chara, { expires: COOKIE_EXPIRED });  
             }, false);
         });
     });
@@ -260,7 +261,7 @@ let reset = () => {
         _element.setAttribute("data-selected", false);
     });
 
-    Cookies.set("selected", selected_chara);  
+    Cookies.set("selected", selected_chara, { expires: COOKIE_EXPIRED });  
 }
 
 let generate = () => {
@@ -367,7 +368,7 @@ window.ready(() => {
 
     document.querySelector('#ign-input').addEventListener('keyup', () => {   
         document.querySelector('#ign').innerHTML = "IGN : " + document.querySelector('#ign-input').value;
-        Cookies.set("ign",document.querySelector('#ign-input').value);
+        Cookies.set("ign",document.querySelector('#ign-input').value,{ expires: COOKIE_EXPIRED });
     });
 
     document.querySelector('#server').addEventListener('click', () => {        
@@ -381,13 +382,13 @@ window.ready(() => {
             let server = _element.getAttribute("id");        
             if(server == "server-en"){
                 document.querySelector(".selected-server-2").innerHTML = "EN";  
-                Cookies.set("server_en","EN");
+                Cookies.set("server_en","EN",{ expires: COOKIE_EXPIRED });
             } else if(server == "server-jp"){
                 document.querySelector(".selected-server-2").innerHTML = "JP";  
-                Cookies.set("server_en","JP");
+                Cookies.set("server_en","JP",{ expires: COOKIE_EXPIRED });
             } else if(server == "server-kr"){
                 document.querySelector(".selected-server-2").innerHTML = "KR";  
-                Cookies.set("server_en","KR");
+                Cookies.set("server_en","KR",{ expires: COOKIE_EXPIRED });
             }
         });
     });
@@ -422,7 +423,7 @@ window.ready(() => {
             }  
         }
 
-        Cookies.set("selected", selected_chara);            
+        Cookies.set("selected", selected_chara,{ expires: COOKIE_EXPIRED });            
     })
 
     document.querySelector('#to-top').addEventListener('click', () => {
