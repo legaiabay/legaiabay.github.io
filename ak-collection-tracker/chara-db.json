@@ -1271,6 +1271,14 @@
             "rarity": "5",
             "image": "placeholder",
             "server": "1"
+        },
+        {
+            "id": "160",
+            "name": "Surtr",
+            "class": "Guard",
+            "rarity": "6",
+            "image": "placeholder",
+            "server": "1"
         }
     ]
 }
