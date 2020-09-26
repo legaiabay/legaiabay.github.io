@@ -1,7 +1,3 @@
-body {
-    background-color: #1b262c;
-}
-
 hr {
     height: 2px;
     color: white;
@@ -31,19 +27,14 @@ hr {
     margin-bottom: 30px;
 }
 
-.container {
-    background-color: #1b262c;
+.bg-color {
+  background-color: #1b262c;
 }
 
 .input-center {
     text-align: center;
     left: 50%;
     width: 20em;
-}
-
-.all-padding {
-    background-color: #1b262c;
-    padding: 20px 20px 20px 20px;
 }
 
 .capture-result {
@@ -209,26 +200,27 @@ hr {
   }
 
   .style-btn-dark {
-    color: #1b262c;
-    background-color: #1b262c;
+    color: #374d58;
+    background-color: #374d58;
   }
 
-  .style-btn-blue {
-    color: rgb(10, 71, 71);
-    background-color: rgb(10, 71, 71);    
+  .style-btn-black {
+    color: #000000;
+    background-color: #000000;
+  }
+
+  .style-btn-green {
+    color: #0c4e4e;
+    background-color: #0c4e4e;    
   }
 
   .style-btn-red {
-    color:rgb(97, 22, 22);
-    background-color:rgb(97, 22, 22);    
+    color:#5e1919;
+    background-color:#5e1919;    
   }
 
   .server-non-cn{
       display: none;
-  }
-  
-  .modal-content {
-      background-color: #1b262c;
   }
 
   .modal-close {

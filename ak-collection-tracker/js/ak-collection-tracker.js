@@ -1,5 +1,6 @@
-const VERSION = "v.1.4.4";
+const VERSION = "v.1.4.5";
 const COOKIE_EXPIRED = 365;
+const CAPTURE_PADDING = "1em";
 
 var selected_server = "cn";
 var current_total_operator = 0;
@@ -11,6 +12,7 @@ var selected_chara_all_en = [];
 var total_chara_rarity = [0,0,0,0,0,0];
 var total_chara_rarity_en = [0,0,0,0,0,0];
 var chara_rarity_count = [0,0,0,0,0,0];
+var background_color = "#1b262c"
 
 ready = (fn) => {
     if (document.readyState != 'loading') {
@@ -23,6 +25,14 @@ ready = (fn) => {
             fn();
         });
     }
+} 
+
+let changeBackgroundColor = (c) => {
+    background_color = c;
+    document.querySelectorAll(".bg-color").forEach((element) => {
+        element.style.backgroundColor = c;
+    })      
+    Cookies.set("background-color",c,{ expires: COOKIE_EXPIRED });
 }
 
 let loadCookies = () => {   
@@ -30,6 +40,7 @@ let loadCookies = () => {
     let saved_server = Cookies.get("server");
     let saved_server_en = Cookies.get("server_en");
     let saved_ign = Cookies.get("ign");        
+    let saved_background_color = Cookies.get("background-color");
     
     if(saved_selected == undefined || saved_selected[0] == "" || saved_selected.length === 0) saved_selected = [];
     else saved_selected = saved_selected.split(",");    
@@ -73,6 +84,10 @@ let loadCookies = () => {
         document.querySelector('#ign-input').value = saved_ign;
         document.querySelector('#ign').innerHTML = "IGN : " + saved_ign;
     }    
+
+    if(saved_background_color != "" && saved_background_color != undefined){
+        changeBackgroundColor(saved_background_color);
+    }
 }
 
 let setServer = (s) => {
@@ -272,6 +287,11 @@ let generate = () => {
         document.querySelector("#ign").style.display = "none";
     }        
 
+    document.querySelector("#capture-area").style.paddingLeft = CAPTURE_PADDING;
+    document.querySelector("#capture-area").style.paddingRight = CAPTURE_PADDING;
+    document.querySelector("#capture-area").style.paddingTop = CAPTURE_PADDING;
+    document.querySelector("#capture-area").style.paddingBottom = CAPTURE_PADDING;    
+
     let rarity_to_hide = [];        
     if(!document.querySelector("#keep-unselected").checked){
         document.querySelectorAll('.chara-img-btn').forEach((_element) => {
@@ -299,8 +319,8 @@ let generate = () => {
     });
 
     html2canvas(document.querySelector("#capture-area"), {
-        backgroundColor	: '#1b262c',
-        width: window.innerWidth                      
+        backgroundColor	: background_color,
+        width: window.innerWidth,
     }).then(canvas => {                                           
         let current_date = new Date().format('Ymd-his');             
         let url = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
@@ -346,6 +366,11 @@ let generate = () => {
 
         document.querySelector(".loading-overlay").style.display = "none";
 
+        document.querySelector("#capture-area").style.paddingLeft = "0px";
+        document.querySelector("#capture-area").style.paddingRight = "0px";
+        document.querySelector("#capture-area").style.paddingTop = "0px";
+        document.querySelector("#capture-area").style.paddingBottom = "0px";
+
         window.scrollTo({     
             behavior: "smooth",   
             left: 0,
@@ -357,6 +382,12 @@ let generate = () => {
 window.ready(() => {
     document.querySelectorAll(".version").forEach((_element) => {
         _element.insertAdjacentHTML('beforeend', VERSION);
+    });
+
+    document.querySelectorAll(".style-btn").forEach((_element) => {
+        _element.addEventListener('click', () => {        
+            changeBackgroundColor(_element.getAttribute('data-color'));
+        });     
     });
     
     document.querySelectorAll(".selected").forEach((_element) => {

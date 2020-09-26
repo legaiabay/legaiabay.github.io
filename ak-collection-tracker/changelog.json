@@ -132,6 +132,12 @@
             "list" : [
                 "CN new operators : Surtr, April, Mint, Arene"
             ]
+        },
+        {
+            "version" : "1.4.5",
+            "list" : [
+                "Background color options : Dark, Black, Green, Red"
+            ]
         }
     ]
 }
