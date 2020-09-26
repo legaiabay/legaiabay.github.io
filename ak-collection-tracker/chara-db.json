@@ -1118,7 +1118,7 @@
             "class": "Supporter",
             "rarity": "4",
             "image": "char_258_podego",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "141",
@@ -1126,7 +1126,7 @@
             "class": "Caster",
             "rarity": "5",
             "image": "char_405_absin",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "142",
@@ -1253,7 +1253,7 @@
             "name": "Arene",
             "class": "Guard",
             "rarity": "4",
-            "image": "placeholder",
+            "image": "char_271_spikes",
             "server": "1"
         },
         {
@@ -1261,7 +1261,7 @@
             "name": "Mint",
             "class": "Caster",
             "rarity": "5",
-            "image": "placeholder",
+            "image": "char_388_mint",
             "server": "1"
         },
         {
@@ -1269,7 +1269,7 @@
             "name": "April",
             "class": "Sniper",
             "rarity": "5",
-            "image": "placeholder",
+            "image": "char_365_aprl",
             "server": "1"
         },
         {
@@ -1277,7 +1277,7 @@
             "name": "Surtr",
             "class": "Guard",
             "rarity": "6",
-            "image": "placeholder",
+            "image": "char_350_surtr",
             "server": "1"
         }
     ]

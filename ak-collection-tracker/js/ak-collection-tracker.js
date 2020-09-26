@@ -1,4 +1,4 @@
-const VERSION = "v.1.4.3";
+const VERSION = "v.1.4.4";
 const COOKIE_EXPIRED = 365;
 
 var selected_server = "cn";

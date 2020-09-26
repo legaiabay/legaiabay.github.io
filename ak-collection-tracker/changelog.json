@@ -126,6 +126,12 @@
             "list" : [
                 "EN/JP/KR new operators : Bagpipe, Sesa, Bibeak, Utage"
             ]
+        },
+        {
+            "version" : "1.4.4",
+            "list" : [
+                "CN new operators : Surtr, April, Mint, Arene"
+            ]
         }
     ]
 }
