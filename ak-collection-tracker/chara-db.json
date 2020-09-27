@@ -1134,7 +1134,7 @@
             "class": "Caster",
             "rarity": "5",
             "image": "char_373_lionhd",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "143",
@@ -1142,7 +1142,7 @@
             "class": "Sniper",
             "rarity": "6",
             "image": "char_197_poca",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "144",
