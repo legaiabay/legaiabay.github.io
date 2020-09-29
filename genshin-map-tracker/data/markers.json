@@ -1,0 +1,16 @@
+{
+    "anemoculus" : [
+        {
+            "id" : 0,
+            "lat" : 0,
+            "lon" : 0,
+            "desc" : "Windrise 1"
+        },
+        {
+            "id" : 1,
+            "lat" : 100,
+            "lon" : 100,            
+            "desc" : "Windrise 2"
+        }
+    ]
+}
