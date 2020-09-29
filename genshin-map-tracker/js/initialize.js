@@ -3,6 +3,23 @@ const MAP_LATITUDE = 1000;
 const MAP_LONGITUDE = 1200;
 
 var anemoculus_obtained = [];
+var anemoculus_selected = "";
+
+var icon_anemoculus = L.icon({
+    iconUrl: `${location.pathname}/img/icon/anemoculus.png`,
+
+    iconSize:     [38, 65],
+    iconAnchor:   [19, 32],
+    popupAnchor:  [0, -10]
+});
+
+var icon_anemoculus_selected = L.icon({
+    iconUrl: `${location.pathname}/img/icon/anemoculus-checked.png`,
+
+    iconSize:     [38, 65],
+    iconAnchor:   [19, 32],
+    popupAnchor:  [0, -10]
+});
 
 ready = (fn) => {
     if (document.readyState != 'loading') {
@@ -40,14 +57,16 @@ let markObtainedSave = (element) => {
     let checked = element.checked;
 
     save(id, type, checked);
+
+    if(checked) anemoculus_selected.target.setIcon(icon_anemoculus_selected)
+    else anemoculus_selected.target.setIcon(icon_anemoculus)
 }
 
-let markObtainedCheck = (id) => {    
+let markObtainedCheck = (marker, id) => {    
+    anemoculus_selected = marker;
+    
     if(anemoculus_obtained.indexOf(id) > -1){        
-        console.log(id + " obtained!");
         document.querySelector(`#marker-${id}`).checked = true;
-    } else {
-        console.log(id + " not obtained!");
     }
 }
 
@@ -58,17 +77,17 @@ let setMarker = (map) => {
         let icon_anemoculus = L.icon({
             iconUrl: `${location.pathname}/img/icon/anemoculus.png`,
 
-            iconSize:     [38, 65], // size of the icon
-            iconAnchor:   [19, 32], // point of the icon which will correspond to marker's location
-            popupAnchor:  [0, -10] // point from which the popup should open relative to the iconAnchor
+            iconSize:     [38, 65],
+            iconAnchor:   [19, 32],
+            popupAnchor:  [0, -10]
         });
 
         data.anemoculus.forEach(element => {                               
-            let mark = L.latLng([ element.lat, element.lon ]);               
+            let mark = L.latLng([ element.lat, element.lon ]);                 
             L.marker(mark, {icon: icon_anemoculus})
                 .bindPopup(`<b>${element.desc}</b><br><input class="marker-obtained" data-type="anemoculus" type="checkbox" id="marker-${element.id}" name="marker-${element.id}" value=${element.id} onclick="markObtainedSave(this)"><label for="marker-${element.id}"> Obtained</label>`)
-                .addEventListener('click', () => { markObtainedCheck(element.id); })
-                .addTo(map);
+                .addEventListener('click', (e) => { markObtainedCheck(e, element.id); })
+                .addTo(map);       
         });              
 
         markObtainedInit();

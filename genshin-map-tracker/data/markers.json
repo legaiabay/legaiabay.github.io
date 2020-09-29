@@ -2,15 +2,45 @@
     "anemoculus" : [
         {
             "id" : 0,
-            "lat" : 0,
-            "lon" : 0,
+            "lat" : 530,
+            "lon" : 630,
             "desc" : "Windrise 1"
         },
         {
             "id" : 1,
-            "lat" : 100,
-            "lon" : 100,            
+            "lat" : 557,
+            "lon" : 577,            
             "desc" : "Windrise 2"
+        },
+        {
+            "id" : 2,
+            "lat" : 515,
+            "lon" : 570,            
+            "desc" : "Windrise 3"
+        },
+        {
+            "id" : 3,
+            "lat" : 485,
+            "lon" : 577,            
+            "desc" : "Windrise 4"
+        },
+        {
+            "id" : 4,
+            "lat" : 460,
+            "lon" : 555,            
+            "desc" : "Windrise 5"
+        },
+        {
+            "id" : 5,
+            "lat" : 467,
+            "lon" : 602,            
+            "desc" : "Windrise 6"
+        },
+        {
+            "id" : 6,
+            "lat" : 618,
+            "lon" : 687,            
+            "desc" : "Windrise 7"
         }
     ]
 }
