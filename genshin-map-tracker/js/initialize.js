@@ -1,6 +1,7 @@
 const MAP_URL = "img/map/map-1.jpg";
 const MAP_LATITUDE = 1000;
 const MAP_LONGITUDE = 1200;
+const COOKIE_EXPIRED = 365;
 
 var anemoculus_obtained = [];
 var anemoculus_selected = "";
@@ -38,15 +39,23 @@ let save = (id, type, checked) => {
     switch(type) {
         case "anemoculus" : checked ? anemoculus_obtained.push(id) : anemoculus_obtained.splice(anemoculus_obtained.indexOf(id), 1); break;
     }            
+
+    Cookies.set("anemoculus_obtained",anemoculus_obtained,{ expires: COOKIE_EXPIRED });
 }
 
 let markObtainedInit = () => {
-    fetch(`${location.pathname}/data/obtained.json`)
-    .then(res => res.json())
-    .then(data => {                
-        anemoculus_obtained = data.anemoculus;
-        console.log(anemoculus_obtained);
-    });
+    // fetch(`${location.pathname}data/obtained.json`)
+    // .then(res => res.json())
+    // .then(data => {                
+    //     anemoculus_obtained = data.anemoculus;
+    //     console.log(anemoculus_obtained);
+    // });
+
+    let _anemoculus_obtained = Cookies.get("anemoculus_obtained");
+    if(_anemoculus_obtained != "" && _anemoculus_obtained != undefined){  
+        anemoculus_obtained = _anemoculus_obtained.split(",").map(Number);
+        console.log(anemoculus_obtained)   
+    }
 }
 
 let markObtainedSave = (element) => {
@@ -69,18 +78,22 @@ let markObtainedCheck = (marker, id) => {
 }
 
 let setMarker = (map) => {
-    fetch(`${location.pathname}/data/markers.json`)
+    fetch(`${location.pathname}data/markers.json`)
     .then(res => res.json())
     .then(data => {                
-        data.anemoculus.forEach(element => {                               
-            let mark = L.latLng([ element.lat, element.lon ]);                 
-            L.marker(mark, {icon: icon_anemoculus})
-                .bindPopup(`<b>${element.desc}</b><br><input class="marker-obtained" data-type="anemoculus" type="checkbox" id="marker-${element.id}" name="marker-${element.id}" value=${element.id} onclick="markObtainedSave(this)"><label for="marker-${element.id}"> Obtained</label>`)
-                .addEventListener('click', (marker) => { markObtainedCheck(marker, element.id); })
-                .addTo(map);       
-        });              
-
         markObtainedInit();
+        data.anemoculus.forEach(element => {                               
+            let location = L.latLng([ element.lat, element.lon ]);                 
+            let marker = L.marker(location, {icon: icon_anemoculus})
+                .bindPopup(`<b>${element.desc}</b><br><input class="marker-obtained" data-type="anemoculus" type="checkbox" id="marker-${element.id}" name="marker-${element.id}" value=${element.id} onclick="markObtainedSave(this)"><label for="marker-${element.id}"> Obtained</label>`)
+                .addEventListener('click', (marker) => { markObtainedCheck(marker, element.id); });    
+
+            if(anemoculus_obtained.indexOf(element.id) > -1){                
+                marker.setIcon(icon_anemoculus_selected);
+            }
+
+            marker.addTo(map);   
+        });              
     });
 }
 
