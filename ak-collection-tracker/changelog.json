@@ -138,6 +138,12 @@
             "list" : [
                 "Background color options : Dark, Black, Green, Red"
             ]
+        },
+        {
+            "version" : "1.4.6",
+            "list" : [
+                "EN/JP/KR new operators : Poca/Rosa, Leonhardt, Podenco, Absinthe"
+            ]
         }
     ]
 }

@@ -1,4 +1,4 @@
-const VERSION = "v.1.4.5";
+const VERSION = "v.1.4.6";
 const COOKIE_EXPIRED = 365;
 const CAPTURE_PADDING = "1em";
 
