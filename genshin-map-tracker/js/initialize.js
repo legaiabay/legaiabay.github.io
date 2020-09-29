@@ -6,7 +6,7 @@ var anemoculus_obtained = [];
 var anemoculus_selected = "";
 
 var icon_anemoculus = L.icon({
-    iconUrl: `${location.pathname}/img/icon/anemoculus.png`,
+    iconUrl: `${location.pathname}img/icon/anemoculus.png`,
 
     iconSize:     [38, 65],
     iconAnchor:   [19, 32],
@@ -14,7 +14,7 @@ var icon_anemoculus = L.icon({
 });
 
 var icon_anemoculus_selected = L.icon({
-    iconUrl: `${location.pathname}/img/icon/anemoculus-checked.png`,
+    iconUrl: `${location.pathname}img/icon/anemoculus-checked.png`,
 
     iconSize:     [38, 65],
     iconAnchor:   [19, 32],
@@ -37,9 +37,7 @@ ready = (fn) => {
 let save = (id, type, checked) => {
     switch(type) {
         case "anemoculus" : checked ? anemoculus_obtained.push(id) : anemoculus_obtained.splice(anemoculus_obtained.indexOf(id), 1); break;
-    }        
-
-    console.log(anemoculus_obtained)
+    }            
 }
 
 let markObtainedInit = () => {
@@ -74,19 +72,11 @@ let setMarker = (map) => {
     fetch(`${location.pathname}/data/markers.json`)
     .then(res => res.json())
     .then(data => {                
-        let icon_anemoculus = L.icon({
-            iconUrl: `${location.pathname}/img/icon/anemoculus.png`,
-
-            iconSize:     [38, 65],
-            iconAnchor:   [19, 32],
-            popupAnchor:  [0, -10]
-        });
-
         data.anemoculus.forEach(element => {                               
             let mark = L.latLng([ element.lat, element.lon ]);                 
             L.marker(mark, {icon: icon_anemoculus})
                 .bindPopup(`<b>${element.desc}</b><br><input class="marker-obtained" data-type="anemoculus" type="checkbox" id="marker-${element.id}" name="marker-${element.id}" value=${element.id} onclick="markObtainedSave(this)"><label for="marker-${element.id}"> Obtained</label>`)
-                .addEventListener('click', (e) => { markObtainedCheck(e, element.id); })
+                .addEventListener('click', (marker) => { markObtainedCheck(marker, element.id); })
                 .addTo(map);       
         });              
 
