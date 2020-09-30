@@ -1,5 +1,7 @@
-vvvvvv- limit map drag : https://stackoverflow.com/questions/22155017/can-i-prevent-panning-leaflet-map-out-of-the-worlds-edge
+vvvvvv - limit map drag : https://stackoverflow.com/questions/22155017/can-i-prevent-panning-leaflet-map-out-of-the-worlds-edge
 vvvvvv - (optional) get map coordinate by mouse? : http://jsfiddle.net/az8Uu/2/
 vvvvvv - add more anemoculus location : https://forums.mihoyo.com/genshin/article/11485
-- image grid : https://leafletjs.com/examples/zoom-levels/
+vvvvvv - better map quality
+vvvvvv - limit map zoom
+(????? - image grid : https://leafletjs.com/examples/zoom-levels/
 - save/load data json : https://stackoverflow.com/questions/7346563/loading-local-json-file

@@ -1,4 +1,4 @@
-const MAP_URL = "img/map/map-1-min.png";
+const MAP_URL = "img/map/map-1-min.jpg";
 const MAP_LATITUDE = 2200;
 const MAP_LONGITUDE = 2400;
 const COOKIE_EXPIRED = 365;
@@ -10,7 +10,7 @@ var icon_anemoculus = L.icon({
     iconUrl: `${location.pathname}img/icon/anemoculus.png`,
 
     iconSize:     [38, 65],
-    iconAnchor:   [19, 32],
+    iconAnchor:   [19, 64],
     popupAnchor:  [0, -10]
 });
 
@@ -18,7 +18,7 @@ var icon_anemoculus_selected = L.icon({
     iconUrl: `${location.pathname}img/icon/anemoculus-checked.png`,
 
     iconSize:     [38, 65],
-    iconAnchor:   [19, 32],
+    iconAnchor:   [19, 64],
     popupAnchor:  [0, -10]
 });
 
@@ -120,7 +120,7 @@ window.ready(() => {
         crs: L.CRS.Simple,
         maxBounds: bounds,
         maxBoundsViscosity: 0.5,
-        maxZoom: 3
+        maxZoom: 2        
     });
     L.imageOverlay(MAP_URL, bounds).addTo(map);
     map.fitBounds(bounds);
