@@ -15,14 +15,16 @@ p {
 }
 
 .note {
+    font-weight: 700;
     font-style: italic;
-    font-size: 12px;
-    color: coral;
+    font-size: 11px;
+    color: #2c2c2c;
     line-height: 1.2;
 }
 
 .found {
-    color: coral;
+    font-weight: 700;
+    color: #2c2c2c;
 }
 
 .vert-space {
@@ -30,21 +32,41 @@ p {
 }
 
 .map-filter{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    background:#2c2c2c;
+    font-family: 'Merriweather', serif;
+    font-weight: 5  00;
+    background:#f1f1f1;
     display: block;
     width: 310px;
     height: 100%;
     line-height: 40px;
-    color: white;
     text-decoration: none;
     transition: ease all 0.3s;
     position: fixed;
     z-index: 999;
     margin-bottom: 200px;
-    padding-left: 20px;
+    padding-left: 0px;
     padding-bottom: 20px;
+}
+
+.filter-header {
+    font-size: 20px;
+    margin-top: -20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: #dcd5a1;
+    background-color: #2c2c2c;
+}
+
+.content-header {
+    padding-left: 10px;
+    margin-right: 14px;
+    color: #f1f1f1;
+    background-color: #2c2c2c;        
+}
+
+.filter-content {
+    margin-top: 0px;
+    padding-left: 10px;
 }
 
 .version {
@@ -76,7 +98,7 @@ p {
   
   /* Modal Content/Box */
   .modal-content {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Merriweather', serif;
     line-height: 1.5;
     background-color: #fefefe;
     margin: 5% auto; /* 15% from the top and centered */

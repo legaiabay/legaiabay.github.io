@@ -1,9 +1,16 @@
+const MARKER_JSON = `${location.pathname}data/markers.json`;
+const CHANGELOG_JSON = `${location.pathname}changelog.json`;
 const MAP_URL = "img/map/map-1-min.jpg";
 const MAP_LATITUDE = 2200;
 const MAP_LONGITUDE = 2400;
+const ICON_FILTER_HIDE = `<path fill-rule="evenodd" d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>`;
+const ICON_FILTER_SHOW = `<path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>`;
+const ICON_ANEMO = `${location.pathname}img/icon/anemoculus.png`;
+const ICON_ANEMO_CHECKED = `${location.pathname}img/icon/anemoculus-checked.png`;
+const ICON_GEO = `${location.pathname}img/icon/geoculus.png`;
+const ICON_GEO_CHECKED = `${location.pathname}img/icon/geoculus-checked.png`;
 
 var filter_show = true;
-
 var hide_obtained = false;
 
 var anemoculus_show = true;
@@ -16,37 +23,19 @@ var geoculus_total = 0;
 var geoculus_obtained = [];
 var geoculus_selected = "";
 
-var icon_anemoculus = L.icon({
-    iconUrl: `${location.pathname}img/icon/anemoculus.png`,
+let markerIcon = (icon) => {
+    return {
+        iconUrl: icon,
+        iconSize:     [30, 45],
+        iconAnchor:   [19, 45],
+        popupAnchor:  [-4, -40]
+    }
+}
 
-    iconSize:     [30, 45],
-    iconAnchor:   [19, 45],
-    popupAnchor:  [-4, -40]
-});
-
-var icon_anemoculus_selected = L.icon({
-    iconUrl: `${location.pathname}img/icon/anemoculus-checked.png`,
-
-    iconSize:     [30, 45],
-    iconAnchor:   [19, 45],
-    popupAnchor:  [-4, -40]
-});
-
-var icon_geoculus = L.icon({
-    iconUrl: `${location.pathname}img/icon/geoculus.png`,
-
-    iconSize:     [30, 45],
-    iconAnchor:   [19, 45],
-    popupAnchor:  [-4, -40]
-});
-
-var icon_geoculus_selected = L.icon({
-    iconUrl: `${location.pathname}img/icon/geoculus-checked.png`,
-
-    iconSize:     [30, 45],
-    iconAnchor:   [19, 45],
-    popupAnchor:  [-4, -40]
-});
+var icon_anemoculus = L.icon(markerIcon(ICON_ANEMO));
+var icon_anemoculus_selected = L.icon(markerIcon(ICON_ANEMO_CHECKED));
+var icon_geoculus = L.icon(markerIcon(ICON_GEO));
+var icon_geoculus_selected = L.icon(markerIcon(ICON_GEO_CHECKED));
 
 ready = (fn) => {
     if (document.readyState != 'loading') {
@@ -150,12 +139,12 @@ let markerFilterInit = () => {
         if(filter_show) {
             document.querySelectorAll(".map-filter")[0].style.top = "0%";
             document.querySelector("#filter-btn").style.top = "28%";
-            document.querySelector("#filter-btn-svg").innerHTML = `<path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>`;
+            document.querySelector("#filter-btn-svg").innerHTML = ICON_FILTER_SHOW;
         }
         else {
             document.querySelectorAll(".map-filter")[0].style.top = "-50%";
             document.querySelector("#filter-btn").style.top = "2%";            
-            document.querySelector("#filter-btn-svg").innerHTML = `<path fill-rule="evenodd" d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>`;
+            document.querySelector("#filter-btn-svg").innerHTML = ICON_FILTER_HIDE;
         }
     });
 }
@@ -226,7 +215,7 @@ let markerFoundRefresh = () => {
 }
 
 let setMarker = (map) => {
-    fetch(`${location.pathname}data/markers.json`)
+    fetch(MARKER_JSON)
     .then(res => res.json())
     .then(data => {                
         markerInit();
@@ -269,11 +258,11 @@ let setMarker = (map) => {
     });
 }
 
-let setChangelog = () => {
-    fetch(`${location.pathname}changelog.json`)
+let setChangelog = () => {    
+    fetch(CHANGELOG_JSON)
     .then(res => res.json())
     .then(data => {
-        data.changelog.reverse();             
+        data.changelog.reverse();           
         data.changelog.forEach(_element => {                               
             document.querySelectorAll('.changelog-body').forEach((__element) => {
                 __element.insertAdjacentHTML('beforeend', `<b>Version ${_element.version}</b>`);
@@ -283,7 +272,11 @@ let setChangelog = () => {
             })            
             document.querySelector('.changelog-body').insertAdjacentHTML('beforeend', "<br><br>");
         });        
+
+        document.querySelectorAll(".version")[0].innerHTML = "v." + data.changelog[0].version;
     });
+
+    
 
     document.querySelector("#changelog").addEventListener("click", () => {        
         document.querySelector("#changelog-modal").style.display = "block";        

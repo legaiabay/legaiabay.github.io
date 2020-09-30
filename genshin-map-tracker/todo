@@ -4,6 +4,7 @@ vvvvvv - add more anemoculus location : https://forums.mihoyo.com/genshin/articl
 vvvvvv - better map quality
 vvvvvv - limit map zoom
 (????? - image grid : https://leafletjs.com/examples/zoom-levels/
-- hide obtained
-- marker filter
+vvvvvv - hide obtained
+vvvvvv - marker filter
+- (desktop) hide filter - same as mobile
 - save/load data json : https://stackoverflow.com/questions/7346563/loading-local-json-file
