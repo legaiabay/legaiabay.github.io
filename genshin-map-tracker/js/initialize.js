@@ -155,9 +155,8 @@ let markerFilterInit = () => {
         else {
             document.querySelectorAll(".map-filter")[0].style.top = "-50%";
             document.querySelector("#filter-btn").style.top = "2%";            
-            document.querySelector("#filter-btn-svg").innerHTML = `<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>`;
+            document.querySelector("#filter-btn-svg").innerHTML = `<path fill-rule="evenodd" d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>`;
         }
-        
     });
 }
 
@@ -317,12 +316,13 @@ let changeMapAttribution = () => {
 }
 
 window.ready(() => {
+    let maxBounds = [[-100,-800], [2300,2700]];
     let bounds = [[0,0], [MAP_LATITUDE,MAP_LONGITUDE]];
     let map = L.map('map', {
-        attributionControl: true,
         crs: L.CRS.Simple,
-        maxBounds: bounds,
+        maxBounds: maxBounds,
         maxBoundsViscosity: 0.5,
+        minZoom: -1,
         maxZoom: 1,
         zoomControl: false
     });
