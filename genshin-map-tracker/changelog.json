@@ -1,0 +1,21 @@
+{
+    "changelog" : [
+        {
+            "version" : "0.1.0",
+            "list" : [
+                "Anemoculus Location/Tracker",
+                "Obtained Anemoculus will be saved in local storage"
+            ]
+        },
+        {
+            "version" : "0.2.0",
+            "list" : [
+                "Major UI update",
+                "Geoculus Location/Tracker",
+                "Anemoculus/Geoculus counter",
+                "Add some filters : hide/show Anemoculus & Geoculus, hide/show obtained markers",
+                "Changelog list"
+            ]
+        }
+    ]
+}

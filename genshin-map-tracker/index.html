@@ -4,13 +4,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     
         <title>Genshin Impact Map Tracker</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <link href="vendor/leaflet/leaflet.css" rel="stylesheet">
-        <script src="vendor/leaflet/leaflet.js"></script>        
+        <script src="vendor/leaflet/leaflet.js"></script>                
     </head>
     <body>
-        <div id='map'></div>        
-        <div id="coords"></div>
+        <div class="map-filter">
+            <h3>Genshin Impact Map Tracker&nbsp;&nbsp;<span class="version">v.0.2.0</span></h3>
+            <div class="row test">
+                <a href="#" id="changelog" class="changelog">Changelog</a>
+            </div>
+            <div class="vert-space"></div>
+            <div>
+                <p>Anemoculus found : <span class="found" id="anemo-found">0/0</span></p>
+                <p>Geoculus found : <span class="found" id="geo-found">0/0</span></p>
+            </div>
+            <h3>⚪ Adventure Item</h3>
+            <div class="row">                
+                <input class="map-filter-anemo" type="checkbox" id="filter-anemo" name="filter-anemo" value="filter-anemo">
+                <label for="filter-anemo"> Anemoculus</label>
+            </div>
+            <div class="row">
+                <input class="map-filter-geo" type="checkbox" id="filter-geo" name="filter-geo" value="filter-geo">
+                <label for="filter-geo"> Geoculus</label>
+            </div>
+            <h3>⚪ Others</h3>
+            <div class="row">
+                <input class="map-filter-hide-obtained" type="checkbox" id="filter-hide-obtained" name="filter-hide-obtained" value="filter-hide-obtained">
+                <label for="filter-hide-obtained"> Hide obtained markers</label>
+            </div>
+        </div>
+        <div id='map'></div>             
+
+        <div id="changelog-modal" class="modal">            
+            <div class="modal-content changelog-body">
+                <span id="changelog-close" class="close">&times;</span>
+                <h2>Changelog</h2>
+            </div>
+        </div>   
         <script src="js/initialize.js"></script>
     </body>
 </html>
