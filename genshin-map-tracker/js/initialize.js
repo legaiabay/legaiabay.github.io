@@ -2,6 +2,8 @@ const MAP_URL = "img/map/map-1-min.jpg";
 const MAP_LATITUDE = 2200;
 const MAP_LONGITUDE = 2400;
 
+var filter_show = true;
+
 var hide_obtained = false;
 
 var anemoculus_show = true;
@@ -141,6 +143,21 @@ let markerFilterInit = () => {
         hide_obtained = checked;
         markerHideObtained();
         localStorage.setItem("hide_obtained", hide_obtained);
+    });
+
+    document.querySelector("#filter-btn").addEventListener('click', () => {
+        filter_show = (filter_show == true) ? false : true;
+        if(filter_show) {
+            document.querySelectorAll(".map-filter")[0].style.top = "0%";
+            document.querySelector("#filter-btn").style.top = "28%";
+            document.querySelector("#filter-btn-svg").innerHTML = `<path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>`;
+        }
+        else {
+            document.querySelectorAll(".map-filter")[0].style.top = "-50%";
+            document.querySelector("#filter-btn").style.top = "2%";            
+            document.querySelector("#filter-btn-svg").innerHTML = `<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>`;
+        }
+        
     });
 }
 

@@ -100,6 +100,10 @@ p {
     cursor: pointer;
   }
 
+  .filter-float-btn{
+    display: none;
+}
+
 @media (max-width: 987px) {
     .map-filter{
         width: 100%;
@@ -122,5 +126,26 @@ p {
     /* Modal Content/Box */
     .modal-content {
         width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    .filter-float-btn{
+        background:#2c2c2c;
+        display: block;
+        width: 2em;
+        height: 2em;
+        line-height: 50px;
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        border: none;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        text-decoration: none;
+        transition: ease all 0.3s;
+        position: fixed;
+        right: 20px;
+        top: 28%;
+        z-index: 999;
     }
 }
