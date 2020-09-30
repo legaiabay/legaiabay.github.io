@@ -1,6 +1,6 @@
-const MAP_URL = "img/map/map-1.jpg";
-const MAP_LATITUDE = 1000;
-const MAP_LONGITUDE = 1200;
+const MAP_URL = "img/map/map-1.png";
+const MAP_LATITUDE = 2200;
+const MAP_LONGITUDE = 2400;
 const COOKIE_EXPIRED = 365;
 
 var anemoculus_obtained = [];
@@ -37,8 +37,11 @@ ready = (fn) => {
 
 let save = (id, type, checked) => {
     switch(type) {
-        case "anemoculus" : checked ? anemoculus_obtained.push(id) : anemoculus_obtained.splice(anemoculus_obtained.indexOf(id), 1); break;
-    }            
+        case "anemoculus" : 
+            if(checked){ if(anemoculus_obtained.indexOf(id) <= -1) anemoculus_obtained.push(id) } 
+            else { anemoculus_obtained.splice(anemoculus_obtained.indexOf(id), 1); };
+            break;
+    }                
 
     Cookies.set("anemoculus_obtained",anemoculus_obtained,{ expires: COOKIE_EXPIRED });
 }
@@ -53,8 +56,7 @@ let markObtainedInit = () => {
 
     let _anemoculus_obtained = Cookies.get("anemoculus_obtained");
     if(_anemoculus_obtained != "" && _anemoculus_obtained != undefined){  
-        anemoculus_obtained = _anemoculus_obtained.split(",").map(Number);
-        console.log(anemoculus_obtained)   
+        anemoculus_obtained = _anemoculus_obtained.split(",").map(Number);         
     }
 }
 
@@ -70,7 +72,7 @@ let markObtainedSave = (element) => {
 }
 
 let markObtainedCheck = (marker, id) => {    
-    anemoculus_selected = marker;
+    anemoculus_selected = marker;    
     
     if(anemoculus_obtained.indexOf(id) > -1){        
         document.querySelector(`#marker-${id}`).checked = true;
@@ -82,26 +84,46 @@ let setMarker = (map) => {
     .then(res => res.json())
     .then(data => {                
         markObtainedInit();
-        data.anemoculus.forEach(element => {                               
+        data.anemoculus.forEach(element => {                              
+            element.id = parseInt(element.id);
             let location = L.latLng([ element.lat, element.lon ]);                 
             let marker = L.marker(location, {icon: icon_anemoculus})
-                .bindPopup(`<b>${element.desc}</b><br><input class="marker-obtained" data-type="anemoculus" type="checkbox" id="marker-${element.id}" name="marker-${element.id}" value=${element.id} onclick="markObtainedSave(this)"><label for="marker-${element.id}"> Obtained</label>`)
-                .addEventListener('click', (marker) => { markObtainedCheck(marker, element.id); });    
-
-            if(anemoculus_obtained.indexOf(element.id) > -1){                
-                marker.setIcon(icon_anemoculus_selected);
-            }
+                .bindPopup(`<b>Anemoculus ${element.id}</b><br><input class="marker-obtained" data-type="anemoculus" type="checkbox" id="marker-${element.id}" name="marker-${element.id}" value=${element.id} onclick="markObtainedSave(this)"><label for="marker-${element.id}"> Found</label>`)
+                .addEventListener('click', (m) => { 
+                    markObtainedCheck(m, element.id); 
+                });    
+            
+            if(anemoculus_obtained.indexOf(element.id) > -1) marker.setIcon(icon_anemoculus_selected);
 
             marker.addTo(map);   
         });              
     });
 }
 
+//for marker positioning only
+let cursorPosition = () => {
+    img = document.querySelectorAll(`.leaflet-image-layer`)[0];    
+
+    document.addEventListener('click', (e) => {
+        let _offsetX = img.getBoundingClientRect().left;
+        let _offsetY = img.getBoundingClientRect().bottom;
+        let x = e.pageX - _offsetX;
+        let y = -e.pageY + _offsetY;
+        console.log(x + ", " + y);
+        navigator.clipboard.writeText(x + "	" + y)
+    });
+}
+
 window.ready(() => {
-    let map = L.map('map', {crs: L.CRS.Simple});
     let bounds = [[0,0], [MAP_LATITUDE,MAP_LONGITUDE]];
+    let map = L.map('map', {
+        crs: L.CRS.Simple,
+        maxBounds: bounds,
+        maxBoundsViscosity: 0.5
+    });
     L.imageOverlay(MAP_URL, bounds).addTo(map);
     map.fitBounds(bounds);
     
     setMarker(map);
+    //cursorPosition();
 });
