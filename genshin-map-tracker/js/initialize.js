@@ -1,4 +1,4 @@
-const MAP_URL = "img/map/map-1.png";
+const MAP_URL = "img/map/map-1-min.png";
 const MAP_LATITUDE = 2200;
 const MAP_LONGITUDE = 2400;
 const COOKIE_EXPIRED = 365;
@@ -119,7 +119,8 @@ window.ready(() => {
     let map = L.map('map', {
         crs: L.CRS.Simple,
         maxBounds: bounds,
-        maxBoundsViscosity: 0.5
+        maxBoundsViscosity: 0.5,
+        maxZoom: 3
     });
     L.imageOverlay(MAP_URL, bounds).addTo(map);
     map.fitBounds(bounds);
