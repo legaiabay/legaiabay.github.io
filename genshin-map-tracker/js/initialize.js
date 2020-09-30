@@ -1,7 +1,6 @@
 const MAP_URL = "img/map/map-1-min.jpg";
 const MAP_LATITUDE = 2200;
 const MAP_LONGITUDE = 2400;
-const COOKIE_EXPIRED = 365;
 
 var anemoculus_obtained = [];
 var anemoculus_selected = "";
@@ -43,7 +42,7 @@ let save = (id, type, checked) => {
             break;
     }                
 
-    Cookies.set("anemoculus_obtained",anemoculus_obtained,{ expires: COOKIE_EXPIRED });
+    localStorage.setItem("anemoculus_obtained", anemoculus_obtained);
 }
 
 let markObtainedInit = () => {
@@ -54,7 +53,7 @@ let markObtainedInit = () => {
     //     console.log(anemoculus_obtained);
     // });
 
-    let _anemoculus_obtained = Cookies.get("anemoculus_obtained");
+    let _anemoculus_obtained = localStorage.getItem("anemoculus_obtained");
     if(_anemoculus_obtained != "" && _anemoculus_obtained != undefined){  
         anemoculus_obtained = _anemoculus_obtained.split(",").map(Number);         
     }
