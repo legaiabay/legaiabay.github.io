@@ -16,6 +16,15 @@
                 "Add some filters : hide/show Anemoculus & Geoculus, hide/show obtained markers",
                 "Changelog list"
             ]
+        },
+        {
+            "version" : "1.0.0",
+            "list" : [
+                "Shrine, Teleporter location/tracker/counter",
+                "UI update",
+                "Reset markers"
+
+            ]
         }
     ]
 }

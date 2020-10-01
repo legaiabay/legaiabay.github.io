@@ -14,6 +14,24 @@ p {
     margin-bottom: -5;
 }
 
+.reset-prompt {
+    position: inherit;
+    left: 50%;  
+    justify-content: center;
+}
+
+#reset, .reset-prompt-btn {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: #d8d9d3;
+    background-color: #2c2c2c;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    margin-top: 15px;
+    padding: 10px 20px;
+}
+
 .note {
     font-weight: 700;
     font-style: italic;
@@ -34,7 +52,7 @@ p {
 .map-filter{
     font-family: 'Merriweather', serif;
     font-weight: 5  00;
-    background:#f1f1f1;
+    background:#dad5cf;
     display: block;
     width: 310px;
     height: 100%;
@@ -53,7 +71,7 @@ p {
     margin-top: -20px;
     padding-top: 10px;
     padding-left: 10px;
-    color: #dcd5a1;
+    color: #d8d9d3;
     background-color: #2c2c2c;
 }
 
@@ -75,7 +93,7 @@ p {
 }
 
 .changelog {
-    color: coral;
+    color: #fb7558;
     font-size: 12px;
 }
 
@@ -100,7 +118,7 @@ p {
   .modal-content {
     font-family: 'Merriweather', serif;
     line-height: 1.5;
-    background-color: #fefefe;
+    background-color: #dad5cf;
     margin: 5% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;

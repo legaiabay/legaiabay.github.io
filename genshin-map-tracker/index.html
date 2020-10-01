@@ -5,7 +5,7 @@
     
         <title>Genshin Impact Map Tracker</title>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-        <link href="css/style.css?version=0.2.3" rel="stylesheet">
+        <link href="css/style.css?version=1.0.0" rel="stylesheet">
         <link href="vendor/leaflet/leaflet.css" rel="stylesheet">
         <script src="vendor/leaflet/leaflet.js"></script>                
     </head>
@@ -21,20 +21,31 @@
             <div class="filter-content">
                 <div>
                     <p class="note"><b>Note :</b><br>Your progress automatically saved in local storage.</p>                    
+                    <button id="reset">Reset Markers</button>
                     <div class="vert-space"><hr></div>
-                    <p>Anemoculus found : <span class="found" id="anemo-found">0/0</span></p>
-                    <p>Geoculus found : <span class="found" id="geo-found">0/0</span></p>
                 </div>
                 <div class="content-header">
-                    <h3>Adventure Item</h3>
+                    <h3>Markers</h3>
+                </div>
+                <div class="row">
+                    <input class="map-filter-tele" type="checkbox" id="filter-tele" name="filter-tele" value="filter-tele">
+                    <label for="filter-tele"> Teleporter : <span class="found" id="tele-found">0/0</span></label>
                 </div>
                 <div class="row">                
                     <input class="map-filter-anemo" type="checkbox" id="filter-anemo" name="filter-anemo" value="filter-anemo">
-                    <label for="filter-anemo"> Anemoculus</label>
+                    <label for="filter-anemo"> Anemoculus : <span class="found" id="anemo-found">0/0</span></label>
                 </div>
                 <div class="row">
                     <input class="map-filter-geo" type="checkbox" id="filter-geo" name="filter-geo" value="filter-geo">
-                    <label for="filter-geo"> Geoculus</label>
+                    <label for="filter-geo"> Geoculus : <span class="found" id="geo-found">0/0</span></label>
+                </div>
+                <div class="row">
+                    <input class="map-filter-mon-shrine" type="checkbox" id="filter-mon-shrine" name="filter-mon-shrine" value="filter-mon-shrine">
+                    <label for="filter-mon-shrine"> Mondstadt Shrine : <span class="found" id="mon-shrine-found">0/0</span></label>
+                </div>
+                <div class="row">
+                    <input class="map-filter-li-shrine" type="checkbox" id="filter-li-shrine" name="filter-li-shrine" value="filter-li-shrine">
+                    <label for="filter-li-shrine"> Liyue Shrine : <span class="found" id="li-shrine-found">0/0</span></label>
                 </div>
                 <div class="content-header">
                     <h3>Others</h3>
@@ -57,6 +68,16 @@
                 <h2>Changelog</h2>
             </div>
         </div>   
-        <script src="js/initialize.js?version=0.2.3"></script>
+
+        <div id="reset-modal" class="modal">            
+            <div class="modal-content modal-body">
+                <h2>Are you sure want to reset markers?</h2>
+                <div class="reset-prompt">
+                    <button id="reset-yes" class="reset-prompt-btn">Yes</button>
+                    <button id="reset-no" class="reset-prompt-btn">No</button>
+                </div>
+            </div>
+        </div>   
+        <script src="js/initialize.js?version=1.0.0"></script>
     </body>
 </html>
