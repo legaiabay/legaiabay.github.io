@@ -1279,6 +1279,14 @@
             "rarity": "6",
             "image": "char_350_surtr",
             "server": "1"
+        },
+        {
+            "id": "161",
+            "name": "Bubble",
+            "class": "Defender",
+            "rarity": "4",
+            "image": "placeholder",
+            "server": "1"
         }
     ]
 }

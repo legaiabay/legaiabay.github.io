@@ -1,5 +1,4 @@
 const VERSION = "v.1.4.6";
-const COOKIE_EXPIRED = 365;
 const CAPTURE_PADDING = "1em";
 
 var selected_server = "cn";
@@ -32,15 +31,15 @@ let changeBackgroundColor = (c) => {
     document.querySelectorAll(".bg-color").forEach((element) => {
         element.style.backgroundColor = c;
     })      
-    Cookies.set("background-color",c,{ expires: COOKIE_EXPIRED });
+    localStorage.setItem("background-color",c);
 }
 
-let loadCookies = () => {   
-    let saved_selected = Cookies.get("selected");
-    let saved_server = Cookies.get("server");
-    let saved_server_en = Cookies.get("server_en");
-    let saved_ign = Cookies.get("ign");        
-    let saved_background_color = Cookies.get("background-color");
+let loadLocalStorage = () => {   
+    let saved_selected = localStorage.getItem("selected");
+    let saved_server = localStorage.getItem("server");
+    let saved_server_en = localStorage.getItem("server_en");
+    let saved_ign = localStorage.getItem("ign");        
+    let saved_background_color = localStorage.getItem("background-color");
     
     if(saved_selected == undefined || saved_selected[0] == "" || saved_selected.length === 0) saved_selected = [];
     else saved_selected = saved_selected.split(",");    
@@ -146,10 +145,10 @@ let setServer = (s) => {
             document.querySelector("#rarity-"+(index+1)+"-total").innerHTML = "/"+_element;
         });    
 
-        Cookies.set("server_en","", { expires: COOKIE_EXPIRED });
+        localStorage.setItem("server_en","");
     }
 
-    Cookies.set("server",s,{ expires: COOKIE_EXPIRED });
+    localStorage.setItem("server",s);
 }
 
 let createCharaDiv = (data) => {
@@ -226,7 +225,7 @@ let setCharaDiv = () => {
             document.querySelector("#rarity-"+(index+1)+"-total").innerHTML = "/" + element;
         });
 
-        loadCookies();
+        loadLocalStorage();
         
         document.querySelectorAll('.chara-img-btn').forEach((_element) => {
             _element.addEventListener('click', () => {                 
@@ -253,7 +252,7 @@ let setCharaDiv = () => {
                     _element.innerHTML = selected_count;
                 });  
                 
-                Cookies.set("selected", selected_chara, { expires: COOKIE_EXPIRED });  
+                localStorage.setItem("selected", selected_chara);  
             }, false);
         });
     });
@@ -276,7 +275,7 @@ let reset = () => {
         _element.setAttribute("data-selected", false);
     });
 
-    Cookies.set("selected", selected_chara, { expires: COOKIE_EXPIRED });  
+    localStorage.setItem("selected", selected_chara);  
 }
 
 let generate = () => {
@@ -399,7 +398,7 @@ window.ready(() => {
 
     document.querySelector('#ign-input').addEventListener('keyup', () => {   
         document.querySelector('#ign').innerHTML = "IGN : " + document.querySelector('#ign-input').value;
-        Cookies.set("ign",document.querySelector('#ign-input').value,{ expires: COOKIE_EXPIRED });
+        localStorage.setItem("ign",document.querySelector('#ign-input').value);
     });
 
     document.querySelector('#server').addEventListener('click', () => {        
@@ -413,13 +412,13 @@ window.ready(() => {
             let server = _element.getAttribute("id");        
             if(server == "server-en"){
                 document.querySelector(".selected-server-2").innerHTML = "EN";  
-                Cookies.set("server_en","EN",{ expires: COOKIE_EXPIRED });
+                localStorage.setItem("server_en","EN");
             } else if(server == "server-jp"){
                 document.querySelector(".selected-server-2").innerHTML = "JP";  
-                Cookies.set("server_en","JP",{ expires: COOKIE_EXPIRED });
+                localStorage.setItem("server_en","JP");
             } else if(server == "server-kr"){
                 document.querySelector(".selected-server-2").innerHTML = "KR";  
-                Cookies.set("server_en","KR",{ expires: COOKIE_EXPIRED });
+                localStorage.setItem("server_en","KR");
             }
         });
     });
@@ -454,7 +453,7 @@ window.ready(() => {
             }  
         }
 
-        Cookies.set("selected", selected_chara,{ expires: COOKIE_EXPIRED });            
+        localStorage.setItem("selected", selected_chara);            
     })
 
     document.querySelector('#to-top').addEventListener('click', () => {
