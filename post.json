@@ -1,0 +1,28 @@
+{
+    "post" : [
+        {
+            "title" : "ARKNIGHTS Collection Tracker",
+            "desc" : "Keeping track your current operators and share your salt (a.k.a collection) to your friends.",
+            "thumb" : "ak-collection-tracker.jpg",
+            "href" : "ak-collection-tracker"
+        },
+        {
+            "title" : "GENSHIN IMPACT Map Tracker",
+            "desc" : "Item/location map guide and keeping track your obtained item or reached location.",
+            "thumb" : "genshin-map-tracker.jpg",
+            "href" : "genshin-map-tracker"
+        },
+        {
+            "title" : "3D Render Dump",
+            "desc" : "I have interest in 3D too so I made my render dump.",
+            "thumb" : "3d-render-dump.jpg",
+            "href" : "3d-portfolio"
+        },
+        {
+            "title" : "(Game) Jumping Slime",
+            "desc" : "Simple 2D HTML5 game made with Cocos Creator.",
+            "thumb" : "game-jumping-slime.jpg",
+            "href" : "games/jumpingslime"
+        }
+    ]
+}

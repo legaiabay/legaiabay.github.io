@@ -4,44 +4,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
         <title>legaiabay.github.io</title>      
         <link rel='icon' href='img/favicon.ico' type='image/x-icon'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/extra.css">        
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>      
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">      
+        <link rel="stylesheet" href="css/extra.css">
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
      </head>
     <body>
-        <div class="container container-padding">
-            <div class="row">
-                <div class="col-12 text-center"> 
-                    <img src="img/fox.png" width="400px" height="400px">
-                    <h1 class="title">legaiabay.github.io</h1>          
-                    <h6 class="title">Experimental Stash</h6><br>       
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12"> 
+                    <img class="title-animate" src="img/fox.png" width="400px" height="400px">
+                    <h1 class="title title-animate">legaiabay.github.io</h1>          
+                    <h6 class="title title-animate">Experimental Stash</h6><br>       
                 </div>                
             </div>
-            <div class="row">
-                <div class="col-12 text-center">                
-                    <button class="btn btn-primary" onclick="document.location='ak-collection-tracker'">ARKNIGHTS Collection Tracker</button>                                                
-                </div>                
-            </div>
-            <div class="vert-space-2"></div>
-            <div class="row">
-                <div class="col-12 text-center">                
-                    <button class="btn btn-primary" onclick="document.location='genshin-map-tracker'">GENSHIN IMPACT Map Tracker</button>                                                
-                </div>                
-            </div>
-            <div class="vert-space-2"></div>
-            <div class="row">
-                <div class="col-12 text-center">                
-                    <button class="btn btn-primary" onclick="document.location='3d-portfolio'">3D Render Dump</button>                                                
-                </div>                
-            </div>           
-            <div class="vert-space-2"></div>
-            <div class="row">
-                <div class="col-12 text-center">                
-                    <button class="btn btn-primary" onclick="document.location='games/jumpingslime'">(Games) Jumping Slime</button>                                                
-                </div>                
-            </div>              
+            <div id="posts"></div>
+
+            <script src="js/init.js"></script>
         </div>
     </body>
 </html>
