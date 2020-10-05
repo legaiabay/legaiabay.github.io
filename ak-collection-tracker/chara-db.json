@@ -1287,6 +1287,14 @@
             "rarity": "4",
             "image": "placeholder",
             "server": "1"
+        },
+        {
+            "id": "162",
+            "name": "Whislash",
+            "class": "Guard",
+            "rarity": "5",
+            "image": "placeholder",
+            "server": "1"
         }
     ]
 }
