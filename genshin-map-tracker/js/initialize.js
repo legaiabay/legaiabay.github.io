@@ -442,7 +442,7 @@ let createMarker = (_map, _data, _type, _title, _name, _obtained, _icon, _icon_s
         element.id = parseInt(element.id);
         let location = L.latLng([ element.lat, element.lon ]);                 
         let marker = L.marker(location, {icon: _icon, alt: _name+"-"+element.id})
-            .bindPopup(`<b>${_title}</b><br><input class="marker-obtained" data-type="${_type}" type="checkbox" id="${_name}-${element.id}" name="${_name}-${element.id}" value=${element.id} onclick="markObtainedSave(this)"><label for="${_name}-${element.id}"> Found</label>`)
+            .bindPopup(`${element.id} <b>${_title}</b><br><input class="marker-obtained" data-type="${_type}" type="checkbox" id="${_name}-${element.id}" name="${_name}-${element.id}" value=${element.id} onclick="markObtainedSave(this)"><label for="${_name}-${element.id}"> Found</label>`)
             .addEventListener('click', (m) => { 
                 markerObtainedCheck(m, element.id, _type); 
             });    
@@ -541,11 +541,17 @@ let cursorPosition = () => {
     document.addEventListener('click', (e) => {
         let _offsetX = img.getBoundingClientRect().left;
         let _offsetY = img.getBoundingClientRect().bottom;
-        let x = e.pageX - _offsetX;
+        let x = (e.pageX - _offsetX);
         let y = -e.pageY + _offsetY;
         console.log(x + ", " + y);
         navigator.clipboard.writeText(x + "	" + y)
     });
+}
+
+let debugMode = () => {
+    cursorPosition();
+
+    document.querySelectorAll(".map-filter")[0].style.display = "none";
 }
 
 window.ready(() => {
@@ -571,4 +577,6 @@ window.ready(() => {
     setChangelog();
 
     setResetButton();
+
+    //debugMode();
 });

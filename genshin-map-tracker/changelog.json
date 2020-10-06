@@ -25,6 +25,12 @@
                 "Reset markers"
 
             ]
+        },
+        {
+            "version" : "1.0.1",
+            "list" : [
+                "Fix some markers position"
+            ]
         }
     ]
 }
