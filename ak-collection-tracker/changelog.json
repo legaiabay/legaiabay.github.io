@@ -144,6 +144,12 @@
             "list" : [
                 "EN/JP/KR new operators : Poca/Rosa, Leonhardt, Podenco, Absinthe"
             ]
+        },
+        {
+            "version" : "1.4.7",
+            "list" : [
+                "CN new operators : Bubble, Whislash, Blemishine"
+            ]
         }
     ]
 }

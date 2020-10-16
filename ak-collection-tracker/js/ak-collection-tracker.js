@@ -1,4 +1,4 @@
-const VERSION = "v.1.4.6";
+const VERSION = "v.1.4.7";
 const CAPTURE_PADDING = "1em";
 
 var selected_server = "cn";

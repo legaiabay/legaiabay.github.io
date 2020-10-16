@@ -1285,7 +1285,7 @@
             "name": "Bubble",
             "class": "Defender",
             "rarity": "4",
-            "image": "placeholder",
+            "image": "bubble",
             "server": "1"
         },
         {
@@ -1293,7 +1293,15 @@
             "name": "Whislash",
             "class": "Guard",
             "rarity": "5",
-            "image": "placeholder",
+            "image": "whislash",
+            "server": "1"
+        },
+        {
+            "id": "163",
+            "name": "Blemishine",
+            "class": "Defender",
+            "rarity": "6",
+            "image": "blemishine",
             "server": "1"
         }
     ]
