@@ -1303,6 +1303,30 @@
             "rarity": "6",
             "image": "blemishine",
             "server": "1"
+        },
+        {
+            "id": "164",
+            "name": "Jackie",
+            "class": "Guard",
+            "rarity": "4",
+            "image": "",
+            "server": "1"
+        },
+        {
+            "id": "165",
+            "name": "Whisperain",
+            "class": "Medic",
+            "rarity": "5",
+            "image": "",
+            "server": "1"
+        },
+        {
+            "id": "166",
+            "name": "Mudrock",
+            "class": "Defender",
+            "rarity": "6",
+            "image": "",
+            "server": "1"
         }
     ]
 }
