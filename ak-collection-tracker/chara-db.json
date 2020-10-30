@@ -1150,7 +1150,7 @@
             "class": "Caster",
             "rarity": "4",
             "image": "char_328_cammou",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "145",
@@ -1158,7 +1158,7 @@
             "class": "Medic",
             "rarity": "5",
             "image": "char_345_folnic",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "146",
@@ -1166,7 +1166,7 @@
             "class": "Guard",
             "rarity": "5",
             "image": "char_294_ayer",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "147",
@@ -1174,7 +1174,7 @@
             "class": "Supporter",
             "rarity": "6",
             "image": "char_358_lisa",
-            "server": "1"
+            "server": "2"
         },
         {
             "id": "148",
