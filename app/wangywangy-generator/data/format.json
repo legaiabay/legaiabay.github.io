@@ -1,0 +1,22 @@
+{
+    "format": [
+        {
+            "title" : "WANGY WANGY",
+            "sample": "VIKARA........... VIKARA VIKARA VIKARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAGH AAAAAAAAAAAAAAAAAAAAAAAGH, WANGI WANGI WANGI WANGI HU HA HU HA HU HA, aaaah baunya vikara wangi aku mau nyiumin aroma wanginya vikara AAAAAAAAH ~~ Rambutnya.... aaah rambutnya juga pengen aku elus-elus ~ AAAAAH vikara keluar pertama kali juga manis, dia bawa balon itu juga manis banget AAAAAAAAH VIKARA LUCCUUUUUUUUUUUUUUU............ GUA BAKAL BAKAR DUIT 12 JUTA RUPIAH BUAT VIKARA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAGH\n\napa ? Vikara itu gak nyata ? Cuma karakter 2 dimensi katamu ? nggak, ngak ngak ngak ngak NGAAAAAAAAK GUA GAK PERCAYA ITU DIA NYATA NGAAAAAAAAAAAAAAAAAK CYGAMES BANGSAAAAAT !! GUA GAK PEDULI SAMA KENYATAAN POKOKNYA GAK PEDULI.\nVikara ngeliat gw ... vikara di laptop ngeliatin gw Vikara ... kamu percaya sama aku ? aaaaaaaaaaah syukur vikara gak malu merelakan aku aaaaaah\n\nYEAAAAAAAAAAAH GUA MASIH PUNYA VIKARA, SENDIRI PUN NGGAK SAMA AAAAAAAAAAAAAAH ANILA, ANCHIRA MAHIRA VAJRA KUMBIRAAAAA KIRIMKANLAH CINTAKU PADA VIKARA KIRIMKAN KE CYGAMES AAAAAAAAH",
+            "format" : "$$name_cap$$........... $$name_cap$$ $$name_cap$$ $$name_cap$$$$repeat_last_name_chara_cap1$$ AAAAAAAAAAAAAAAAAGH AAAAAAAAAAAAAAAAAAAAAAAGH, WANGI WANGI WANGI WANGI HU HA HU HA HU HA, aaaah baunya $$name$$ wangi aku mau nyiumin aroma wanginya $$name$$ AAAAAAAAH ~~ Rambutnya.... aaah rambutnya juga pengen aku elus-elus ~ AAAAAH $$name$$ keluar pertama kali juga manis, dia bawa balon itu juga manis banget AAAAAAAAH $$name_cap$$ LUCCUUUUUUUUUUUUUUU............ GUA BAKAL BAKAR DUIT 12 JUTA RUPIAH BUAT $$name_cap$$ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAGH\n\napa ? $$name$$ itu gak nyata ? Cuma karakter 2 dimensi katamu ? nggak, ngak ngak ngak ngak NGAAAAAAAAK GUA GAK PERCAYA ITU DIA NYATA NGAAAAAAAAAAAAAAAAAK CYGAMES BANGSAAAAAT !! GUA GAK PEDULI SAMA KENYATAAN POKOKNYA GAK PEDULI.\n\n$$name$$ ngeliat gw ... $$name$$ di laptop ngeliatin gw $$name$$ ... kamu percaya sama aku ? aaaaaaaaaaah syukur $$name$$ gak malu merelakan aku aaaaaah\n\nYEAAAAAAAAAAAH GUA MASIH PUNYA $$name_cap$$, SENDIRI PUN NGGAK SAMA AAAAAAAAAAAAAAH $$add_cap1$$, $$add_cap2$$ $$add_cap3$$ $$add_cap4$$ $$add_cap5$$ KIRIMKANLAH CINTAKU PADA $$name_cap$$ KIRIMKAN KE $$add_cap6$$ AAAAAAAAH",
+            "default_name" : "Vikara",
+            "additional_word" : ["Anila","Anchira","Mahira","Vajra","Kumbira","Cygames"],
+            "repeat" : [32],
+            "repeat_add" : [4]
+        },
+        {
+            "title" : "Gw gamau menikah",
+            "sample": "semakin di usia sperti ini yg mendekati usia quarter life crisis gw sadar pemikiran gw dulu soal \"gw gamau menikah\" itu salah\ngw ingin menikah\ningin segera dan cepat-cepat menikah\ngw butuh kasih sayang dan belaian\nmaka tunggulah gw, jodoh\ntunggu aku, Megumiku sayang\nDiluc love",
+            "format" : "semakin di usia sperti ini yg mendekati usia quarter life crisis gw sadar pemikiran gw dulu soal \"gw gamau menikah\" itu salah\ngw ingin menikah\ningin segera dan cepat-cepat menikah\ngw butuh kasih sayang dan belaian\nmaka tunggulah gw, jodoh\ntunggu aku, $$name$$ku sayang\n$$add1$$ love",
+            "default_name" : "Megumi",
+            "additional_word" : ["Diluc"],
+            "repeat" : false,
+            "repeat_add" : false
+        }
+    ]
+}   

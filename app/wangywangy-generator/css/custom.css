@@ -1,0 +1,21 @@
+body {
+    background-color: #212529;
+}
+
+.space{
+    margin-bottom: 10px;
+}
+
+.g-width {
+    width: 90%;
+    max-width: 600px;
+    color: #212529;
+}
+
+.output {
+    height: 400px;
+}
+
+.input-label{
+    color: white;
+}
