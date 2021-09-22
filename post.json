@@ -19,6 +19,12 @@
             "href" : "app/wangywangy-generator"
         },
         {
+            "title" : "TextMeshPro Unicode Generator",
+            "desc" : "Unicode generator for Unity TextMeshPro",
+            "thumb" : "textmeshpro-unicode.png",
+            "href" : "app/textmeshpro-unicode-generator"
+        },
+        {
             "title" : "3D Render Dump",
             "desc" : "I have interest in 3D too so I made my render dump.",
             "thumb" : "3d-render-dump.jpg",
