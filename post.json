@@ -1,13 +1,19 @@
 {
     "post" : [
         {
-            "title" : "ARKNIGHTS Collection Tracker",
+            "title" : "Sprint Poker",
+            "desc" : "Sprint planning card voting tools powered by Bootstrap and Firebase Realtime Database.",
+            "thumb" : "sprint-poker.png",
+            "href" : "app/sprintpoker"
+        },
+        {
+            "title" : "ARKNIGHTS Collection Tracker (deprecated)",
             "desc" : "Keeping track your current operators and share your salt (a.k.a collection) to your friends.",
             "thumb" : "ak-collection-tracker.jpg",
             "href" : "app/ak-collection-tracker"
         },
         {
-            "title" : "GENSHIN IMPACT Map Tracker",
+            "title" : "GENSHIN IMPACT Map Tracker (deprecated)",
             "desc" : "Item/location map guide and keeping track your obtained item or reached location.",
             "thumb" : "genshin-map-tracker.jpg",
             "href" : "app/genshin-map-tracker"
