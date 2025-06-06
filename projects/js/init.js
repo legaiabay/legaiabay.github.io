@@ -22,8 +22,8 @@ let createPost = (data) => {
         posts += `
             <div class="col-sm-12 col-xl-6">                
                 <div class="card card-center" style="width: 100%;">
-                    <a href="${d.href}" target="_blank">
-                        <img class="card-img-top" src="projects/img/thumb/${d.thumb}" alt="Card image cap">
+                    <a href="https://legaiabay.github.io/${d.href}" target="_blank">
+                        <img class="card-img-top" src="img/thumb/${d.thumb}" alt="Card image cap">
                     </a>
                     <div class="card-body">
                         <h5 class="card-title text-center">${d.title}</h5>
