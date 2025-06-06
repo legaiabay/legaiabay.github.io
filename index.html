@@ -1,27 +1,992 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-        <title>legaiabay.github.io</title>      
-        <link rel='icon' href='img/favicon.ico' type='image/x-icon'>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">      
-        <link rel="stylesheet" href="css/extra.css">
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
-     </head>
-    <body>
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-12"> 
-                    <img class="title-animate" src="img/fox.png" width="400px" height="400px">
-                    <h1 class="title title-animate">legaiabay.github.io</h1>          
-                    <h6 class="title title-animate">Experimental Stash</h6><br>       
-                </div>                
-            </div>
-            <div id="posts"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abay Journal</title>
 
-            <script src="js/init.js"></script>
+  <!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto Mono', monospace;
+      background-color: #1c1f23;
+      color: white;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p, a, li, button, input, .typed-container, .tree-company-name, .tree-pos-title {
+      font-weight: 200;
+    }
+
+    .left-section {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .left-section img {
+      max-width: 300px;
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .center-section {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 32px 16px 24px 16px; /* Add top padding */
+      overflow-y: auto;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    #main-content {
+      overflow-y: auto;
+      max-height: 100vh;
+      padding: 32px 0px 24px 16px; /* Add top padding */
+      box-sizing: border-box;
+    }
+
+    .typed-container {
+      white-space: pre-line;
+      font-size: 1rem;
+      border-right: 2px solid white;
+      padding-right: 10px;
+    }
+
+    .right-section {
+      width: 250px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid #555;
+      position: relative;
+      height: 100vh;         /* Ensure full viewport height */
+      box-sizing: border-box;
+    }
+
+    .right-section input[type="text"] {
+      width: 100%;           /* Make input fill the container */
+      box-sizing: border-box;
+      padding: 10px;
+      background-color: #1c1f23;
+      border: 1px solid white;
+      color: white;
+      /* margin-bottom: 20px; */ /* Remove if you want no gap below */
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    .search-container {
+      position: relative;
+      margin-bottom: 30px; /* Add gap below search box */
+    }
+
+    .search-dropdown {
+      background-color: #2c2f33;
+      border: 1px solid #444;
+      display: none;
+      position: absolute;
+      bottom: 100%;           /* Position above the input */
+      left: 0;
+      width: 100%;
+      margin-bottom: 5px;     /* Optional: space between dropdown and input */
+      max-height: 150px;
+      overflow-y: auto;
+      font-size: 0.8rem;
+      z-index: 10;
+    }
+
+    .search-dropdown div {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .search-dropdown div:hover {
+      background-color: #3a3d40;
+    }
+
+    .right-section a {
+      display: block;
+      margin: 10px 0;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-top: 1px solid #555;
+      padding-top: 10px;
+    }
+
+    .right-section a:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .dropdown-item.selected {
+      background: #3a3d40;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        flex-direction: column;
+        height: auto;
+        overflow: auto;
+      }
+
+      .bio-page .center-section {
+        align-items: flex-start !important;
+        text-align: left !important;
+      }
+
+      .left-section,
+      .center-section,
+      .right-section {
+        flex: unset;
+        width: 100%;
+        min-width: 0;
+        padding: 10px 5vw;
+        box-sizing: border-box;
+        border: none;
+      }
+
+      .left-section {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .left-section img {
+        max-width: 120px;
+        width: 60vw;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .center-section {
+        padding-left: 0;
+        margin-bottom: 10px;
+      }
+
+      .typed-container {
+        font-size: 1rem;
+        padding-right: 0;
+        border-right: none;
+      }
+
+      .right-section {
+        padding: 10px 5vw;
+        border-left: none;
+        border-top: 1px solid #555;
+        margin-top: 10px;
+      }
+
+      .search-container {
+        margin-bottom: 20px;
+      }
+
+      .right-section input[type="text"] {
+        font-size: 1rem;
+        padding: 8px;
+      }
+
+      .search-dropdown {
+        font-size: 0.95rem;
+        max-height: 180px;
+        left: 0;
+        width: 100%;
+      }
+
+      .right-section a {
+        margin: 8px 0;
+        font-size: 1rem;
+        padding-top: 8px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      /* Floating button styles */
+      #toggleSidebar {
+        display: block;
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 200; /* Make sure it's above the sidebar */
+        background: #2c2f33;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        font-size: 2rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      #toggleSidebar:active {
+        background: #444;
+      }
+
+      .right-section {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        max-width: 100vw;
+        height: 70vh; /* or 100vh if you want full height */
+        background: #23272a;
+        z-index: 101;
+        box-shadow: 0 -2px 12px rgba(0,0,0,0.3);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 40px;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .right-section.open {
+        display: flex;
+        visibility: visible;
+        pointer-events: auto;
+        animation: slideInSidebar 0s;
+      }
+      .right-section.closing {
+        animation: slideOutSidebar 0s forwards;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      @keyframes slideInSidebar {
+        from { bottom: -100vh; }
+        to { bottom: 0; }
+      }
+      @keyframes slideOutSidebar {
+        from { bottom: 0; }
+        to { bottom: -100vh; }
+      }
+
+      .center-section {
+        align-items: center;
+        text-align: center;
+        justify-content: start;
+        padding-left: 0;
+      }
+      .typed-container {
+        text-align: center;
+        border-right: none;
+        padding-right: 0;
+      }
+      .close-sidebar-btn {
+        display: block;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        z-index: 102;
+        cursor: pointer;
+      }
+
+      .see-more-btn,
+      .see-less-btn {
+        position: static !important;
+        display: block !important;
+        margin: 16px auto 0 auto !important;
+        width: fit-content !important;
+      }
+      .blog-content-preview {
+        padding-bottom: 0 !important;
+      }
+
+      .blog-post {
+        padding: 8vw 3vw;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        border-radius: 0;
+        word-break: break-word;
+      }
+      .blog-post h2 {
+        font-size: 1.3rem;
+        margin-top: 0.5em;
+        margin-bottom: 0.7em;
+      }
+      .blog-content-full img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 18px auto;
+        border-radius: 6px;
+      }
+      .blog-content-full p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1.2em;
+      }
+
+      .blog-post,
+      .blog-content-full {
+        text-align: left !important;
+      }
+    }
+    @keyframes slideInSidebar {
+      from { right: -100vw; }
+      to { right: 0; }
+    }
+    @keyframes slideOutSidebar {
+      from { right: 0; }
+      to { right: -100vw; }
+    }
+
+    .blog-post {
+      background: #23272a;
+      border-radius: 0; /* Sharp square corners */
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+    }
+    .blog-content-preview {
+      min-height: 2.5em;
+      position: relative;
+      padding-bottom: 60px; /* Add enough space for the button */
+    }
+    .back-to-blog-btn {
+      font-size: 0.95em;
+      font-family: 'Roboto Mono', monospace;
+      color: #fff;
+      background: transparent;
+      border: 1px solid #fff;
+      border-radius: 0;
+      cursor: pointer;
+      padding: 4px 14px;
+      margin-bottom: 12px;
+      margin-right: 8px;
+      margin-top: 0;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: none;
+      outline: none;
+      display: inline-block;
+      position: static;
+    }
+
+    .see-more-btn,
+    .see-less-btn {
+      font-size: 0.95em;
+      font-family: 'Roboto Mono', monospace;
+      color: #fff;
+      background: transparent;
+      border: 1px solid #fff;
+      border-radius: 0;
+      cursor: pointer;
+      padding: 4px 14px;
+      margin-bottom: 12px;
+      margin-right: 8px;
+      margin-top: 0;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: none;
+      outline: none;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    /* Hover effect for all */
+    .back-to-blog-btn:hover,
+    .see-more-btn:hover,
+    .see-less-btn:hover {
+      background: #fff;
+      color: #23272a;
+    }
+
+    /* Mobile: center see more/less buttons below content */
+    @media (max-width: 700px) {
+      .see-more-btn,
+      .see-less-btn {
+        position: static !important;
+        display: block !important;
+        margin: 16px auto 0 auto !important;
+        width: fit-content !important;
+      }
+      .blog-content-preview {
+        padding-bottom: 0 !important;
+      }
+
+      .blog-post,
+      .blog-content-full {
+        text-align: left !important;
+      }
+
+      #link-group-home {
+        text-align: center !important;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 18px;
+      }
+    }
+
+    body.no-fox .left-section {
+      display: none !important;
+    }
+    body.no-fox .center-section {
+      flex: 1 1 100%;
+      max-width: 100vw;
+    }
+
+    /* Add to your <style> section */
+    .work-tree {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1rem;
+      margin: 2em 0;
+      color: #fff;
+      line-height: 1.7;
+    }
+    .tree-company {
+      margin-bottom: 1.5em;
+    }
+    .tree-branch {
+      color: #6cf;
+      margin-right: 0.5em;
+      user-select: none;
+    }
+    .tree-years, .tree-pos-years {
+      color: #aaa;
+      margin-right: 0.7em;
+    }
+    .tree-company-name {
+      font-weight: bold;
+      color: #fff;
+    }
+    .tree-pos-title {
+      color: #fff;
+    }
+    .tree-positions {
+      margin-left: 2.5em;
+    }
+
+    .bio-text ul {
+      list-style-type: disc;
+      margin-left: 1.5em;
+      color: #ccc;
+    }
+    .bio-text ul li {
+      color: #ccc;
+      position: relative;
+    }
+    .bio-text ul li::marker {
+      color: #6cf; /* Blue, same as .tree-branch */
+    }
+
+    @keyframes fadeInBtn {
+      from { opacity: 0; transform: translateY(10px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .fade-in-btn {
+      opacity: 0;
+      animation: fadeInBtn 0.7s ease forwards;
+    }
+
+    .fade-in-fox {
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+      animation-delay: 0.5s; /* Start after fox image begins to appear */
+    }
+  </style>
+</head>
+<body>
+  <div class="left-section">
+    <img src="assets/img/fox.png" alt="Fox with Glasses" style="cursor:pointer;" onclick="window.location.hash='#home'" />
+  </div>
+
+  <div class="center-section">
+    <div id="main-content">
+      <!-- Dynamic content will be injected here -->
+    </div>
+  </div>
+
+  <div class="right-section">
+    <button class="close-sidebar-btn" aria-label="Close menu" style="display:none;">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="search-container" style="position: relative;">
+      <input class="search-box" type="text" placeholder="search post..." oninput="showDropdown()" />
+      <div class="search-dropdown" id="searchDropdown"></div>
+    </div>
+    <a href="#">Home</a>
+    <a href="#">Bio & Experiences</a>
+    <a href="#">Projects</a>
+    <a href="#">Blog</a>
+    <a href="https://github.com/legaiabay" target="_blank" rel="noopener">
+      GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/abdul-khobir-fauzi-07a502125/" target="_blank" rel="noopener">
+      LinkedIn
+    </a>
+  </div>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    const BLOG_PAGE_SIZE = 10;
+
+    let searchData = [];
+    let sortedPosts = [];
+    let currentResults = [];
+    let selectedIndex = -1;
+
+    fetch('assets/content/posts.json')
+      .then(response => response.json())
+      .then(data => {
+        searchData = data;
+        handleHashChange();
+      });
+
+    function renderHome() {
+      document.getElementById('main-content').innerHTML = `
+        <div class="typed-container" id="typed"></div>
+      `;
+
+      new Typed('#typed', {
+        strings: [
+          `<h1>Abay Journal</h1>
+            ~ my technology journey so far<br>
+            <em style="font-size:0.75em;color:#aaa;margin-top:0.5em;min-height:1.5em;">* this site is experimental result made using AI (ChatGPT + Github Copilot)</em> 😅
+          `,
+        ],
+        typeSpeed: 30,
+        backSpeed: 0,
+        loop: false,
+        showCursor: false,
+        smartBackspace: false,
+      });
+
+      // Add click handlers for the always-visible buttons
+      document.getElementById('github-btn').onclick = () =>
+        window.open('https://github.com/legaiabay', '_blank');
+      document.getElementById('linkedin-btn').onclick = () =>
+        window.open('https://www.linkedin.com/in/abdul-khobir-fauzi/', '_blank');
+    }
+
+    function renderBlog(reset = false) {
+      const container = document.getElementById('main-content');
+      if (!searchData.length) {
+        container.innerHTML = '<p>Loading...</p>';
+        return;
+      }
+
+      // Sort posts by date (latest first) once
+      if (!sortedPosts.length || reset) {
+        sortedPosts = [...searchData].sort((a, b) => new Date(b.date) - new Date(a.date));
+        blogPage = 1;
+        container.innerHTML = ''; // Clear if resetting
+      }
+
+      // Calculate which posts to show
+      const start = 0;
+      const end = blogPage * BLOG_PAGE_SIZE;
+      const postsToShow = sortedPosts.slice(start, end);
+
+      // Render posts (append if not reset)
+      if (reset) {
+        container.innerHTML = '';
+      }
+      container.innerHTML += postsToShow
+        .slice((blogPage - 1) * BLOG_PAGE_SIZE)
+        .map(post => `
+          <div class="blog-post" style="margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #444;">
+            <div style="font-size:0.9em;color:#aaa;">${post.date} | <span style="color:#6cf;">${post.tag}</span></div>
+            <h3 style="margin:0.3em 0 0.5em 0;">
+              <a href="#blog/${post.id}" style="color:#6cf;text-decoration:none;">${post.title}</a>
+            </h3>
+          </div>
+        `).join('');
+
+      // Add event listeners for "See more" buttons
+      container.querySelectorAll('.see-more-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          window.location.hash = `#blog/${this.dataset.id}`;
+        });
+      });
+
+      // Infinite scroll: load more when near bottom
+      container.onscroll = function() {
+        if (container.scrollTop + container.clientHeight >= container.scrollHeight - 50) {
+          if (end < sortedPosts.length) {
+            blogPage++;
+            renderBlog(false);
+          }
+        }
+      };
+    }
+
+    function truncateContent(content, maxLength) {
+      if (content.length <= maxLength) return content;
+      return content.slice(0, maxLength) + '...';
+    }
+
+    function showDropdown() {
+      const input = document.querySelector('.search-box');
+      const dropdown = document.getElementById('searchDropdown');
+      const query = input.value.trim().toLowerCase();
+
+      currentResults = searchData.filter(item =>
+        item.title.toLowerCase().includes(query) ||
+        item.tag.toLowerCase().includes(query)
+      ).slice(0, 5);
+
+      selectedIndex = -1;
+
+      dropdown.innerHTML = currentResults.length
+        ? currentResults.map((item, idx) =>
+            `<div class="dropdown-item${idx === selectedIndex ? ' selected' : ''}" data-idx="${idx}">
+              <strong>${item.title}</strong><br>
+              <span style="color:#aaa;font-size:0.85em;">${item.date} | ${item.tag}</span>
+            </div>`
+          ).join('')
+        : '<div style="color:#aaa;">No results found</div>';
+
+      dropdown.style.display = query ? 'block' : 'none';
+    }
+
+    document.querySelector('.search-box').addEventListener('keydown', searchBoxKeydown);
+
+    function searchBoxKeydown(e) {
+      const dropdown = document.getElementById('searchDropdown');
+      if (dropdown.style.display !== 'block') return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (selectedIndex < currentResults.length - 1) {
+          selectedIndex++;
+          updateDropdownSelection();
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (selectedIndex > 0) {
+          selectedIndex--;
+          updateDropdownSelection();
+        }
+      } else if (e.key === 'Enter') {
+        if (selectedIndex >= 0 && currentResults[selectedIndex]) {
+          window.location.hash = `#blog/${currentResults[selectedIndex].id}`;
+          dropdown.style.display = 'none';
+          document.querySelector('.search-box').value = ''; // Clear the search box
+        }
+      }
+    }
+
+    function updateDropdownSelection() {
+      const dropdown = document.getElementById('searchDropdown');
+      const items = dropdown.querySelectorAll('.dropdown-item');
+      items.forEach((item, idx) => {
+        if (idx === selectedIndex) {
+          item.classList.add('selected');
+          item.scrollIntoView({ block: 'nearest' });
+        } else {
+          item.classList.remove('selected');
+        }
+      });
+    }
+
+    // Hide dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      const dropdown = document.getElementById('searchDropdown');
+      const input = document.querySelector('.search-box');
+      if (!dropdown.contains(e.target) && e.target !== input) {
+        dropdown.style.display = 'none';
+      }
+    });
+
+    // Click to select from dropdown
+    document.getElementById('searchDropdown').addEventListener('mousedown', function(e) {
+      if (e.target.closest('.dropdown-item')) {
+        const idx = Number(e.target.closest('.dropdown-item').dataset.idx);
+        if (currentResults[idx]) {
+          window.location.hash = `#blog/${currentResults[idx].id}`;
+          this.style.display = 'none';
+          document.querySelector('.search-box').value = ''; // Clear the search box
+        }
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const sidebar = document.querySelector('.right-section');
+      const closeBtn = document.querySelector('.close-sidebar-btn');
+      const toggleBtn = document.getElementById('toggleSidebar');
+
+      toggleBtn.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) {
+          // Start slide out animation
+          sidebar.classList.remove('open');
+          sidebar.classList.add('closing');
+          closeBtn.style.display = 'none';
+          document.body.style.overflow = '';
+          // Remove .closing after animation
+          sidebar.addEventListener('animationend', function handler() {
+            sidebar.classList.remove('closing');
+            sidebar.removeEventListener('animationend', handler);
+          });
+        } else {
+          sidebar.classList.add('open');
+          closeBtn.style.display = 'block';
+          document.body.style.overflow = 'hidden';
+        }
+      });
+
+      closeBtn.addEventListener('click', function() {
+        sidebar.classList.remove('open');
+        sidebar.classList.add('closing');
+        this.style.display = 'none';
+        document.body.style.overflow = '';
+        sidebar.addEventListener('animationend', function handler() {
+          sidebar.classList.remove('closing');
+          sidebar.removeEventListener('animationend', handler);
+        });
+      });
+
+      function truncateContent(content, maxLength) {
+        if (content.length <= maxLength) return content;
+        return content.slice(0, maxLength) + '...';
+      }
+    });
+
+    // Load data once and use for both search and blog
+    fetch('search-data.json')
+      .then(response => response.json())
+      .then(data => {
+        searchData = data;
+        handleHashChange(); // Call this to handle initial hash
+      });
+
+    // Handle hash changes for navigation
+    function handleHashChange() {
+      // Always close sidebar on mobile when navigating
+      const sidebar = document.querySelector('.right-section');
+      const closeBtn = document.querySelector('.close-sidebar-btn');
+      sidebar.classList.remove('open');
+      document.body.style.overflow = '';
+      if (closeBtn) closeBtn.style.display = 'none';
+
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+
+      // Show fox image only on home page and blog list
+      const foxImg = document.querySelector('.left-section img');
+      const blogMatch = hash.match(/^blog(?:\/(\d+))?$/);
+      if (foxImg) {
+        if (
+          !hash ||
+          hash === 'home' ||
+          hash === '' ||
+          hash === 'bio' ||
+          hash === 'bio & experiences' ||
+          (blogMatch && !blogMatch[1])
+        ) {
+          foxImg.style.display = '';
+          document.body.classList.remove('no-fox');
+        } else {
+          foxImg.style.display = 'none';
+          document.body.classList.add('no-fox');
+        }
+      }
+
+      // Match #blog or #blog/ID
+      if (blogMatch) {
+        if (blogMatch[1]) {
+          renderBlogPost(parseInt(blogMatch[1], 10));
+        } else {
+          renderBlog(true);
+        }
+        return;
+      }
+
+      if (hash === 'bio' || hash === 'bio & experiences') {
+        document.body.classList.add('bio-page');
+        renderBioAndExperiences();
+      } else {
+        document.body.classList.remove('bio-page');
+        renderHome();
+      }
+    }
+
+    function renderBlogPost(postId) {
+      const postMeta = searchData.find(p => p.id === postId);
+      const container = document.getElementById('main-content');
+      if (!postMeta) {
+        container.innerHTML = `<p>Post not found.</p>`;
+        return;
+      }
+      fetch(`assets/content/${postMeta.file}`)
+        .then(res => res.text())
+        .then(md => {
+          // Remove frontmatter if present
+          const content = md.replace(/^---[\s\S]*?---/, '').trim();
+          container.innerHTML = `
+            <div class="blog-post" style="margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #444;">
+              <div style="font-size:0.9em;color:#aaa;">
+                <button class="back-to-blog-btn" onclick="window.location.hash='#blog'">&larr; Back to Blog</button><br>
+                ${postMeta.date} | <span style="color:#6cf;">${postMeta.tag}</span>
+              </div>
+              <h2 style="margin:0.3em 0 0.5em 0;">${postMeta.title}</h2>
+              <div class="blog-content-full" style="margin-top:1.5em;line-height:1.7;">
+                ${marked.parse(content)}
+              </div>
+            </div>
+          `;
+        });
+    }
+
+    function renderBioAndExperiences() {
+      document.getElementById('main-content').innerHTML = `
+        <h2 style="margin-bottom: 0.7em;">Bio</h2>
+        <div class="bio-text" style="margin-bottom:2em; font-size:1.1em; color:#ccc;">
+          Software Engineer. Coding Enthusiast. Focus on game and web development.<br>
+          <div style="margin-top:0.7em;">Hobbies:</div>
+          <ul style="margin: 0.5em 0 0 1.5em; color: #ccc;">
+            <li>Gaming (JRPG enthusiast)</li>
+            <li>Photography</li>
+            <li>Playing music instruments</li>
+            <li>Night riding</li>
+            <li>Coffee</li>
+          </ul>
         </div>
-    </body>
+        <hr style="border: none; border-top: 1px solid #444; margin: 2em 0;">
+        <h2>Experience</h2>
+        <div class="work-tree">
+          <div class="tree-company">
+            <span class="tree-branch">├──</span>
+            <span class="tree-years">2018 - Present</span>
+            <span class="tree-company-name">Fast8 Group</span>
+            <div class="tree-positions">
+              <div>
+                <span class="tree-branch">│   ├──</span>
+                <span class="tree-pos-years">2025 - Present</span>
+                <span class="tree-pos-title">Tech Subdivision - Head of SaaS</span>
+              </div>
+              <div>
+                <span class="tree-branch">│   ├──</span>
+                <span class="tree-pos-years">2022 - 2025</span>
+                <span class="tree-pos-title">SaaS Backend Dev Supervisor</span>
+              </div>
+              <div>
+                <span class="tree-branch">│   ├──</span>
+                <span class="tree-pos-years">2021 - 2022</span>
+                <span class="tree-pos-title">Senior Backend Dev</span>
+              </div>
+              <div>
+                <span class="tree-branch">│   └──</span>
+                <span class="tree-pos-years">2018 - 2021</span>
+                <span class="tree-pos-title">Backend Dev</span>
+              </div>
+            </div>
+          </div>
+          <div class="tree-company">
+            <span class="tree-branch">├──</span>
+            <span class="tree-years">2018</span>
+            <span class="tree-company-name">SEMISOFT</span>
+            <div class="tree-positions">
+              <div>
+                <span class="tree-branch">│   └──</span>
+                <span class="tree-pos-years">2018</span>
+                <span class="tree-pos-title">Game Programmer (Unity)</span>
+              </div>
+            </div>
+          </div>
+          <div class="tree-company">
+            <span class="tree-branch">├──</span>
+            <span class="tree-years">2017 - 2018</span>
+            <span class="tree-company-name">PT. Imtel Sinergi</span>
+            <div class="tree-positions">
+              <div>
+                <span class="tree-branch">│   └──</span>
+                <span class="tree-pos-years">2017 - 2018</span>
+                <span class="tree-pos-title">Game Programmer (Unity)</span>
+              </div>
+            </div>
+          </div>
+          <div class="tree-company">
+            <span class="tree-branch">└──</span>
+            <span class="tree-years">2016 - 2017</span>
+            <span class="tree-company-name">Gunadarma University</span>
+            <div class="tree-positions">
+              <div>
+                <span class="tree-branch">    └──</span>
+                <span class="tree-pos-years">2016 - 2017</span>
+                <span class="tree-pos-title">IT Laboratory Assistant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Run on page load
+    window.addEventListener('DOMContentLoaded', handleHashChange);
+    // Run on hash change (back/forward navigation)
+    window.addEventListener('hashchange', handleHashChange);
+
+    document.querySelectorAll('.right-section a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        // Only handle internal links (not starting with http)
+        if (href && !href.startsWith('http')) {
+          e.preventDefault();
+          const section = this.textContent.trim().toLowerCase();
+          if (section === 'home') {
+            window.location.hash = '#home';
+          } else if (section === 'blog') {
+            window.location.hash = '#blog';
+          } else if (section === 'bio & experiences') {
+            window.location.hash = '#bio';
+          } else if (section === 'projects') {
+            window.location.href = 'https://legaiabay.github.io/';
+            return;
+          }
+          document.querySelector('.right-section').classList.remove('open');
+          document.body.style.overflow = '';
+          document.querySelector('.close-sidebar-btn').style.display = 'none';
+        }
+        // For external links, do nothing (let browser handle)
+      });
+    });
+  </script>
+
+  <!-- Add this floating button just before closing </body> -->
+  <button id="toggleSidebar" aria-label="Open menu">
+    <i class="fas fa-bars"></i>
+  </button>
+</body>
 </html>
