@@ -4,20 +4,20 @@
     "date": "2024-05-01",
     "title": "Building a CI/CD Pipeline",
     "tag": "DevOps",
-    "file": "post-1.md"
+    "file": "post-1.html"
   },
   {
     "id": 2,
     "date": "2024-04-20",
     "title": "My First Golang API",
     "tag": "Go",
-    "file": "post-2.md"
+    "file": "post-2.html"
   },
   {
     "id": 3,
     "date": "2024-03-15",
     "title": "AI Chatbot Demo",
     "tag": "AI",
-    "file": "post-3.md"
+    "file": "post-3.html"
   }
 ]
