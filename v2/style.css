@@ -16,25 +16,42 @@ body {
   position: relative;
 }
 
-/* ── WebGL background canvas ── */
-#bgCanvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
 /* ── Per-section background themes ── */
 body::before {
-  display: none; /* replaced by WebGL canvas */
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at var(--gx, 70%) var(--gy, 50%), #0055cc 0%, #0033aa 30%, #001155 60%, #000a2e 100%);
+  z-index: 0;
+  transition: background 0.8s ease;
 }
 
-body.bg-home::before,
-body.bg-bio::before,
-body.bg-projects::before,
+body.bg-home::before {
+  background: radial-gradient(ellipse at var(--gx, 70%) var(--gy, 50%), #0055cc 0%, #0033aa 30%, #001155 60%, #000a2e 100%);
+}
+body.bg-bio::before {
+  background: radial-gradient(ellipse at var(--gx, 60%) var(--gy, 50%), #1a0a3a 0%, #2d0a4e 30%, #1a0030 60%, #0d0020 100%);
+}
+body.bg-projects::before {
+  background: radial-gradient(ellipse at var(--gx, 65%) var(--gy, 50%), #0a2a1a 0%, #0a3d20 30%, #061a10 60%, #030d08 100%);
+}
 body.bg-blog::before {
-  display: none;
+  background: radial-gradient(ellipse at var(--gx, 70%) var(--gy, 50%), #2a1500 0%, #3d1f00 30%, #1a0d00 60%, #0d0600 100%);
+}
+
+/* ── Diagonal moving square grid ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: -100px;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: var(--grid-x, 0px) var(--grid-y, 0px);
+  pointer-events: none;
+  transform: rotate(-20deg) scale(1.6);
 }
 
 /* ── Grain canvas ── */
@@ -678,9 +695,33 @@ body.bg-blog::before {
     display: none;
   }
 
-  /* Title gets plain white bg on mobile instead */
+  /* Title gets white bg with CSS clip-path wobble on mobile */
   .section-title {
     background: #fff;
+    animation: titleWobbleMobile 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes titleWobbleMobile {
+    0%   { clip-path: polygon(0%   0%,   100% 3%,   98%  100%, 2%   97%);  }
+    20%  { clip-path: polygon(2%   2%,   97%  0%,   100% 98%,  0%   100%); }
+    40%  { clip-path: polygon(0%   3%,   100% 0%,   96%  100%, 4%   96%);  }
+    60%  { clip-path: polygon(3%   0%,   96%  4%,   100% 97%,  0%   100%); }
+    80%  { clip-path: polygon(1%   4%,   100% 0%,   98%  98%,  0%   97%);  }
+    100% { clip-path: polygon(0%   0%,   98%  3%,   100% 100%, 2%   96%);  }
+  }
+
+  /* Selected menu item wobble on mobile */
+  .menu-item.active {
+    animation: menuZoomIn 0.2s cubic-bezier(0.22, 1, 0.36, 1) both,
+               menuWobbleMobile 2s ease-in-out 0.2s infinite alternate;
+  }
+
+  @keyframes menuWobbleMobile {
+    0%   { clip-path: polygon(0%   0%,   100% 2%,   98%  100%, 2%   98%);  }
+    25%  { clip-path: polygon(2%   1%,   98%  0%,   100% 97%,  1%   100%); }
+    50%  { clip-path: polygon(0%   3%,   100% 1%,   97%  100%, 3%   97%);  }
+    75%  { clip-path: polygon(3%   0%,   97%  3%,   100% 98%,  0%   100%); }
+    100% { clip-path: polygon(1%   0%,   99%  2%,   100% 100%, 2%   97%);  }
   }
 
   /* Wallet — smaller, stays top-left */
