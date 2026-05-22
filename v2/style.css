@@ -16,30 +16,25 @@ body {
   position: relative;
 }
 
-/* ── Per-section background themes ── */
-body::before {
-  content: '';
-  position: absolute;
+/* ── WebGL background canvas ── */
+#bgCanvas {
+  position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 50%, #0055cc 0%, #0033aa 30%, #001155 60%, #000a2e 100%);
-  transition: background 0.1s;
+  width: 100%;
+  height: 100%;
   z-index: 0;
 }
 
-body.bg-home::before {
-  background: radial-gradient(ellipse at 70% 50%, #0055cc 0%, #0033aa 30%, #001155 60%, #000a2e 100%);
+/* ── Per-section background themes ── */
+body::before {
+  display: none; /* replaced by WebGL canvas */
 }
 
-body.bg-bio::before {
-  background: radial-gradient(ellipse at 60% 50%, #1a0a3a 0%, #2d0a4e 30%, #1a0030 60%, #0d0020 100%);
-}
-
-body.bg-projects::before {
-  background: radial-gradient(ellipse at 65% 50%, #0a2a1a 0%, #0a3d20 30%, #061a10 60%, #030d08 100%);
-}
-
+body.bg-home::before,
+body.bg-bio::before,
+body.bg-projects::before,
 body.bg-blog::before {
-  background: radial-gradient(ellipse at 70% 50%, #2a1500 0%, #3d1f00 30%, #1a0d00 60%, #0d0600 100%);
+  display: none;
 }
 
 /* ── Grain canvas ── */
@@ -153,13 +148,12 @@ body.bg-blog::before {
   font-size: 7rem;
   font-weight: 700;
   font-style: italic;
-  color: #111;
+  color: #5b5b5b;
   letter-spacing: -0.02em;
   white-space: nowrap;
   z-index: 0;
   opacity: 0.75;
   text-transform: uppercase;
-  -webkit-text-stroke: 2px #111;
   pointer-events: none;
 }
 
@@ -630,8 +624,6 @@ body.bg-blog::before {
   cursor: pointer;
   line-height: 1;
   white-space: nowrap;
-  -webkit-text-stroke: 1px #007ab8;
-  text-shadow: 2px 2px 0px rgba(0, 0, 80, 0.5);
   transition: color 0.12s;
   font-size: 1.5rem;
 }
@@ -643,10 +635,7 @@ body.bg-blog::before {
 /* Active state */
 .menu-item.active {
   color: #cc0000;
-  -webkit-text-stroke: 2px #cc0000;
-  text-shadow:
-    3px 3px 0px rgba(0, 0, 0, 0.6),
-    0 0 20px rgba(180, 0, 0, 0.4);
+  text-shadow: none;
   font-size: 5.5rem;
   line-height: 1;
   padding: 4px 18px 4px 24px;
@@ -792,7 +781,6 @@ body.bg-blog::before {
     padding: 6px 16px;
     background: #fff;
     color: #cc0000;
-    -webkit-text-stroke: 1px #cc0000;
     text-shadow: none;
     transform-origin: center center;
   }
@@ -871,6 +859,143 @@ body.bg-blog::before {
   white-space: nowrap;
 }
 
+/* ── Experience horizontal timeline ── */
+.exp-timeline {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 0;
+  height: 200px;
+  scrollbar-width: thin;
+  scrollbar-color: #00cfff rgba(0,207,255,0.1);
+  align-items: stretch;
+}
+.exp-timeline::-webkit-scrollbar { height: 3px; }
+.exp-timeline::-webkit-scrollbar-track { background: rgba(0,207,255,0.1); }
+.exp-timeline::-webkit-scrollbar-thumb { background: #00cfff; border-radius: 2px; }
+
+/* Each column = one position */
+.exp-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 110px;
+  scroll-snap-align: start;
+  cursor: pointer;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  transition: background 0.15s;
+}
+.exp-col:hover { background: rgba(255,255,255,0.03); }
+
+/* Accent bar — top horizontal stripe */
+.exp-col-accent {
+  height: 4px;
+  width: 100%;
+  background: rgba(0, 207, 255, 0.2);
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.exp-col.active .exp-col-accent { background: #00cfff; }
+
+/* Inner content */
+.exp-col-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 10px 14px 10px;
+  gap: 4px;
+  flex: 1;
+}
+
+/* Big year number */
+.exp-col-year {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255,255,255,0.3);
+  transition: color 0.2s;
+}
+.exp-col.active .exp-col-year { color: #fff; }
+
+/* Job title */
+.exp-col-title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.3;
+  transition: color 0.2s;
+}
+.exp-col.active .exp-col-title { color: #fff; font-weight: 700; }
+
+/* Company name */
+.exp-col-company {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  color: rgba(0,207,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+  margin-top: auto;
+}
+.exp-col.active .exp-col-company { color: #00cfff; }
+
 @media (max-width: 768px) {
   .exp-grid { max-height: none; }
+
+  /* Experience timeline — vertical on mobile */
+  .exp-timeline {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    overflow-x: hidden;
+    overflow-y: visible;
+    scroll-snap-type: none;
+    scrollbar-width: thin;
+    scrollbar-color: #00cfff rgba(0,207,255,0.1);
+  }
+  .exp-timeline::-webkit-scrollbar { width: 3px; height: auto; }
+
+  .exp-col {
+    width: 100%;
+    flex-direction: row;
+    height: auto;
+    min-height: 80px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    scroll-snap-align: start;
+  }
+
+  .exp-col-accent {
+    width: 4px;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .exp-col-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 12px;
+    flex: 1;
+  }
+
+  .exp-col-year {
+    font-size: 1.8rem;
+    min-width: 60px;
+    flex-shrink: 0;
+  }
+
+  .exp-col-title { flex: 1; font-size: 0.72rem; }
+
+  .exp-col-company { margin-top: 0; text-align: right; flex-shrink: 0; }
+}
+
+@media (max-width: 768px) {
+  .content-section[data-section="home"] {
+    min-height: calc(100vh - 172px);
+    justify-content: center;
+  }
 }

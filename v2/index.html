@@ -11,6 +11,9 @@
 </head>
 <body>
 
+  <!-- WebGL background -->
+  <canvas id="bgCanvas"></canvas>
+
   <!-- Grain canvas -->
   <canvas id="grainCanvas"></canvas>
 
@@ -53,9 +56,8 @@
         <h1 class="section-title">Hello, I'm <span class="accent">Abay</span></h1>
         <p class="section-sub">Abdul Khobir Fauzi</p>
         <p class="section-body">
-          Welcome to my corner of the internet.<br />
-          This is where I document my technology journey —
-          things I build, things I learn, and things I break.
+          Software Engineer. Coding Enthusiast.<br />
+          Focus on game and web development.
         </p>
         <div class="tag-list">
           <span class="tag">Developer</span>
@@ -80,64 +82,70 @@
 
       <!-- BIO & EXPERIENCES -->
       <section class="content-section" data-section="bio">
-        <h1 class="section-title">Bio &amp; <span class="accent">Experiences</span></h1>
+        <h1 class="section-title"><span class="accent">Experiences</span></h1>
 
-        <div class="bio-block">
-          <p class="section-body">Software Engineer. Coding Enthusiast.<br>Focus on game and web development.</p>
-          <div class="section-body" style="margin-top: 8px;">Hobbies:</div>
-          <ul class="bio-list">
-            <li>Gaming (JRPG enthusiast)</li>
-            <li>Photography</li>
-            <li>Playing music instruments</li>
-            <li>Night riding</li>
-            <li>Coffee</li>
-          </ul>
-        </div>
+        <div class="exp-timeline" id="expTimeline">
 
-        <div class="bio-divider"></div>
-
-        <div class="exp-grid">
-
-          <div class="exp-card">
-            <div class="exp-card-header">
-              <span class="exp-company-name">Fast8 Group</span>
-              <span class="exp-company-years">2018 – Present</span>
-            </div>
-            <div class="exp-card-positions">
-              <div class="exp-pos-row"><span class="exp-pos-title">Tech Subdivision – Head of SaaS</span><span class="exp-pos-years">2025 – Present</span></div>
-              <div class="exp-pos-row"><span class="exp-pos-title">SaaS Backend Dev Supervisor</span><span class="exp-pos-years">2022 – 2025</span></div>
-              <div class="exp-pos-row"><span class="exp-pos-title">Senior Backend Dev</span><span class="exp-pos-years">2021 – 2022</span></div>
-              <div class="exp-pos-row"><span class="exp-pos-title">Backend Dev</span><span class="exp-pos-years">2018 – 2021</span></div>
+          <div class="exp-col active" data-exp="0">
+            <div class="exp-col-accent"></div>
+            <div class="exp-col-inner">
+              <span class="exp-col-year">2025</span>
+              <span class="exp-col-title">Head of SaaS</span>
+              <span class="exp-col-company">Fast8 Group</span>
             </div>
           </div>
 
-          <div class="exp-card">
-            <div class="exp-card-header">
-              <span class="exp-company-name">SEMISOFT</span>
-              <span class="exp-company-years">2018</span>
-            </div>
-            <div class="exp-card-positions">
-              <div class="exp-pos-row"><span class="exp-pos-title">Game Programmer (Unity)</span><span class="exp-pos-years">2018</span></div>
-            </div>
-          </div>
-
-          <div class="exp-card">
-            <div class="exp-card-header">
-              <span class="exp-company-name">PT. Imtel Sinergi</span>
-              <span class="exp-company-years">2017 – 2018</span>
-            </div>
-            <div class="exp-card-positions">
-              <div class="exp-pos-row"><span class="exp-pos-title">Game Programmer (Unity)</span><span class="exp-pos-years">2017 – 2018</span></div>
+          <div class="exp-col" data-exp="1">
+            <div class="exp-col-accent"></div>
+            <div class="exp-col-inner">
+              <span class="exp-col-year">2022</span>
+              <span class="exp-col-title">Backend Dev Supervisor</span>
+              <span class="exp-col-company">Fast8 Group</span>
             </div>
           </div>
 
-          <div class="exp-card">
-            <div class="exp-card-header">
-              <span class="exp-company-name">Gunadarma University</span>
-              <span class="exp-company-years">2016 – 2017</span>
+          <div class="exp-col" data-exp="2">
+            <div class="exp-col-accent"></div>
+            <div class="exp-col-inner">
+              <span class="exp-col-year">2021</span>
+              <span class="exp-col-title">Senior Backend Dev</span>
+              <span class="exp-col-company">Fast8 Group</span>
             </div>
-            <div class="exp-card-positions">
-              <div class="exp-pos-row"><span class="exp-pos-title">IT Laboratory Assistant</span><span class="exp-pos-years">2016 – 2017</span></div>
+          </div>
+
+          <div class="exp-col" data-exp="3">
+            <div class="exp-col-accent"></div>
+            <div class="exp-col-inner">
+              <span class="exp-col-year">2018</span>
+              <span class="exp-col-title">Backend Dev</span>
+              <span class="exp-col-company">Fast8 Group</span>
+            </div>
+          </div>
+
+          <div class="exp-col" data-exp="4">
+            <div class="exp-col-accent"></div>
+            <div class="exp-col-inner">
+              <span class="exp-col-year">2018</span>
+              <span class="exp-col-title">Game Programmer</span>
+              <span class="exp-col-company">SEMISOFT</span>
+            </div>
+          </div>
+
+          <div class="exp-col" data-exp="5">
+            <div class="exp-col-accent"></div>
+            <div class="exp-col-inner">
+              <span class="exp-col-year">2017</span>
+              <span class="exp-col-title">Game Programmer</span>
+              <span class="exp-col-company">PT. Imtel Sinergi</span>
+            </div>
+          </div>
+
+          <div class="exp-col" data-exp="6">
+            <div class="exp-col-accent"></div>
+            <div class="exp-col-inner">
+              <span class="exp-col-year">2016</span>
+              <span class="exp-col-title">Lab Assistant</span>
+              <span class="exp-col-company">Gunadarma Univ.</span>
             </div>
           </div>
 
@@ -212,14 +220,7 @@
       <!-- BLOG -->
       <section class="content-section" data-section="blog">
         <h1 class="section-title"><span class="accent">Blog</span></h1>
-        <p class="section-body">Notes, tutorials, and experiments.</p>
-        <ul class="blog-list">
-          <li class="blog-item">
-            <span class="blog-date">—</span>
-            <span class="blog-title">Visit the blog for latest posts</span>
-          </li>
-        </ul>
-        <a class="cta-link" href="https://legaiabay.github.io" target="_blank">Go to Blog →</a>
+        <p class="section-body">Coming Later</p>
       </section>
 
       <!-- GITHUB (external redirect section) -->
