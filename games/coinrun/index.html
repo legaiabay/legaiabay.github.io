@@ -2,25 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>Coin Run</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
       background: #0a0a12;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
     }
     #game-container {
       position: relative;
       width: 390px;
       height: 844px;
-      max-height: 100vh;
-      max-width: calc(100vh * 390 / 844);
+      max-height: 100dvh;
+      max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+      max-width: calc((100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom)) * 390 / 844);
     }
     canvas {
       display: block;
