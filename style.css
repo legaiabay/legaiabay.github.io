@@ -16,6 +16,30 @@ body {
   position: relative;
 }
 
+/* ── Splash screen ── */
+#splash {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  pointer-events: none;
+}
+
+#splashImg {
+  width: 160px;
+  height: auto;
+  opacity: 0;
+  animation: splashFadeIn 0.4s ease 0.1s forwards;
+}
+
+@keyframes splashFadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
 /* ── Per-section background themes ── */
 body::before {
   content: '';

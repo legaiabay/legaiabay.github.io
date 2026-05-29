@@ -322,7 +322,85 @@ items.forEach((item, i) => {
   });
 });
 
-// ── Diagonal grid animation ───────────────────────────────────────
+// ── Splash screen ─────────────────────────────────────────────────
+(function runSplash() {
+  const splash = document.getElementById('splash');
+  const splashImg = document.getElementById('splashImg');
+
+  // Wait 500ms then ripple out from image center
+  setTimeout(() => {
+    const r = splashImg.getBoundingClientRect();
+    const origin = {
+      x: r.left + r.width  / 2,
+      y: r.top  + r.height / 2,
+    };
+
+    // Use the same canvas + playRipple but with black fill
+    // We draw directly here since playRipple uses black already
+    const cvs = document.getElementById('transitionCanvas');
+    const c   = cvs.getContext('2d');
+    const maxR = Math.hypot(
+      Math.max(origin.x, cvs.width  - origin.x),
+      Math.max(origin.y, cvs.height - origin.y)
+    );
+
+    const PHASE_MS = 350;
+    let startTime  = null;
+    let phase      = 1;
+    let splashRemoved = false;
+
+    function easeIO(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+
+    function tick(ts) {
+      if (!startTime) startTime = ts;
+      const t = Math.min((ts - startTime) / PHASE_MS, 1);
+
+      c.clearRect(0, 0, cvs.width, cvs.height);
+
+      if (phase === 1) {
+        // Expand black circle over splash
+        const rad = maxR * easeIO(t);
+        c.globalCompositeOperation = 'source-over';
+        c.fillStyle = '#000';
+        c.beginPath();
+        c.arc(origin.x, origin.y, rad, 0, Math.PI * 2);
+        c.fill();
+
+        if (t >= 1) {
+          // Remove splash, reveal main page
+          if (!splashRemoved) {
+            splashRemoved = true;
+            splash.remove();
+          }
+          phase = 2;
+          startTime = ts;
+        }
+      } else {
+        // Fill black, punch hole from center
+        c.globalCompositeOperation = 'source-over';
+        c.fillStyle = '#000';
+        c.fillRect(0, 0, cvs.width, cvs.height);
+
+        const rad = maxR * easeIO(t);
+        c.globalCompositeOperation = 'destination-out';
+        c.beginPath();
+        c.arc(origin.x, origin.y, rad, 0, Math.PI * 2);
+        c.fill();
+        c.globalCompositeOperation = 'source-over';
+
+        if (t >= 1) {
+          c.clearRect(0, 0, cvs.width, cvs.height);
+          return;
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }, 500);
+})();
+// ─────────────────────────────────────────────────────────────────
 (function animateGrid() {
   let offset = 0;
   function tick() {
