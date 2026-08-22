@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genki — Self-Hosted Uptime Monitoring</title>
+  <link rel="icon" href="assets/img/favicon.ico" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:             #0d0d0d;
+      --bg-panel:       #111111;
+      --bg-card:        #161616;
+      --bg-card-2:      #1a1a1a;
+      --border:         #252525;
+      --border-soft:    #1e1e1e;
+      --text-primary:   #e8e8e8;
+      --text-secondary: #888;
+      --text-muted:     #555;
+      --text-dim:       #444;
+      --accent:         #e53e3e;
+      --accent-hover:   #fc8181;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    .hero {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 0;
+    }
+
+    /* ── LEFT: big logo ──────────────────────────────────── */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-panel);
+      border-right: 1px solid var(--border-soft);
+      overflow: hidden;
+    }
+
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(229,62,62,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-version {
+      position: absolute;
+      top: 28px;
+      left: 32px;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+    }
+
+    .logo-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-ring {
+      position: absolute;
+      border-radius: 50%;
+      animation: ring-pulse 3.5s ease-in-out infinite;
+    }
+
+    .logo-ring:nth-child(1) { width: 240px; height: 240px; border: 1px solid rgba(229,62,62,0.18); animation-delay: 0s; }
+    .logo-ring:nth-child(2) { width: 340px; height: 340px; border: 1px solid rgba(229,62,62,0.10); animation-delay: 0.7s; }
+    .logo-ring:nth-child(3) { width: 440px; height: 440px; border: 1px solid rgba(229,62,62,0.05); animation-delay: 1.4s; }
+    .logo-ring:nth-child(4) { width: 560px; height: 560px; border: 1px solid rgba(229,62,62,0.02); animation-delay: 2.1s; }
+
+    @keyframes ring-pulse {
+      0%, 100% { opacity: 1;   transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(1.02); }
+    }
+
+    .logo-img {
+      position: relative;
+      z-index: 1;
+      width: 200px;
+      height: auto;
+      filter: drop-shadow(0 0 48px rgba(229,62,62,0.25)) drop-shadow(0 0 96px rgba(229,62,62,0.1));
+      animation: logo-float 5s ease-in-out infinite;
+    }
+
+    @keyframes logo-float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+
+    /* ── RIGHT: copy + thumbnails ────────────────────────── */
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 72px;
+      gap: 0;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+    }
+
+    .hero-heading {
+      font-size: clamp(30px, 3.4vw, 48px);
+      font-weight: 700;
+      line-height: 1.13;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+    }
+
+    .hero-heading em  { font-style: normal; color: var(--text-secondary); }
+    .hero-heading .accent { color: var(--accent-hover); }
+
+    .hero-body {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      max-width: 360px;
+      margin-bottom: 28px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.15s, color 0.15s, transform 0.1s;
+    }
+
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #c53030; }
+    .btn-secondary {
+      background: var(--bg-card-2);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: var(--bg-card); color: var(--text-primary); border-color: var(--border-soft); }
+
+    /* ── THUMBNAIL STRIP ─────────────────────────────────── */
+    .ss-label {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 10px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .ss-thumbs {
+      display: flex;
+      gap: 8px;
+    }
+
+    .ss-thumb {
+      flex: 1;
+      aspect-ratio: 16 / 9;
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      opacity: 0.45;
+      background: var(--bg-card);
+      transition: opacity 0.15s, border-color 0.15s, transform 0.15s;
+    }
+
+    .ss-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+      display: block;
+    }
+
+    .ss-thumb:hover { opacity: 0.75; transform: translateY(-2px); }
+    .ss-thumb.active { border-color: var(--accent); opacity: 1; }
+
+    /* ── LIGHTBOX ─────────────────────────────────────────── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0,0,0,0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      backdrop-filter: blur(6px);
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      animation: lb-in 0.2s ease;
+    }
+
+    @keyframes lb-in {
+      from { opacity: 0; transform: scale(0.96); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    /* browser chrome */
+    .lightbox-frame {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.7);
+    }
+
+    .lightbox-bar {
+      height: 30px;
+      background: var(--bg-card-2);
+      border-bottom: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .lb-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+    }
+    .lb-dot:nth-child(1) { background: #e53e3e; }
+    .lb-dot:nth-child(2) { background: #ed8936; }
+    .lb-dot:nth-child(3) { background: #48bb78; }
+
+    .lightbox-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: calc(100vh - 160px);
+      object-fit: contain;
+    }
+
+    /* close button */
+    .lightbox-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--bg-card-2);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .lightbox-close:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* nav arrows */
+    .lb-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(22,22,22,0.9);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, color 0.15s;
+      user-select: none;
+    }
+
+    .lb-arrow:hover { background: var(--bg-card-2); color: var(--text-primary); }
+    .lb-arrow.prev { left: -48px; }
+    .lb-arrow.next { right: -48px; }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .footer-text { font-size: 12px; color: var(--text-muted); }
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .page { height: auto; overflow: visible; }
+      .hero { grid-template-columns: 1fr; }
+
+      .hero-visual {
+        min-height: 320px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+      }
+
+      .logo-img { width: 130px; }
+      .logo-ring:nth-child(1) { width: 160px; height: 160px; }
+      .logo-ring:nth-child(2) { width: 220px; height: 220px; }
+      .logo-ring:nth-child(3) { width: 280px; height: 280px; }
+      .logo-ring:nth-child(4) { width: 340px; height: 340px; }
+
+      .hero-copy { padding: 36px 24px; }
+      .lightbox { padding: 20px; }
+      .lb-arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="page">
+
+  <!-- ─── HERO ─────────────────────────────────────────── -->
+  <section class="hero">
+
+    <!-- LEFT: big logo with rings -->
+    <div class="hero-visual">
+      <div class="logo-wrap">
+        <div class="logo-ring"></div>
+        <div class="logo-ring"></div>
+        <div class="logo-ring"></div>
+        <div class="logo-ring"></div>
+        <img class="logo-img" src="assets/img/logo.png" alt="Genki" />
+      </div>
+    </div>
+
+    <!-- RIGHT: copy + thumbnails -->
+    <div class="hero-copy">
+      <p class="hero-label">Self-hosted · Open source</p>
+      <h1 class="hero-heading">
+        Monitor <em>uptime,</em><br>
+        track <span class="accent">incidents,</span><br>
+        stay in control.
+      </h1>
+      <p class="hero-body">
+        Genki is a self-hosted uptime monitoring application. It checks HTTP, TCP, and ping endpoints on a configurable schedule, tracks incidents, and sends notifications to Slack, Telegram, Google Chat, and more — all from a single Docker image.
+      </p>
+
+      <div class="hero-cta">
+        <a href="https://github.com/legaiabay/genki-uptime-monitoring" class="btn btn-primary" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 19 19" fill="currentColor"><path fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/></svg>
+          View on GitHub
+        </a>
+      </div>
+
+      <!-- thumbnail strip -->
+      <p class="ss-label">Preview</p>
+      <div class="ss-thumbs" id="ss-thumbs">
+        <div class="ss-thumb" data-index="0">
+          <img src="assets/img/ss1.png" alt="Screenshot 1" />
+        </div>
+        <div class="ss-thumb" data-index="1">
+          <img src="assets/img/ss2.png" alt="Screenshot 2" />
+        </div>
+        <div class="ss-thumb" data-index="2">
+          <img src="assets/img/ss3.png" alt="Screenshot 3" />
+        </div>
+        <div class="ss-thumb" data-index="3">
+          <img src="assets/img/ss4.png" alt="Screenshot 4" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────── -->
+  <footer>
+    <span class="footer-text">legaiabay @ 2023 - <span id="footer-year"></span> · made with ❤️</span>
+  </footer>
+
+</main>
+
+<!-- ─── LIGHTBOX ──────────────────────────────────────────── -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lb-close" aria-label="Close">✕</button>
+    <button class="lb-arrow prev" id="lb-prev" aria-label="Previous">‹</button>
+    <button class="lb-arrow next" id="lb-next" aria-label="Next">›</button>
+    <div class="lightbox-frame">
+      <div class="lightbox-bar">
+        <span class="lb-dot"></span>
+        <span class="lb-dot"></span>
+        <span class="lb-dot"></span>
+      </div>
+      <img class="lightbox-img" id="lb-img" src="" alt="Screenshot preview" />
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── year ──────────────────────────────────────────────────
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  // ── lightbox ──────────────────────────────────────────────
+  const images = [
+    'assets/img/ss1.png',
+    'assets/img/ss2.png',
+    'assets/img/ss3.png',
+    'assets/img/ss4.png',
+  ];
+
+  const thumbs   = document.querySelectorAll('.ss-thumb');
+  const lightbox = document.getElementById('lightbox');
+  const lbImg    = document.getElementById('lb-img');
+  let current    = 0;
+
+  function openLightbox(idx) {
+    current = idx;
+    lbImg.src = images[current];
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function navigate(dir) {
+    current = (current + dir + images.length) % images.length;
+    lbImg.src = images[current];
+  }
+
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => openLightbox(parseInt(thumb.dataset.index)));
+  });
+
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', () => navigate(-1));
+  document.getElementById('lb-next').addEventListener('click', () => navigate(1));
+
+  // click backdrop to close
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+  // keyboard nav
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowLeft')   navigate(-1);
+    if (e.key === 'ArrowRight')  navigate(1);
+  });
+</script>
+</body>
+</html>
