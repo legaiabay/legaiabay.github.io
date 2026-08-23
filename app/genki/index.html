@@ -115,7 +115,18 @@
       50%       { transform: translateY(-10px); }
     }
 
-    /* ── RIGHT: copy + thumbnails ────────────────────────── */
+    .version-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .version-badge img {
+      height: 22px;
+      border-radius: 4px;
+    }
+
     .hero-copy {
       display: flex;
       flex-direction: column;
@@ -205,9 +216,10 @@
       border-radius: 6px;
       overflow: hidden;
       cursor: pointer;
-      border: 2px solid transparent;
-      opacity: 0.45;
+      border: 1px solid rgba(255,255,255,0.12);
+      opacity: 0.85;
       background: var(--bg-card);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
       transition: opacity 0.15s, border-color 0.15s, transform 0.15s;
     }
 
@@ -219,8 +231,8 @@
       display: block;
     }
 
-    .ss-thumb:hover { opacity: 0.75; transform: translateY(-2px); }
-    .ss-thumb.active { border-color: var(--accent); opacity: 1; }
+    .ss-thumb:hover { opacity: 1; transform: translateY(-2px); border-color: rgba(255,255,255,0.25); }
+    .ss-thumb.active { border-color: var(--accent); opacity: 1; box-shadow: 0 2px 16px rgba(229,62,62,0.25), 0 0 0 1px rgba(229,62,62,0.15); }
 
     /* ── LIGHTBOX ─────────────────────────────────────────── */
     .lightbox {
@@ -382,6 +394,9 @@
 
     <!-- RIGHT: copy + thumbnails -->
     <div class="hero-copy">
+      <a class="version-badge" href="https://github.com/legaiabay/genki-uptime-monitoring/releases" target="_blank" rel="noopener">
+        <img src="https://img.shields.io/github/v/release/legaiabay/genki-uptime-monitoring?style=flat&label=latest&color=e53e3e&labelColor=1a1a1a&logo=github&logoColor=white" alt="Latest Release" />
+      </a>
       <p class="hero-label">Self-hosted · Open source</p>
       <h1 class="hero-heading">
         Monitor <em>uptime,</em><br>
@@ -389,7 +404,7 @@
         stay in control.
       </h1>
       <p class="hero-body">
-        Genki is a self-hosted uptime monitoring application. It checks HTTP, TCP, and ping endpoints on a configurable schedule, tracks incidents, and sends notifications to Slack, Telegram, Google Chat, and more — all from a single Docker image.
+        <b style="color: var(--accent-hover);">Genki</b> is a self-hosted uptime monitoring application. It checks HTTP, TCP, and ping endpoints on a configurable schedule, tracks incidents, and sends notifications to Slack, Telegram, Google Chat, and more — all from a single Docker image.
       </p>
 
       <div class="hero-cta">
