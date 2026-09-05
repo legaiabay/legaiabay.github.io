@@ -8,7 +8,7 @@ const grainCtx     = grainCanvas.getContext('2d');
 const canvas       = document.getElementById('transitionCanvas');
 const ctx          = canvas.getContext('2d');
 
-const BG_CLASSES = ['bg-home', 'bg-bio', 'bg-projects', 'bg-blog'];
+const BG_CLASSES = ['bg-home', 'bg-bio', 'bg-projects', 'bg-games', 'bg-blog'];
 
 function applyBgTheme(index) {
   const item = items[index];
@@ -259,19 +259,41 @@ function easeInOut(t) {
 }
 // ─────────────────────────────────────────────────────────────────
 document.addEventListener('keydown', (e) => {
+  let nextIndex = -1;
   if (e.key === 'ArrowDown' || e.key === 's') {
-    activeIndex = Math.min(activeIndex + 1, items.length - 1);
-    bgIndex     = activeIndex;
-    updateMenu();
-    updateContent();
-    requestAnimationFrame(() => requestAnimationFrame(() => updateMenuBg(bgIndex)));
+    nextIndex = Math.min(activeIndex + 1, items.length - 1);
   } else if (e.key === 'ArrowUp' || e.key === 'w') {
-    activeIndex = Math.max(activeIndex - 1, 0);
-    bgIndex     = activeIndex;
+    nextIndex = Math.max(activeIndex - 1, 0);
+  }
+  if (nextIndex === -1 || nextIndex === activeIndex) return;
+
+  const item = items[nextIndex];
+  const r = item.getBoundingClientRect();
+  const origin = {
+    x: r.left + r.width  / 2,
+    y: r.top  + r.height / 2,
+  };
+
+  const fired = playRipple(origin, () => {
+    activeIndex = nextIndex;
+    bgIndex     = nextIndex;
+    applyBgTheme(nextIndex);
     updateMenu();
     updateContent();
+    scrollActiveIntoView();
+    requestAnimationFrame(() => requestAnimationFrame(() => updateMenuBg(bgIndex, true)));
+  });
+
+  if (!fired) {
+    activeIndex = nextIndex;
+    bgIndex     = nextIndex;
+    applyBgTheme(nextIndex);
+    updateMenu();
+    updateContent();
+    scrollActiveIntoView();
     requestAnimationFrame(() => requestAnimationFrame(() => updateMenuBg(bgIndex)));
-  }});
+  }
+});
 
 // ── Mouse hover — moves rectangle only (desktop) ──────────────────
 items.forEach((item, i) => {
@@ -428,6 +450,7 @@ items.forEach((item, i) => {
     home:     { x: 70, y: 50 },
     bio:      { x: 60, y: 50 },
     projects: { x: 65, y: 50 },
+    games:    { x: 60, y: 45 },
     blog:     { x: 70, y: 50 },
   };
   let start = null;

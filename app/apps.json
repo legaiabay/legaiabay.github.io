@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Genki Uptime Monitoring",
+    "icon": "✦",
+    "path": "genki/",
+    "desc": "Self-hosted uptime monitoring app. Checks HTTP, TCP, and ping endpoints, tracks incidents, and sends notifications to Slack, Telegram, and more.",
+    "tags": ["Monitoring", "DevOps", "SaaS"],
+    "accent": "#4fc8e8",
+    "image": "genki/assets/img/ss1.png"
+  },
+  {
+    "name": "Sprint Poker",
+    "icon": "♠",
+    "path": "sprintpoker/",
+    "desc": "Sprint planning card voting tools powered by Bootstrap and Firebase Realtime Database.",
+    "tags": ["Agile", "Firebase", "Team"],
+    "accent": "#8d78ff",
+    "image": "https://legaiabay.github.io/projects/img/thumb/sprint-poker.png"
+  },
+  {
+    "name": "phpdata2json",
+    "icon": "✦",
+    "path": "phpdata2json/",
+    "desc": "Convert PHP data (serialize, array, var_dump) and JSON directly in your browser",
+    "tags": ["Utility", "PHP", "JSON"],
+    "accent": "#ff8a62",
+    "image": "https://legaiabay.github.io/projects/img/thumb/phpdata2json.png"
+  },
+  {
+    "name": "ARKNIGHTS Collection Tracker",
+    "icon": "A",
+    "path": "ak-collection-tracker/",
+    "desc": "Keeping track of your current operators and share your collection with friends.",
+    "tags": ["Gaming", "Tracker", "Deprecated"],
+    "accent": "#895dff",
+    "image": "https://legaiabay.github.io/projects/img/thumb/ak-collection-tracker.jpg"
+  },
+  {
+    "name": "GENSHIN IMPACT Map Tracker",
+    "icon": "✧",
+    "path": "genshin-map-tracker/",
+    "desc": "Item/location map guide and keeping track of your obtained items or reached locations.",
+    "tags": ["Gaming", "Map", "Deprecated"],
+    "accent": "#76c7ff",
+    "image": "https://legaiabay.github.io/projects/img/thumb/genshin-map-tracker.jpg"
+  },
+  {
+    "name": "Wangy Wangy Generator",
+    "icon": "W",
+    "path": "wangywangy-generator/",
+    "desc": "For your degenerate needs.",
+    "tags": ["Generator", "Fun", "Text"],
+    "accent": "#ec6cbd",
+    "image": "https://legaiabay.github.io/projects/img/thumb/wangywangy-generator.png"
+  },
+  {
+    "name": "TextMeshPro Unicode Generator",
+    "icon": "T",
+    "path": "textmeshpro-unicode-generator/",
+    "desc": "Unicode generator for Unity TextMeshPro.",
+    "tags": ["Unity", "Unicode", "Generator"],
+    "accent": "#4ad7ab",
+    "image": "https://legaiabay.github.io/projects/img/thumb/textmeshpro-unicode.png"
+  },
+  {
+    "name": "3D Render Dump",
+    "icon": "3D",
+    "path": "3d-portfolio/",
+    "desc": "I have interest in 3D too so I made my render dump.",
+    "tags": ["3D", "Portfolio", "Art"],
+    "accent": "#e68aff",
+    "image": "https://legaiabay.github.io/projects/img/thumb/3d-render-dump.jpg"
+  },
+  {
+    "name": "(Game) Jumping Slime",
+    "icon": "🎮",
+    "path": "../games/jumpingslime/",
+    "desc": "Simple 2D HTML5 game made with Cocos Creator.",
+    "tags": ["Game", "HTML5", "Cocos"],
+    "accent": "#f9c74f",
+    "image": "https://legaiabay.github.io/projects/img/thumb/game-jumping-slime.jpg"
+  },
+  {
+    "name": "(Game) Coin Run",
+    "icon": "🎮",
+    "path": "../games/coinrun/",
+    "desc": "Simple coin run and jump game with realtime currency graph obstacle.",
+    "tags": ["Game", "HTML5", "PhaserJS"],
+    "accent": "#f9c74f",
+    "image": "https://legaiabay.github.io/projects/img/thumb/coinrun.png"
+  }
+]

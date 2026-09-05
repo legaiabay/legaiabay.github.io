@@ -59,6 +59,9 @@ body.bg-bio::before {
 body.bg-projects::before {
   background: radial-gradient(ellipse at var(--gx, 65%) var(--gy, 50%), #0a2a1a 0%, #0a3d20 30%, #061a10 60%, #030d08 100%);
 }
+body.bg-games::before {
+  background: radial-gradient(ellipse at var(--gx, 60%) var(--gy, 45%), #3a0a0a 0%, #5a1010 30%, #2a0606 60%, #120202 100%);
+}
 body.bg-blog::before {
   background: radial-gradient(ellipse at var(--gx, 70%) var(--gy, 50%), #2a1500 0%, #3d1f00 30%, #1a0d00 60%, #0d0600 100%);
 }

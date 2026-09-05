@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Convert PHP data and JSON directly in your browser." />
+  <meta name="theme-color" content="#111318" />
+  <title>PHP Data ↔ JSON</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <a class="brand" href="https://legaiabay.github.io" aria-label="Back to legaiabay home">legaiabay<span>/tools</span></a>
+      <div class="hero-copy">
+        <p class="eyebrow">Browser-based developer tool</p>
+        <h1>PHP Data <span>↔ JSON</span></h1>
+        <p class="intro">Convert PHP serialized values, array literals, and var_dump output to JSON, or serialize JSON for PHP. Your data never leaves this browser.</p>
+      </div>
+    </header>
+
+    <section class="converter" aria-label="PHP serialized data and JSON converter">
+      <div class="workspace">
+      <article class="editor-card input-card">
+        <div class="card-header">
+          <div>
+            <span class="step">01</span>
+            <h2 id="inputTitle">PHP serialized input</h2>
+          </div>
+          <button class="text-button" id="exampleButton" type="button">Load example</button>
+        </div>
+        <div class="editor-wrap input-editor-wrap">
+          <pre class="highlight-layer" id="phpHighlight" aria-hidden="true"></pre>
+          <label class="sr-only" id="inputLabel" for="phpInput">PHP serialized input</label>
+          <textarea id="phpInput" spellcheck="false" placeholder='a:2:{s:4:"name";s:4:"Abay";s:6:"active";b:1;}' autofocus></textarea>
+        </div>
+        <div class="input-footer">
+          <span id="inputCount">0 characters</span>
+          <span class="shortcut"><kbd>⌘</kbd><span>+</span><kbd>Enter</kbd> to convert</span>
+        </div>
+      </article>
+
+      <div class="actions" aria-label="Conversion controls">
+        <fieldset class="conversion-options" id="conversionOptions">
+          <legend>PHP format</legend>
+          <label>
+            <input type="radio" name="formatType" value="serialized" checked />
+            <span>Serialize</span>
+          </label>
+          <label>
+            <input type="radio" name="formatType" value="array" />
+            <span>Array</span>
+          </label>
+          <label>
+            <input type="radio" name="formatType" value="vardump" />
+            <span>var_dump</span>
+          </label>
+        </fieldset>
+        <button class="primary-button" id="convertButton" type="button">
+          <span id="convertLabel">Convert to JSON</span>
+          <span aria-hidden="true">→</span>
+        </button>
+        <button class="reverse-button" id="reverseButton" type="button" aria-pressed="false">
+          <span aria-hidden="true">⇄</span>
+          <span>Reverse</span>
+        </button>
+        <button class="secondary-button" id="clearButton" type="button">Clear</button>
+      </div>
+
+      <article class="editor-card output-card">
+        <div class="card-header output-header">
+          <div>
+            <span class="step">02</span>
+            <h2 id="outputTitle">JSON output</h2>
+          </div>
+          <div class="output-controls">
+            <fieldset class="format-switcher" id="formatSwitcher">
+              <legend class="sr-only">JSON formatting</legend>
+              <label>
+                <input type="radio" name="format" value="compact" />
+                <span>One-line</span>
+              </label>
+              <label>
+                <input type="radio" name="format" value="tidy" checked />
+                <span>Tidy</span>
+              </label>
+            </fieldset>
+            <button class="copy-button" id="copyButton" type="button" disabled>Copy</button>
+          </div>
+        </div>
+        <div class="output-wrap">
+          <div class="editor-wrap output-editor-wrap">
+            <pre class="highlight-layer" id="jsonHighlight" aria-hidden="true"></pre>
+            <label class="sr-only" id="outputLabel" for="jsonOutput">JSON output</label>
+            <textarea id="jsonOutput" readonly spellcheck="false" placeholder="Your converted JSON will appear here..."></textarea>
+          </div>
+          <div class="empty-mark" id="emptyMark" aria-hidden="true">{ }</div>
+        </div>
+        <div class="status" id="status" role="status" aria-live="polite">
+          <span class="status-dot"></span>
+          <span id="statusText">Ready to convert</span>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="history-panel" aria-labelledby="historyTitle">
+      <div class="history-header">
+        <div>
+          <p class="eyebrow">Local browser storage</p>
+          <h2 id="historyTitle">Conversion history</h2>
+        </div>
+        <button class="text-button" id="clearHistoryButton" type="button" disabled>Clear history</button>
+      </div>
+      <p class="history-empty" id="historyEmpty">Successful conversions will appear here. History is stored only in this browser.</p>
+      <div class="history-list" id="historyList" aria-live="polite"></div>
+    </section>
+
+    <aside class="support-note">
+      <span>Supported</span>
+      <p>Null, booleans, numbers, UTF-8 strings, arrays, JSON objects, and PHP objects.</p>
+    </aside>
+  </main>
+
+  <footer>
+    <a href="https://legaiabay.github.io">legaiabay @ 2026</a>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
