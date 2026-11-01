@@ -3,8 +3,6 @@ const sections     = document.querySelectorAll('.content-section');
 const verticalText = document.getElementById('verticalText');
 const menuBg       = document.getElementById('menuBg');
 const titleBg      = document.getElementById('titleBg');
-const grainCanvas  = document.getElementById('grainCanvas');
-const grainCtx     = grainCanvas.getContext('2d');
 const canvas       = document.getElementById('transitionCanvas');
 const ctx          = canvas.getContext('2d');
 
@@ -16,40 +14,6 @@ function applyBgTheme(index) {
   BG_CLASSES.forEach(c => document.body.classList.remove(c));
   document.body.classList.add(`bg-${bg}`);
 }
-function resizeGrain() {
-  // Run at half resolution for performance, CSS scales it up
-  grainCanvas.width  = Math.floor(window.innerWidth  / 2);
-  grainCanvas.height = Math.floor(window.innerHeight / 2);
-  grainCanvas.style.width  = window.innerWidth  + 'px';
-  grainCanvas.style.height = window.innerHeight + 'px';
-}
-resizeGrain();
-window.addEventListener('resize', resizeGrain);
-
-let lastGrainFrame = 0;
-const GRAIN_FPS = 24; // update rate — lower = choppier old-TV feel
-
-function drawGrain(ts) {
-  requestAnimationFrame(drawGrain);
-  if (ts - lastGrainFrame < 1000 / GRAIN_FPS) return;
-  lastGrainFrame = ts;
-
-  const w = grainCanvas.width;
-  const h = grainCanvas.height;
-  const imageData = grainCtx.createImageData(w, h);
-  const data = imageData.data;
-
-  for (let i = 0; i < data.length; i += 4) {
-    const v = (Math.random() * 255) | 0;
-    data[i]     = v;
-    data[i + 1] = v;
-    data[i + 2] = v;
-    data[i + 3] = 255;
-  }
-
-  grainCtx.putImageData(imageData, 0, 0);
-}
-requestAnimationFrame(drawGrain);
 // ─────────────────────────────────────────────────────────────────
 
 let activeIndex   = 0;   // drives content + size hierarchy
@@ -440,34 +404,6 @@ items.forEach((item, i) => {
 })();
 // ─────────────────────────────────────────────────────────────────
 
-// ── Gradient center drift ─────────────────────────────────────────
-(function animateGradient() {
-  const SPEED_X = 0.00035;
-  const SPEED_Y = 0.00022;
-  const RANGE_X = 12;
-  const RANGE_Y = 8;
-  const centers = {
-    home:     { x: 70, y: 50 },
-    bio:      { x: 60, y: 50 },
-    projects: { x: 65, y: 50 },
-    games:    { x: 60, y: 45 },
-    blog:     { x: 70, y: 50 },
-  };
-  let start = null;
-  function tick(ts) {
-    if (!start) start = ts;
-    const elapsed = ts - start;
-    const active = document.querySelector('.menu-item.active');
-    const key = active ? active.dataset.bg : 'home';
-    const c = centers[key] || centers.home;
-    const gx = c.x + Math.sin(elapsed * SPEED_X) * RANGE_X;
-    const gy = c.y + Math.sin(elapsed * SPEED_Y + 1.2) * RANGE_Y;
-    document.body.style.setProperty('--gx', gx.toFixed(2) + '%');
-    document.body.style.setProperty('--gy', gy.toFixed(2) + '%');
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-})();
 // ─────────────────────────────────────────────────────────────────
 // ── Experience timeline interaction ───────────────────────────────
 const expCols = document.querySelectorAll('.exp-col');
