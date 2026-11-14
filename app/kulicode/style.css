@@ -16,6 +16,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
+  min-width: 1200px;
   font-family: var(--sans);
   color: var(--brown);
   background: var(--cream);
@@ -114,7 +115,6 @@ h1 {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--sans);
-  box-shadow: 0 30px 70px rgba(58, 26, 18, .35), 0 0 0 1px rgba(58, 26, 18, .25);
   transition: background .25s ease, color .25s ease;
 }
 
@@ -219,7 +219,6 @@ h1 {
   color: var(--fg);
   border: 1px solid color-mix(in srgb, var(--fg) 16%, transparent);
   border-radius: 12px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
   overflow: hidden;
   font-family: var(--mono);
   font-size: 14px;
@@ -353,7 +352,7 @@ kbd {
 }
 .app-win[data-minimap="off"] .toast { right: 14px; }
 .toast.on { opacity: 1; transform: none; }
-.toast kbd { font-size: 14px; padding: 3px 9px; background: var(--bg-bar); box-shadow: 0 6px 16px rgba(0, 0, 0, .35); }
+.toast kbd { font-size: 14px; padding: 3px 9px; background: var(--bg-bar); }
 
 /* status bar */
 .status { flex: none; display: flex; align-items: center; gap: 18px; height: 26px; padding: 0 12px; background: var(--bg-bar); border-top: 1px solid var(--line); font-size: 12px; color: var(--dim); }
@@ -365,12 +364,6 @@ kbd {
   font-size: 14px;
   color: var(--brown-2);
   background: var(--cream);
-}
-
-/* ---------- small screens: hero only ---------- */
-
-@media (max-width: 820px) {
-  .features { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
